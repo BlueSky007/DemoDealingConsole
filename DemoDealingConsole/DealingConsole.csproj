@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26F020BC-2FBB-4CC5-99E9-0EF87F74232D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iExchange.DealingConsole</RootNamespace>
+    <AssemblyName>iExchange.DealingConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccountStatusFrames.aspx" />
+    <Content Include="AccountStatusQuery.aspx" />
+    <Content Include="AccountStatusResult.aspx" />
+    <Content Include="AddHistoryQuotation.aspx" />
+    <Content Include="Alert.aspx" />
+    <Compile Include="AccountStatusFrames.aspx.cs">
+      <DependentUpon>AccountStatusFrames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountStatusFrames.aspx.designer.cs">
+      <DependentUpon>AccountStatusFrames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountStatusQuery.aspx.cs">
+      <DependentUpon>AccountStatusQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountStatusQuery.aspx.designer.cs">
+      <DependentUpon>AccountStatusQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountStatusResult.aspx.cs">
+      <DependentUpon>AccountStatusResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountStatusResult.aspx.designer.cs">
+      <DependentUpon>AccountStatusResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddHistoryQuotation.aspx.designer.cs">
+      <DependentUpon>AddHistoryQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alert.aspx.designer.cs">
+      <DependentUpon>Alert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BlotterSelection.aspx.cs">
+      <DependentUpon>BlotterSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BlotterSelection.aspx.designer.cs">
+      <DependentUpon>BlotterSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswod.aspx.designer.cs">
+      <DependentUpon>ChangePasswod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePriceForFPLCalc.aspx.cs">
+      <DependentUpon>ChangePriceForFPLCalc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePriceForFPLCalc.aspx.designer.cs">
+      <DependentUpon>ChangePriceForFPLCalc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPolicyManagementForm.aspx.cs">
+      <DependentUpon>CustomerPolicyManagementForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPolicyManagementForm.aspx.designer.cs">
+      <DependentUpon>CustomerPolicyManagementForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DealerCanViewAccountInfoConfirm.aspx.designer.cs">
+      <DependentUpon>DealerCanViewAccountInfoConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DealingPolicyForm.aspx.cs">
+      <DependentUpon>DealingPolicyForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DealingPolicyForm.aspx.designer.cs">
+      <DependentUpon>DealingPolicyForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Debug.aspx.designer.cs">
+      <DependentUpon>Debug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DQConfirm.aspx.designer.cs">
+      <DependentUpon>DQConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enquiry.aspx.designer.cs">
+      <DependentUpon>Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteOrders.aspx.designer.cs">
+      <DependentUpon>ExecuteOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryPrice.aspx.designer.cs">
+      <DependentUpon>HistoryPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inner\Service2.asmx.cs">
+      <DependentUpon>service2.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InstantOrderList.aspx.cs">
+      <DependentUpon>InstantOrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstantOrderList.aspx.designer.cs">
+      <DependentUpon>InstantOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstantOrderListFrame.aspx.cs">
+      <DependentUpon>InstantOrderListFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstantOrderListFrame.aspx.designer.cs">
+      <DependentUpon>InstantOrderListFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kickout.aspx.designer.cs">
+      <DependentUpon>Kickout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Language.cs" />
+    <Compile Include="LMTProcess.aspx.designer.cs">
+      <DependentUpon>LMTProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementFrame.aspx.cs">
+      <DependentUpon>ManagementFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementFrame.aspx.designer.cs">
+      <DependentUpon>ManagementFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MooMocProcess.aspx.designer.cs">
+      <DependentUpon>MooMocProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="DealingConsoleServer.cs" />
+    <Compile Include="AddHistoryQuotation.aspx.cs">
+      <DependentUpon>AddHistoryQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alert.aspx.cs">
+      <DependentUpon>Alert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SourceLevelAdjustment.aspx.cs">
+      <DependentUpon>SourceLevelAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SourceLevelAdjustment.aspx.designer.cs">
+      <DependentUpon>SourceLevelAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TraceExtension.cs" />
+    <Content Include="Behaviors\calendar.htc" />
+    <Content Include="Behaviors\expand_js.htc" />
+    <Content Include="Behaviors\imageRollover_js.htc" />
+    <Content Include="Behaviors\menu.htc" />
+    <Content Include="Behaviors\mpc.htc" />
+    <Content Include="Behaviors\webservice.htc" />
+    <Content Include="Behaviors\webservice_bak.htc" />
+    <Content Include="BlotterSelection.aspx" />
+    <Content Include="Cab\Data.CAB" />
+    <Content Include="Cab\vsflex7.cab" />
+    <Content Include="Cab\WebTools.CAB" />
+    <Content Include="Calendar.aspx" />
+    <Content Include="ChangePasswod.aspx" />
+    <Content Include="ChangePriceForFPLCalc.aspx" />
+    <Content Include="Common\Setting.css" />
+    <Content Include="Components\DealingConsole.exe" />
+    <Content Include="Confirm.aspx" />
+    <Content Include="CustomerPolicyManagementForm.aspx" />
+    <Content Include="DealerCanViewAccountInfoConfirm.aspx" />
+    <Content Include="Debug.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DQConfirm.aspx" />
+    <Content Include="Enquiry.aspx" />
+    <Content Include="ExecuteOrders.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HistoryPrice.aspx" />
+    <Content Include="Images\ChangeAutoToManual1.gif" />
+    <Content Include="Images\ChangeAutoToManual2.gif" />
+    <Content Include="Images\Dealing.jpg" />
+    <Content Include="Images\ExOrder.jpg" />
+    <Content Include="Images\ExOrder1.jpg" />
+    <Content Include="Images\ExOrder2.jpg" />
+    <Content Include="Images\ExOrder3.jpg" />
+    <Content Include="Images\icoSearch.gif" />
+    <Content Include="Images\LMTProcess1.jpg" />
+    <Content Include="Images\LMTProcess2.jpg" />
+    <Content Include="Images\LMTProcess3.jpg" />
+    <Content Include="Images\OpenInt.jpg" />
+    <Content Include="Images\OpenInt1.jpg" />
+    <Content Include="Images\OpenInt2.jpg" />
+    <Content Include="Images\OpenInt3.jpg" />
+    <Content Include="Images\Option.jpg" />
+    <Content Include="Images\Option1.jpg" />
+    <Content Include="Images\Option2.jpg" />
+    <Content Include="Images\Option3.jpg" />
+    <Content Include="Images\Password.jpg" />
+    <Content Include="Images\Password1.jpg" />
+    <Content Include="Images\Password2.jpg" />
+    <Content Include="Images\Password3.jpg" />
+    <Content Include="Images\Policy.png" />
+    <Content Include="Images\QPolicy.jpg" />
+    <Content Include="Images\RefPrice1.gif" />
+    <Content Include="Images\RefPrice2.gif" />
+    <Content Include="Images\Refresh.gif" />
+    <Content Include="Images\ResetToPrevious1.gif" />
+    <Content Include="Images\ResetToPrevious2.gif" />
+    <Content Include="Images\ResetToSetValue1.gif" />
+    <Content Include="Images\ResetToSetValue2.gif" />
+    <Content Include="Images\Search.jpg" />
+    <Content Include="Images\search1.jpg" />
+    <Content Include="Images\search2.jpg" />
+    <Content Include="Images\search3.jpg" />
+    <Content Include="Images\seperator.jpg" />
+    <Content Include="Images\tree_symbol_collapse.gif" />
+    <Content Include="Images\tree_symbol_expand.gif" />
+    <Content Include="Inner\service2.asmx" />
+    <Content Include="InstantOrderList.aspx" />
+    <Content Include="InstantOrderListFrame.aspx" />
+    <Content Include="JavaScript\AccountStatusQuery.js" />
+    <Content Include="JavaScript\clsAccount.js" />
+    <Content Include="JavaScript\clsCustomer.js" />
+    <Content Include="JavaScript\clsEmployee.js" />
+    <Content Include="JavaScript\clsEnquiry.js" />
+    <Content Include="JavaScript\clsInstrument.js" />
+    <Content Include="JavaScript\clsIOProxy.js" />
+    <Content Include="JavaScript\clsMaxMin.js" />
+    <Content Include="JavaScript\clsOrder.js" />
+    <Content Include="JavaScript\clsOrderRelation.js" />
+    <Content Include="JavaScript\clsPrice.js" />
+    <Content Include="JavaScript\clsQuotationSource.js" />
+    <Content Include="JavaScript\clsQuote.js" />
+    <Content Include="JavaScript\clsQuotePolicy.js" />
+    <Content Include="JavaScript\clsQuotePolicyDetail.js" />
+    <Content Include="JavaScript\clsScheduler.js" />
+    <Content Include="JavaScript\clsSourceInstrument.js" />
+    <Content Include="JavaScript\clsTradePolicy.js" />
+    <Content Include="JavaScript\clsTradePolicyDetail.js" />
+    <Content Include="JavaScript\clsTradeTime.js" />
+    <Content Include="JavaScript\clsTransaction.js" />
+    <Content Include="JavaScript\clsUnclosedOrder.js" />
+    <Content Include="JavaScript\ColKeyAndLanguage.js" />
+    <Content Include="JavaScript\colorConst.js" />
+    <Content Include="JavaScript\clsComboCode.js" />
+    <Content Include="JavaScript\Common.js" />
+    <Content Include="JavaScript\CookieManagement.js" />
+    <Content Include="JavaScript\CustomerPolicyManagement.js" />
+    <Content Include="JavaScript\DealingConsole.js" />
+    <Content Include="JavaScript\Enquiry.js" />
+    <Content Include="JavaScript\EnumDefine.js" />
+    <Content Include="JavaScript\ExecuteOrders.js" />
+    <Content Include="JavaScript\ExecuteOrderSummary.js" />
+    <Content Include="JavaScript\flexConst.js" />
+    <Content Include="JavaScript\FormAccountStatusResult.js" />
+    <Content Include="JavaScript\FormAlert.js" />
+    <Content Include="JavaScript\FormBlotterSelection.js" />
+    <Content Include="JavaScript\FormCalendar.js" />
+    <Content Include="JavaScript\FormConfirm.js" />
+    <Content Include="JavaScript\FormDealerCanViewAccountInfoConfirm.js" />
+    <Content Include="JavaScript\FormDebug.js" />
+    <Content Include="JavaScript\FormDQConfirm.js" />
+    <Content Include="JavaScript\FormExecuteOrder.js" />
+    <Content Include="JavaScript\FormHistoryPrice.js" />
+    <Content Include="JavaScript\FormManagementFrame.js" />
+    <Content Include="JavaScript\FormOpenInterest.js" />
+    <Content Include="JavaScript\FormOptions.js" />
+    <Content Include="JavaScript\FormOrderPrint.js" />
+    <Content Include="JavaScript\FormOrderSearch.js" />
+    <Content Include="JavaScript\FormOrderTask.js" />
+    <Content Include="JavaScript\FormPrompt.js" />
+    <Content Include="JavaScript\FormProperty.js" />
+    <Content Include="JavaScript\FormQuotation.js" />
+    <Content Include="JavaScript\FormQuotationTask.js" />
+    <Content Include="JavaScript\FormQuotePolicy.js" />
+    <Content Include="JavaScript\FormSourceLevelAdjustment.js" />
+    <Content Include="JavaScript\FormToolBar.js" />
+    <Content Include="JavaScript\GlobalFun.js" />
+    <Content Include="JavaScript\Group.js" />
+    <Content Include="JavaScript\GroupNetPosition.js" />
+    <Content Include="JavaScript\History.js" />
+    <Content Include="JavaScript\HistoryPrice.js" />
+    <Content Include="JavaScript\InstantOrderList.js" />
+    <Content Include="JavaScript\InstrumentSortByCode.js" />
+    <Content Include="JavaScript\LMTProcess.js" />
+    <Content Include="JavaScript\MD5.js" />
+    <Content Include="JavaScript\MooMocProcess.js" />
+    <Content Include="JavaScript\ObjectPool.js" />
+    <Content Include="JavaScript\OpenInterest.js" />
+    <Content Include="JavaScript\OpenInterestSummary.js" />
+    <Content Include="JavaScript\Option.js" />
+    <Content Include="JavaScript\OrderSearch.js" />
+    <Content Include="JavaScript\OrderTask.js" />
+    <Content Include="JavaScript\Price.js" />
+    <Content Include="JavaScript\Property.js" />
+    <Content Include="JavaScript\Quotation.js" />
+    <Content Include="JavaScript\Quotation2.js" />
+    <Content Include="JavaScript\QuotationTask.js" />
+    <Content Include="JavaScript\Quote.js" />
+    <Content Include="JavaScript\QuotePolicy.js" />
+    <Content Include="JavaScript\Setting.js" />
+    <Content Include="JavaScript\SlidingWindow.js" />
+    <Content Include="JavaScript\SourceLevelAdjustment.js" />
+    <Content Include="JavaScript\TradeDay.js" />
+    <Content Include="JavaScript\UnclosedOrder.js" />
+    <Content Include="JavaScript\updateHistoryQuotation.js" />
+    <Content Include="JavaScript\UpdateHighLowBatchProcessInfo.js" />
+    <Content Include="Kickout.aspx" />
+    <Content Include="LMTProcess.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="ManagementFrame.aspx" />
+    <Content Include="MooMocProcess.aspx" />
+    <Content Include="OpenInterest.aspx" />
+    <Content Include="Options.aspx" />
+    <Content Include="OrderPrint.aspx" />
+    <Content Include="OrderSearch.aspx" />
+    <Content Include="OrderTask.aspx" />
+    <Content Include="Prompt.aspx" />
+    <Content Include="Property.aspx" />
+    <Content Include="Quotation.aspx" />
+    <Content Include="QuotationTask.aspx" />
+    <Content Include="Quote.aspx" />
+    <Content Include="QuotePolicy.aspx" />
+    <Content Include="Service.asmx" />
+    <Content Include="Sound\Sound0.wav" />
+    <Content Include="Sound\Sound1.wav" />
+    <Content Include="Sound\Sound2.wav" />
+    <Content Include="SourceLevelAdjustment.aspx" />
+    <Content Include="style.css" />
+    <Content Include="ToolBar.aspx" />
+    <Content Include="UnclosedOrderForm.aspx" />
+    <Content Include="UpdateHistoryQuotation.aspx" />
+    <Compile Include="Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePasswod.aspx.cs">
+      <DependentUpon>ChangePasswod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DealerCanViewAccountInfoConfirm.aspx.cs">
+      <DependentUpon>DealerCanViewAccountInfoConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Debug.aspx.cs">
+      <DependentUpon>Debug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DQConfirm.aspx.cs">
+      <DependentUpon>DQConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enquiry.aspx.cs">
+      <DependentUpon>Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExecuteOrders.aspx.cs">
+      <DependentUpon>ExecuteOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoryPrice.aspx.cs">
+      <DependentUpon>HistoryPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kickout.aspx.cs">
+      <DependentUpon>Kickout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LMTProcess.aspx.cs">
+      <DependentUpon>LMTProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MooMocProcess.aspx.cs">
+      <DependentUpon>MooMocProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpenInterest.aspx.cs">
+      <DependentUpon>OpenInterest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpenInterest.aspx.designer.cs">
+      <DependentUpon>OpenInterest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Options.aspx.cs">
+      <DependentUpon>Options.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Options.aspx.designer.cs">
+      <DependentUpon>Options.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPrint.aspx.cs">
+      <DependentUpon>OrderPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderPrint.aspx.designer.cs">
+      <DependentUpon>OrderPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSearch.aspx.cs">
+      <DependentUpon>OrderSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSearch.aspx.designer.cs">
+      <DependentUpon>OrderSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderTask.aspx.cs">
+      <DependentUpon>OrderTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderTask.aspx.designer.cs">
+      <DependentUpon>OrderTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="prompt.aspx.cs">
+      <DependentUpon>Prompt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <None Include="Properties\AssemblyInfo.cs.orig" />
+    <Compile Include="prompt.aspx.designer.cs">
+      <DependentUpon>Prompt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Property.aspx.cs">
+      <DependentUpon>Property.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Property.aspx.designer.cs">
+      <DependentUpon>Property.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quotation.aspx.cs">
+      <DependentUpon>Quotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quotation.aspx.designer.cs">
+      <DependentUpon>Quotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationTask.aspx.cs">
+      <DependentUpon>QuotationTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuotationTask.aspx.designer.cs">
+      <DependentUpon>QuotationTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote.aspx.cs">
+      <DependentUpon>Quote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote.aspx.designer.cs">
+      <DependentUpon>Quote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuotePolicy.aspx.cs">
+      <DependentUpon>QuotePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuotePolicy.aspx.designer.cs">
+      <DependentUpon>QuotePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service.asmx.cs">
+      <DependentUpon>Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolBar.aspx.cs">
+      <DependentUpon>ToolBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToolBar.aspx.designer.cs">
+      <DependentUpon>ToolBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnclosedOrderForm.aspx.cs">
+      <DependentUpon>UnclosedOrderForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnclosedOrderForm.aspx.designer.cs">
+      <DependentUpon>UnclosedOrderForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateHistoryQuotation.aspx.cs">
+      <DependentUpon>UpdateHistoryQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateHistoryQuotation.aspx.designer.cs">
+      <DependentUpon>UpdateHistoryQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SecuritySystem.ParticipantService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SecuritySystem.SecurityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{C97B1ADC-BF5E-488D-A7F1-B1B44423AB1D}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{75C2C216-4FA4-4E81-914F-B647C24E814F}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DealingConsole.mdx" />
+    <None Include="DealingConsole.wdx" />
+    <Content Include="DealingPolicyForm.aspx" />
+    <Content Include="Images\DealingPolicy1.gif" />
+    <Content Include="Images\DealingPolicy2.gif" />
+    <Content Include="Inner\Web.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SecuritySystem.ParticipantService\PlaceHolder.disco" />
+    <None Include="Web References\SecuritySystem.ParticipantService\PlaceHolder.wsdl" />
+    <None Include="Web References\SecuritySystem.ParticipantService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SecuritySystem.SecurityService\PlaceHolder2.wsdl" />
+    <None Include="Web References\SecuritySystem.SecurityService\PlaceHolder2.disco" />
+    <None Include="Web References\SecuritySystem.SecurityService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="JavaScript\clsDealingPolicyDetail.js" />
+    <Content Include="JavaScript\clsDQOrder.js" />
+    <Content Include="JavaScript\clsLMTOrder.js" />
+    <Content Include="JavaScript\clsMKTOrder.js" />
+    <Content Include="JavaScript\clsMOCOrder.js" />
+    <Content Include="JavaScript\clsMOOOrder.js" />
+    <Content Include="JavaScript\clsDealerParameterGroupDetail.js" />
+    <Content Include="JavaScript\DealingPolicyForm.js" />
+    <Content Include="Sound\Ringin.wav" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alert.aspx.resx">
+      <DependentUpon>Alert.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.aspx.resx">
+      <DependentUpon>Calendar.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswod.aspx.resx">
+      <DependentUpon>ChangePasswod.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Confirm.aspx.resx">
+      <DependentUpon>Confirm.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debug.aspx.resx">
+      <DependentUpon>Debug.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default.aspx.resx">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enquiry.aspx.resx">
+      <DependentUpon>Enquiry.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecuteOrders.aspx.resx">
+      <DependentUpon>ExecuteOrders.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx" />
+    <EmbeddedResource Include="HistoryPrice.aspx.resx">
+      <DependentUpon>HistoryPrice.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inner\Service2.asmx.resx" />
+    <EmbeddedResource Include="LMTProcess.aspx.resx">
+      <DependentUpon>LMTProcess.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.aspx.resx">
+      <DependentUpon>Login.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MooMocProcess.aspx.resx">
+      <DependentUpon>MooMocProcess.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenInterest.aspx.resx">
+      <DependentUpon>OpenInterest.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.aspx.resx">
+      <DependentUpon>Options.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderPrint.aspx.resx">
+      <DependentUpon>OrderPrint.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderSearch.aspx.resx">
+      <DependentUpon>OrderSearch.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderTask.aspx.resx">
+      <DependentUpon>OrderTask.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prompt.aspx.resx">
+      <DependentUpon>prompt.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Property.aspx.resx">
+      <DependentUpon>Property.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quotation.aspx.resx">
+      <DependentUpon>Quotation.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationTask.aspx.resx">
+      <DependentUpon>QuotationTask.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotePolicy.aspx.resx">
+      <DependentUpon>QuotePolicy.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service.asmx.resx" />
+    <EmbeddedResource Include="ToolBar.aspx.resx">
+      <DependentUpon>ToolBar.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/iExchange%2520Team/Test/PlaceHolder/PlaceHolder.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SecuritySystem.ParticipantService\</RelPath>
+      <UpdateFromURL>http://localhost/iExchange%2520Team/Test/PlaceHolder/PlaceHolder.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>iExchange_DealingConsole_Participant_Service_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/iExchange%2520Team/Test/PlaceHolder/PlaceHolder2.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\SecuritySystem.SecurityService\</RelPath>
+      <UpdateFromURL>http://localhost/iExchange%2520Team/Test/PlaceHolder/PlaceHolder2.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>iExchange_DealingConsole_Security_Service_PlaceHolder2</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1531</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

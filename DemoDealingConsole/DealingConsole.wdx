@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RMS:MODEL xmlns:RMS="http://www.rational.com/products/xde"  xmlns:dt="http://www.rational.com/products/xde"  xmlns:UML="http://www.rational.com/products/xde"  id="MhawXptqNU6asDrP31rFfg"  unitPolicy="3" >
+<RMS:METAMODEL name="UML 7.0"  id="SRu5vy3weEOOfUkO9LWyYQ"  version="7.0.207.1700"  server="1.1.207.1700"  format="0.27" />
+<RMS:ROOT>
+<UML:Model id="7E8rM8HKl0iDGW3s+TvDcw" >
+<UML:Name>WorkspaceModel</UML:Name>
+<UML:Kind>WORKSPACE</UML:Kind>
+<UML:Workspace>
+<UML:Workspace id="IJ7gbJ3s+0Oe+eXHTX57uw" >
+<UML:DiagramView reserve="6" >
+<UML:DiagramView id="kzHjSuzkiEujUkVOYB4Q0w" >
+<UML:Extent>(0,0)</UML:Extent>
+<UML:Position>(0,0)</UML:Position>
+<UML:Name>{EFB7497E-7EF4-4F0F-8BDA-8C6D8BDE361D}</UML:Name>
+<UML:WindowState>Closed</UML:WindowState>
+<UML:Zoom>100</UML:Zoom>
+</UML:DiagramView>
+<UML:DiagramView id="7lraVzJqTU6JXZGkZs8s3g" >
+<UML:Extent>(0,0)</UML:Extent>
+<UML:Position>(0,0)</UML:Position>
+<UML:Name>{F9A9137A-2B4E-46FD-BB5F-636B24249685}</UML:Name>
+<UML:ViewportX>-21</UML:ViewportX>
+<UML:ViewportY>1272</UML:ViewportY>
+<UML:WindowState>Closed</UML:WindowState>
+<UML:Zoom>100</UML:Zoom>
+</UML:DiagramView>
+<UML:DiagramView id="Jt/Idoioy0CnM7ZCPi75Jg" >
+<UML:Extent>(0,0)</UML:Extent>
+<UML:Position>(0,0)</UML:Position>
+<UML:Name>{2A99BEFB-AEAE-44B8-B79A-0F081ADADE55}</UML:Name>
+<UML:ViewportX>-1916</UML:ViewportX>
+<UML:ViewportY>10625</UML:ViewportY>
+<UML:Zoom>100</UML:Zoom>
+</UML:DiagramView>
+<UML:DiagramView id="eT9GRTwkyk+4i8DdKZfvIQ" >
+<UML:Extent>(0,0)</UML:Extent>
+<UML:Position>(0,0)</UML:Position>
+<UML:Name>{3FE90C60-CD69-4DBD-9E95-63A474E4615C}</UML:Name>
+<UML:ViewportX>834</UML:ViewportX>
+<UML:ViewportY>4357</UML:ViewportY>
+<UML:WindowState>Closed</UML:WindowState>
+<UML:Zoom>100</UML:Zoom>
+</UML:DiagramView>
+<UML:DiagramView id="L6mEdQhAsEeusps0u7RhMg" >
+<UML:Extent>(0,0)</UML:Extent>
+<UML:Position>(0,0)</UML:Position>
+<UML:Name>{008F0AB1-F7AB-4CE6-81CE-255F2B905F34}</UML:Name>
+<UML:ViewportX>-2746</UML:ViewportX>
+<UML:ViewportY>15506</UML:ViewportY>
+<UML:WindowState>Closed</UML:WindowState>
+<UML:Zoom>100</UML:Zoom>
+</UML:DiagramView>
+<UML:DiagramView id="PTMHxpyD/kuqDMdvbOrr4w" >
+<UML:Extent>(0,0)</UML:Extent>
+<UML:Position>(0,0)</UML:Position>
+<UML:Name>{2AD26439-0FC4-409B-B0B4-222F64F39F6C}</UML:Name>
+<UML:ViewportX>-4024</UML:ViewportX>
+<UML:ViewportY>5494</UML:ViewportY>
+<UML:WindowState>Closed</UML:WindowState>
+<UML:Zoom>100</UML:Zoom>
+</UML:DiagramView>
+</UML:DiagramView>
+</UML:Workspace>
+</UML:Workspace>
+</UML:Model>
+</RMS:ROOT>
+</RMS:MODEL>

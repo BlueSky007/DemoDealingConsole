@@ -1,0 +1,81 @@
+BODY
+{
+    BACKGROUND-COLOR: white;
+    COLOR: black;
+    FONT-SIZE: 11pt
+}
+TD
+{
+    FONT-SIZE: 9pt
+}
+OBJECT
+{
+    BACKGROUND-COLOR: #d7d4cf;
+    FONT-SIZE: 9pt
+}
+LABEL
+{
+    COLOR: black;
+    FONT-SIZE: 9pt
+}
+SELECT
+{
+    COLOR: black;
+    FONT-SIZE: 9pt
+}
+INPUT
+{
+    BACKGROUND-COLOR: #d7d4cf;
+    COLOR: black;
+    CURSOR: hand;
+    FONT-SIZE: 9pt
+}
+A:link
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+.TdTitle
+{
+    BACKGROUND-COLOR: darkgray;
+    COLOR: black;
+    FONT-FAMILY: 'Times New Roman';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold
+}
+INPUT.txt
+{
+    BACKGROUND-COLOR: white;
+    CURSOR: auto
+}
+.table
+{
+    BACKGROUND-COLOR: white;
+    VISIBILITY: inherit
+}
+DD
+{
+    CURSOR: hand
+}
+LABEL.lblLink
+{
+    COLOR: blue;
+    FONT-SIZE: 9pt
+}
+P
+{
+    FONT-SIZE: 11pt
+}
+TD.Desc
+{
+    FONT-SIZE: 10pt
+}
+LI
+{
+    LIST-STYLE: inside
+}
