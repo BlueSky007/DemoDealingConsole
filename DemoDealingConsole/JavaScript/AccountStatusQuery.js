@@ -1,4 +1,5 @@
 ﻿var accountStatusQueryScanTimerID = null;
+//feige
 
 function AccountStatusQueryScanTimerStart() {
     AccountStatusQueryTimerStop();
