@@ -1,5 +1,11 @@
-
+var messageLanguage;
+var commonLanguage;
 var OrderTaskInited = false;
+
+function SettingLanguage(commonLanguage) {
+    if (commonLanguage == null) return;
+    //document.getElementById("_OpenPriceButton").value = commonLanguage["OpenPriceButton"];
+};
 
 //Added Michael on 2005-06-30
 function OrderTaskInit() {
@@ -13,6 +19,10 @@ function OrderTaskInit() {
         var quotationFrm = window.parent.quotationFrm;
         var orderGridColKey = quotationFrm.orderGridColKey;
         var orderGridLanguage = quotationFrm.orderGridLanguage;
+        commonLanguage = quotationFrm.commonLanguage;
+        messageLanguage = quotationFrm.messageLanguage;
+
+        this.SettingLanguage(commonLanguage);
 
         var parameter = quotationFrm.oDealingConsole.InitGrid(window.vsflexOrderTask, quotationFrm.optionGrid.OrderGrid, orderGridLanguage);
         if (parameter == "") GridColumnsDefaultFormatForOrderTask(window.vsflexOrderTask, orderGridColKey);
@@ -292,9 +302,9 @@ function AddDQOrderToGrid(order) {
     vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Time) = GetDateTimeString(window.parent.quotationFrm.oSystemTime, "DateTime"); //.getVarDate();
     vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Account) = account ? account.code : tran.accountID;
 
-    vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.BuyLot) = order.isBuy ? "B" : "S";
+    vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.BuyLot) = order.isBuy ? commonLanguage["Buy"] : commonLanguage["Sell"];
     vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.SellLot) = order.GetFormatLot2(order.lot);
-    vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.OpenClose) = order.isOpen ? "O" : "C";
+    vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.OpenClose) = order.isOpen ? commonLanguage["Open"] : commonLanguage["Close"];
     vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.TradeOption) = this.GetTradeOption(order.tradeOption);
     vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.QuotePolicyCode) = order.GetQuotePolicyCode();
     vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.SetPrice) = (order.setPrice == null) ? "" : order.setPrice.ToString();
@@ -350,9 +360,9 @@ function AddLmtMktOrderToGrid(order) {
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Time) = GetDateTimeString(window.parent.quotationFrm.oSystemTime, "DateTime"); //.getVarDate();
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Account) = account ? account.code : tran.accountID;
 
-	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.BuyLot) = order.isBuy ? "B" : "S";
+	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.BuyLot) = order.isBuy ? commonLanguage["Buy"] : commonLanguage["Sell"];
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.SellLot) = order.GetFormatLot2(order.lot);
-	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.OpenClose) = order.isOpen ? "O" : "C";
+	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.OpenClose) = order.isOpen ? commonLanguage["Open"] : commonLanguage["Close"];
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.TradeOption) = this.GetTradeOption(order.tradeOption);
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.QuotePolicyCode) = order.GetQuotePolicyCode();
 	if(order.setPrice)
@@ -417,9 +427,9 @@ function AddMooMocOrderToGrid(order) {
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Item) = instrument ? instrument.code : tran.instrumentID;
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Time) = GetDateTimeString(window.parent.quotationFrm.oSystemTime, "DateTime"); //.getVarDate();
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Account) = account ? account.code : tran.accountID;
-	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.BuyLot) = order.isBuy ? "B" : "S";
+	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.BuyLot) = order.isBuy ? commonLanguage["Buy"] : commonLanguage["Sell"];
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.SellLot) = order.GetFormatLot2(order.lot);
-	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.OpenClose) = order.isOpen ? "O" : "C";
+	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.OpenClose) = order.isOpen ? commonLanguage["Open"] : commonLanguage["Close"];
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.TradeOption) = this.GetTradeOption(order.tradeOption);
 	
 	vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.QuotePolicyCode) = order.GetQuotePolicyCode();
@@ -501,7 +511,7 @@ function UpdateOrderStatus(order,needRedraw) {
                     var orderMain = orders[0];
                     var status = orderMain.status;
                     if (status == OrderStatus.WaitTime || status == OrderStatus.TimeArrived) {
-                        vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Order) = OrderStatus.GetOrderStatusString(orderMain.status);
+                        vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Order) = OrderStatus.GetOrderStatusString(orderMain.status, commonLanguage);
                         if (orderMain.status == OrderStatus.TimeArrived) {
                             vsflexGrid.Cell(flexcpForeColor, line, _OrderTaskGridColIndexs.Order) = vsflexGrid.Cell(flexcpForeColor, line, _OrderTaskGridColIndexs.Item);
                             ForwardOrder(line, needRedraw);
@@ -525,7 +535,7 @@ function UpdateOrderStatus(order,needRedraw) {
             var orderInRow = data.object;
             orderInRow.status = order.status;
             orderInRow.lastStatus = order.lastStatus;
-            vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Order) = OrderStatus.GetOrderStatusString(orderMain.status);
+            vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.Order) = OrderStatus.GetOrderStatusString(orderMain.status, commonLanguage);
             //Modified by Michael on 2006-09-29
 
             var status = orderMain.status;
@@ -630,7 +640,7 @@ function OnOrderAcceptPlace(line)
 			var order = data.object;
 			if(order.status == OrderStatus.WaitAcceptRejectPlace)
 			{
-				//var args = new Array("Are you sure?", "Yes", "No");
+				//var args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"]);
 				//isOK = window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				//if(isOK)
 				{
@@ -657,7 +667,7 @@ function OnOrderRejectPlace(line)
 			var order = data.object;
 			if(order.status == OrderStatus.WaitAcceptRejectPlace)
 			{
-			    var args = new Array("Are you sure?", "Yes", "No", order.GetDescription());
+			    var args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order.GetDescription());
 				isOK = window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				if(isOK)
 				{
@@ -684,7 +694,7 @@ function OnOrderAcceptCancel(line)
 			var order = data.object;
 			if(order.status == OrderStatus.WaitAcceptRejectCancel)
 			{
-			    var args = new Array("Are you sure?", "Yes", "No", order.GetDescription());
+			    var args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order.GetDescription());
 				isOK = window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				if(isOK)
 				{
@@ -740,11 +750,11 @@ function OnOrderAccept(line)
 			    else {
 			        var args = null;
 			        if (order.mainWindow.CanDealerViewAccountInfo) {
-			            args = new Array("Are you sure?", "  Yes  ", "  No  ", order);
+			            args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order);
 			            isOK = window.showModalDialog("DealerCanViewAccountInfoConfirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:320px;dialogHeight:400px");
 			        }
 			        else {
-			            args = new Array("Are you sure?", "  Yes  ", "  No  ", order);
+			            args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order);
 			            isOK = window.showModalDialog("DQConfirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 			        }
 			    }
@@ -774,7 +784,7 @@ function OnOrderReject(line)
 			    var confirmRejectDQOrder = order.mainWindow.oDealingConsole.ConfirmRejectDQOrder;
 			    if (confirmRejectDQOrder)
 			    {
-			        var args = new Array("Are you sure?", "Yes", "No", order.GetDescription());
+			        var args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order.GetDescription());
 				    isOK = window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				    if (!isOK) 
 				    {
@@ -810,19 +820,18 @@ function OnOrderUpdate(line)
 
 function OnSpotOrderModify(line) {
     var vsflexGrid = parent.orderTaskFrm.vsflexOrderTask;
-
     if (line >= vsflexGrid.FixedRows) {
         var data = vsflexGrid.RowData(line);
         if (data && data.object && data.type == OrderType.SpotTrade) {
             var order = data.object;            
             if (order.status == OrderStatus.WaitAcceptRejectPlace) {
                 var oldValue = order.lot;
-                var args = new Array("Input new price: ", oldValue);                
+                var args = new Array(commonLanguage["InputNewPrice"], oldValue);                
                 var newValue = showModalDialog("Prompt.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
                 if (newValue) {
                     if(newValue > oldValue)
                     {
-                        var sMsg = "Input lot must less than " + oldValue;
+                        var sMsg = commonLanguage["InputLotMustLessThan"] + oldValue;
                         window.showModalDialog("Alert.aspx", sMsg, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
                         OnOrderUpdateButtons(true);
                         window.focus();
@@ -853,10 +862,9 @@ function OnOrderModify(line)
 			(data.type == OrderType.Limit || data.type == OrderType.Market) )
 		{
 			var order = data.object;
-			if(order.status == OrderStatus.WaitOutLotLMT)
-			{
+			if(order.status == OrderStatus.WaitOutLotLMT) {
 			    var oldValue = (order.bestPrice == null) ? "" : order.bestPrice.ToString(); //vsflexGrid.TextMatrix(line, _OrderTaskGridColIndexs.SetPrice);
-				var args = new Array("Input new price: ", oldValue);
+			    var args = new Array(commonLanguage["InputNewPrice"], oldValue);    
 				var newValue = showModalDialog("Prompt.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				if(newValue)
 				{
@@ -885,7 +893,7 @@ function OnOrderModify(line)
 					if (!isProblematic) isProblematic = instrument.IsProblematic(adjustPrice);
 					if(isProblematic)
 					{
-						var args = new Array("Out of Range, accept the price?", "Accept", "Reject");
+					    var args = new Array(messageLanguage["LMTProcessAlert"], messageLanguage["AlertAcceptButton"], messageLanguage["AlertRejectButton"]);
 						isProblematic = !window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 					}
 					if(!isProblematic)
@@ -951,12 +959,12 @@ function OnOrderExecute(line)
 				var args = null;
 				if (order.mainWindow.CanDealerViewAccountInfo)
 				{
-					args = new Array("Are you sure?", "  Yes  ", "  No  ",order);
+					args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"],order);
 					isOK = window.showModalDialog("DealerCanViewAccountInfoConfirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:320px;dialogHeight:400px");
 				}
 				else
 				{
-					args = new Array("Are you sure?", "  Yes  ", "  No  ");
+					args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"]);
 					isOK = window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				}
 				if(isOK)
@@ -1094,7 +1102,7 @@ function OnOrderCancel(line)
 			}
 			else
 			{
-			    var args = new Array("Are you sure?", "Yes", "No", order.GetDescription());
+			    var args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order.GetDescription());
 				var isOK = window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 				if(isOK)
 				{

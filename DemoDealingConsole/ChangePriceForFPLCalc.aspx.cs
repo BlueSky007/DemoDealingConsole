@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using iExchange.Common;
 using System.Configuration;
+using System.Collections;
 
 namespace iExchange.DealingConsole
 {
@@ -18,13 +19,18 @@ namespace iExchange.DealingConsole
         {
             //string filePath = this.MapPath(Application["ReportXMLPosition"].ToString() + LanguageManager.LanguageXml);
             //this.Session["ChangePriceForFPLCalcLanguage"] = Language.GetLanguage(filePath, "ChangePriceForFPLCalc");
-            this.grid.Columns[0].HeaderText = "Item";
-            this.grid.Columns[1].HeaderText = "Code";
-            this.grid.Columns[2].HeaderText = "Bid";
-            this.grid.Columns[3].HeaderText = "Ask";
-            this.grid.Columns[4].HeaderText = "SpreadPoints";
-            this.grid.Columns[5].HeaderText = "Operation";
-            this.saveButton.Text = "Save";
+            this.grid.Columns[0].HeaderText = this.GetLanguage("Instrument"); //"Item";
+            this.grid.Columns[1].HeaderText = this.GetLanguage("Code"); //"Code";
+            this.grid.Columns[2].HeaderText = this.GetLanguage("Bid");//"Bid";
+            this.grid.Columns[3].HeaderText = this.GetLanguage("Ask"); //"Ask";
+            this.grid.Columns[4].HeaderText = this.GetLanguage("SpreadPoints"); //"SpreadPoints";
+  
+            EditCommandColumn operationColumn = (EditCommandColumn)this.grid.Columns[5];
+            operationColumn.HeaderText = this.GetLanguage("Operation"); //"Operation";
+            operationColumn.EditText   = this.GetLanguage("Modify"); //"Modify";
+            
+            this.saveButton.Text = this.GetLanguage("SaveButton");
+            this._ChangePriceTitle.Text = this.GetLanguage("ChangePriceTitle");
 
             // Put user code to initialize the page here
             if (Page.IsPostBack) return;
@@ -124,7 +130,17 @@ namespace iExchange.DealingConsole
                 this.SpreadPointsTextBox.Text = e.Item.Cells[4].Text;
             }
         }
-
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
         protected string ConnectionString
         {
             get

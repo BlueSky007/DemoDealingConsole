@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>
-		<title>prompt</title>
+		<title><%=GetLanguage("Prompt")%></title>
 		<meta name="GENERATOR" Content="Microsoft Visual Studio 7.0">
 		<meta name="CODE_LANGUAGE" Content="C#">
 		<meta name="vs_defaultClientScript" content="JavaScript">
@@ -24,8 +24,8 @@
 			</TR>
 			<TR>
 				<TD align="middle">
-					<INPUT id="Button1" type="submit" value="OK" name="Button1" onclick="returnValue=Text1.value; window.close();"><FONT face="system">&nbsp;
-					</FONT><INPUT id="Button2" type="button" value="Cancel" name="Button2" onclick="window.close();"></TD>
+					<INPUT id="Button1" type="submit" value="<%=GetLanguage("Ok") %>" name="Button1" onclick="returnValue=Text1.value; window.close();"><FONT face="system">&nbsp;
+					</FONT><INPUT id="Button2" type="button" value="<%=GetLanguage("Cancel") %>" name="Button2" onclick="window.close();"></TD>
 			</TR>
 		</TABLE>
 	</BODY>

@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-	<title>Add HistoryQuotatoin</title>
+	<title><%=GetLanguage("AddHistoryQuotatoinPage")%></title>
     <script language="javascript" src="JavaScript/GlobalFun.js"></script>
 	<script language="javascript" src="JavaScript/updateHistoryQuotation.js">
 	</script>
@@ -33,7 +33,7 @@
             align="center">
 			<tr>
 				<td style="width: 85px; height: 24px;">
-					&nbsp;Instrument:</td>
+					&nbsp;<%=GetLanguage("Instrument")%></td>
 				<td style="width: 162px; height: 24px;">
 					<select id="_InstrumentAddSelect" style="width: 181px" onchange="InstrumentAddSelect_Onchange()">
 					</select>
@@ -41,22 +41,22 @@
 			</tr>
 			<tr>
 				<td style="width: 85px">
-					Timestamp:</td>
+					<%=GetLanguage("Timestamp")%>:</td>
 				<td style="width: 162px" nowrap="nowrap">
 					<input id="_TimestampText" onblur="OnSetDateTime();" type="text" style="width: 175px" />
-                    <br />Value less than <div id="_OverridedQuotationLastTimestampDiv"></div></td>
+                    <br /><%=GetLanguage("ValueLessThan")%><div id="_OverridedQuotationLastTimestampDiv"></div></td>
 				
 			</tr>
 			<tr>
 				<td style="width: 85px">
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Origin:</td>
+					<%=GetLanguage("Origin")%>:</td>
 				<td style="width: 162px">
 					<input id="_OriginText" type="text" style="width: 175px"  onchange="OnSetPrice(event);"/>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" valign="middle" align="center"><input id="_OkAddButton" type="button" value="OK" onclick="return OkAddButton_onclick()" />
-			<input id="_CancelAddButton" type="button" value="Cancel" onclick="return CancelAddButton_onclick()" />
+				<td colspan="2" valign="middle" align="center"><input id="_OkAddButton" type="button" value="<%=GetLanguage("Ok")%>" onclick="return OkAddButton_onclick()" />
+			<input id="_CancelAddButton" type="button" value="<%=GetLanguage("Cancel")%>" onclick="return CancelAddButton_onclick()" />
 					</td>
 			</tr>
 		</table>			

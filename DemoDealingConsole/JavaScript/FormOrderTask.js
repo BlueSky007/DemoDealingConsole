@@ -289,10 +289,12 @@ function ActionClass(behaviors,caption) {
 }
 
 var FillOrderAction = new FillOrderAction()     //static
-function FillOrderAction()
-{
+function FillOrderAction() {
+
+    var commonLanguage = window.parent.quotationFrm.commonLanguage;
+    
     this.NoneAction = new ActionClass(ActionEnum.None," ");
-	this.OnOrderAccept = new ActionClass(ActionEnum.OnOrderAccept,"Accept");
+    this.OnOrderAccept = new ActionClass(ActionEnum.OnOrderAccept,"Accept");
 	this.OnOrderReject = new ActionClass(ActionEnum.OnOrderReject, "Reject")
 	this.OnOrderDetail = new ActionClass(ActionEnum.OnOrderDetail, "Detail")
 	this.OnOrderAcceptPlace = new ActionClass(ActionEnum.OnOrderAcceptPlace, "Accept")
@@ -300,10 +302,10 @@ function FillOrderAction()
 	this.OnOrderAcceptCancel = new ActionClass(ActionEnum.OnOrderAcceptCancel, "Accept")
 	this.OnOrderRejectCancel = new ActionClass(ActionEnum.OnOrderRejectCancel, "Reject")
 	this.OnOrderUpdate = new ActionClass(ActionEnum.OnOrderUpdate, "uPdate");
-	this.OnOrderModify = new ActionClass(ActionEnum.OnOrderModify, "modiFy")
-	this.OnOrderWait = new ActionClass(ActionEnum.OnOrderWait, "waIt")
-	this.OnOrderExecute = new ActionClass(ActionEnum.OnOrderExecute, "Execute")
-	this.OnOrderCancel = new ActionClass(ActionEnum.OnOrderCancel, "Cancel")
+	this.OnOrderModify = new ActionClass(ActionEnum.OnOrderModify, "modiFy");
+	this.OnOrderWait = new ActionClass(ActionEnum.OnOrderWait, "waIt");
+	this.OnOrderExecute = new ActionClass(ActionEnum.OnOrderExecute, "Execute");
+	this.OnOrderCancel = new ActionClass(ActionEnum.OnOrderCancel, "Cancel");
 }
 
 //Binding Object
@@ -317,6 +319,9 @@ function CellDataDefine(fillOrderAction,isEnable,isDQ,btnCount)
 
 function SetCellData(vsflexGrid, row, col, cellDataDefine) {
     vsflexGrid.Cell(flexcpData, row, col) = cellDataDefine;
+    var commonLanguage = window.parent.quotationFrm.commonLanguage;
+    var buttonCaption = commonLanguage[cellDataDefine.Action.Caption + "Caption"];
+
     var foreColorValue = color_black;
     var backColorValue = color_lightblue;
     var showBtnCount = cellDataDefine.ButtonCount;
@@ -328,8 +333,8 @@ function SetCellData(vsflexGrid, row, col, cellDataDefine) {
 
         switch (showBtnCount) {
             case 2:
-                vsflexGrid.TextMatrix(row, col) = cellDataDefine.Action.Caption;
-//                backColorValue = color_lightblue;
+                vsflexGrid.TextMatrix(row, col) = buttonCaption;// cellDataDefine.Action.Caption;
+                //                backColorValue = color_lightblue;
                 var isEnable = cellDataDefine.IsEnable;
                 if (!isEnable) {
                     foreColorValue = color_darkgray;
@@ -337,7 +342,7 @@ function SetCellData(vsflexGrid, row, col, cellDataDefine) {
                 else {
                     foreColorValue = col > _OrderTaskGridColIndexs.DQAccept ? color_red : color_black;
                 }
-//                backColorValue = color_lightblue;
+                //                backColorValue = color_lightblue;
                 break;
         }
     }
@@ -350,47 +355,47 @@ function SetCellData(vsflexGrid, row, col, cellDataDefine) {
 	        case 0:
 	            vsflexGrid.MergeCells = flexMergeFree;
 	            vsflexGrid.MergeRow(row) = true;
-	            vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderPlacing, row, _OrderTaskGridColIndexs.OrderExecuted) = cellDataDefine.Action.Caption;
+	            vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderPlacing, row, _OrderTaskGridColIndexs.OrderExecuted) = buttonCaption;// cellDataDefine.Action.Caption;
 	            vsflexGrid.Cell(flexcpBackColor, row, _OrderTaskGridColIndexs.OrderPlacing) = color_lightblue;
 	            vsflexGrid.Cell(flexcpData, row, _OrderTaskGridColIndexs.OrderPlacing) = cellDataDefine;
 	            break;
-            case 1:
-                vsflexGrid.MergeCells = flexMergeFree;
-                vsflexGrid.MergeRow(row) = true;
-                vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderPlacing, row, _OrderTaskGridColIndexs.OrderExecuted) = cellDataDefine.Action.Caption;
-//                vsflexGrid.ColAlignment(2) = flexAlignCenterCenter
-                vsflexGrid.Cell(flexcpBackColor, row, _OrderTaskGridColIndexs.OrderPlacing) = color_lightblue;
-                vsflexGrid.Cell(flexcpData, row, _OrderTaskGridColIndexs.OrderPlacing) = cellDataDefine;
-                break;
-            case 2:
-                vsflexGrid.MergeCells = flexMergeFree;
-                vsflexGrid.MergeRow(row) = true;
-                //                vsflexGrid.ColAlignment(3) = flexAlignCenterCenter
-                if (col < _OrderTaskGridColIndexs.OrderPending) {
-                    vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderPlacing, row, _OrderTaskGridColIndexs.OrderPending) = cellDataDefine.Action.Caption;
-                }
-                else {
-                    vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderCanceled, row, _OrderTaskGridColIndexs.OrderExecuted) = cellDataDefine.Action.Caption;
-                }
-//                backColorValue = color_lightblue;
-                //vsflexGrid.Cell(flexcpData, row, col) = cellDataDefine;
-                foreColorValue = (col >= _OrderTaskGridColIndexs.OrderCanceled) ? color_red : color_black;
-                break;
-            case 4:
-                vsflexGrid.TextMatrix(row, col) = cellDataDefine.Action.Caption;
-//                backColorValue = color_lightblue;
-//                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderPlacing) = flexAlignCenterCenter;
-//                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderPending) = flexAlignCenterCenter;
-//                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderCanceled) = flexAlignCenterCenter;
-//                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderExecuted) = flexAlignCenterCenter;
-                var isEnable = cellDataDefine.IsEnable;
-                if (!isEnable) {
-                    foreColorValue = color_darkgray;
-                }
-                else {
-                    foreColorValue = color_black;
-                }
-                break;
+	        case 1:
+	            vsflexGrid.MergeCells = flexMergeFree;
+	            vsflexGrid.MergeRow(row) = true;
+	            vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderPlacing, row, _OrderTaskGridColIndexs.OrderExecuted) = buttonCaption;// cellDataDefine.Action.Caption;
+	            //                vsflexGrid.ColAlignment(2) = flexAlignCenterCenter
+	            vsflexGrid.Cell(flexcpBackColor, row, _OrderTaskGridColIndexs.OrderPlacing) = color_lightblue;
+	            vsflexGrid.Cell(flexcpData, row, _OrderTaskGridColIndexs.OrderPlacing) = cellDataDefine;
+	            break;
+	        case 2:
+	            vsflexGrid.MergeCells = flexMergeFree;
+	            vsflexGrid.MergeRow(row) = true;
+	            //                vsflexGrid.ColAlignment(3) = flexAlignCenterCenter
+	            if (col < _OrderTaskGridColIndexs.OrderPending) {
+	                vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderPlacing, row, _OrderTaskGridColIndexs.OrderPending) = buttonCaption; // cellDataDefine.Action.Caption;
+	            }
+	            else {
+	                vsflexGrid.Cell(flexcpText, row, _OrderTaskGridColIndexs.OrderCanceled, row, _OrderTaskGridColIndexs.OrderExecuted) = buttonCaption;// cellDataDefine.Action.Caption;
+	            }
+	            //                backColorValue = color_lightblue;
+	            //vsflexGrid.Cell(flexcpData, row, col) = cellDataDefine;
+	            foreColorValue = (col >= _OrderTaskGridColIndexs.OrderCanceled) ? color_red : color_black;
+	            break;
+	        case 4:
+	            vsflexGrid.TextMatrix(row, col) = buttonCaption;// cellDataDefine.Action.Caption;
+	            //                backColorValue = color_lightblue;
+	            //                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderPlacing) = flexAlignCenterCenter;
+	            //                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderPending) = flexAlignCenterCenter;
+	            //                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderCanceled) = flexAlignCenterCenter;
+	            //                vsflexGrid.ColAlignment(_OrderTaskGridColIndexs.OrderExecuted) = flexAlignCenterCenter;
+	            var isEnable = cellDataDefine.IsEnable;
+	            if (!isEnable) {
+	                foreColorValue = color_darkgray;
+	            }
+	            else {
+	                foreColorValue = color_black;
+	            }
+	            break;
         }
     }
     vsflexGrid.Cell(flexcpForeColor, row, col) = foreColorValue;

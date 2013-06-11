@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>
-		<title>MooMocProcess</title>
+		<title><%=GetLanguage("MooMocProcessPage")%></title>
 		<meta name="GENERATOR" Content="Microsoft Visual Studio 7.0">
 		<meta name="CODE_LANGUAGE" Content="C#">
 		<meta name="vs_defaultClientScript" content="JavaScript">
@@ -26,37 +26,36 @@
 			border="0" bgColor="buttonface" style="WIDTH: 698px; HEIGHT: 346px">
 			<TR>
 				<TD vAlign="middle" noWrap align="center" width="111" colSpan="1" height="7" rowSpan="1">
-					<DIV id="labelItem" style="DISPLAY: inline; FONT-WEIGHT: bold; WIDTH: 70px; HEIGHT: 15px">Item</DIV>
+					<DIV id="labelItem" style="DISPLAY: inline; FONT-WEIGHT: bold; WIDTH: 70px; HEIGHT: 15px"><%=GetLanguage("Instrument")%></DIV>
 				</TD>
-				<TD id="labelSell" width="128" height="7">Tatol sell: 0</TD>
-				<TD id="labelBuy" width="132" height="7">Tatol buy: 0</TD>
-				<TD align="center" height="7"><INPUT id="btnApply" onclick="OnMooMocApply()" type="button" value="Apply" name="btnApply"
+				<TD id="labelSell" width="128" height="7"><%=GetLanguage("TotalSell")%>: 0</TD>
+				<TD id="labelBuy" width="132" height="7"><%=GetLanguage("TotalBuy")%>: 0</TD>
+				<TD align="center" height="7"><INPUT id="btnApply" onclick="OnMooMocApply()" type="button" value="<%=GetLanguage("Apply")%>" name="btnApply"
 						ACCESSKEY="A" style="WIDTH: 73px; HEIGHT: 24px"></TD>
-				<TD align="center" height="7"><INPUT id="btnAcceptPlace" onclick="OnMooMocAccept()" type="button" value="Accept" name="btnAcceptPlace"
+				<TD align="center" height="7"><INPUT id="btnAcceptPlace" onclick="OnMooMocAccept()" type="button" value="<%=GetLanguage("Accept")%>" name="btnAcceptPlace"
 						ACCESSKEY="R" style="WIDTH: 73px; HEIGHT: 24px"></TD>
 			</TR>
 			<TR>
-				<TD vAlign="middle" noWrap align="right" width="111" height="7" style="HEIGHT: 7px">Source 
-					Price:</TD>
+				<TD vAlign="middle" noWrap align="right" width="111" height="7" style="HEIGHT: 7px"><%=GetLanguage("Source")%>:</TD>
 				<TD id="labelSource" width="128" height="7" style="HEIGHT: 7px"><FONT face="system"></FONT></TD>
 				<TD width="132" height="7" style="HEIGHT: 7px"><FONT face="system"></FONT></TD>
-				<TD align="center" colSpan="1" height="7" rowSpan="1" style="HEIGHT: 7px"><INPUT id="btnExecute" onclick="OnMooMocExecute()" type="button" value="Execute" name="btnExec"
+				<TD align="center" colSpan="1" height="7" rowSpan="1" style="HEIGHT: 7px"><INPUT id="btnExecute" onclick="OnMooMocExecute()" type="button" value="<%=GetLanguage("Execute")%>" name="btnExec"
 						ACCESSKEY="E" style="WIDTH: 73px"></TD>
-				<TD style="HEIGHT: 7px" align="center" height="7"><INPUT id="btnRejectPlace" onclick="OnMooMocReject()" type="button" value="Reject" name="btnRejectPlace"
+				<TD style="HEIGHT: 7px" align="center" height="7"><INPUT id="btnRejectPlace" onclick="OnMooMocReject()" type="button" value="<%=GetLanguage("Reject")%>" name="btnRejectPlace"
 						ACCESSKEY="C" style="WIDTH: 73px; HEIGHT: 24px"></FONT></TD>
 			</TR>
 			<TR>
 				<TD vAlign="middle" noWrap align="right" width="111" colSpan="1" height="2" rowSpan="1"
-					style="HEIGHT: 2px">Market Price:</TD>
+					style="HEIGHT: 2px"><%=GetLanguage("MarketPrice")%>:</TD>
 				<TD width="128" height="2" style="HEIGHT: 2px">
-					<P>Bid: <INPUT id="textBid" type="text" size="6" name="Text1" style="COLOR: blue"></P>
+					<P><%=GetLanguage("Bid")%>: <INPUT id="textBid" type="text" size="6" name="Text1" style="COLOR: blue"></P>
 				</TD>
-				<TD width="132" height="2" style="HEIGHT: 2px">Ask: <INPUT id="textAsk" type="text" size="6" name="Text2" style="COLOR: red">
+				<TD width="132" height="2" style="HEIGHT: 2px"><%=GetLanguage("Ask")%>: <INPUT id="textAsk" type="text" size="6" name="Text2" style="COLOR: red">
 				</TD>
 				<TD vAlign="baseline" noWrap align="center" colSpan="1" height="2" rowSpan="1" style="HEIGHT: 2px">
-					<INPUT onclick="if (window.confirm('Are you sure?')){ComfirmCancel();}" style="WIDTH: 78px; HEIGHT: 24px" type="button" value="Cancel" id="cancelButton">
+					<INPUT onclick="if (window.confirm('Are you sure?')){ComfirmCancel();}" style="WIDTH: 78px; HEIGHT: 24px" type="button" value="<%=GetLanguage("Cancel")%>" id="cancelButton">
 				</TD>
-				<TD style="HEIGHT: 2px" vAlign="baseline" noWrap align="center" height="2"><INPUT id="btnExit" onclick="self.close();" type="button" value="Exit" name="btnExit" ACCESSKEY="X"
+				<TD style="HEIGHT: 2px" vAlign="baseline" noWrap align="center" height="2"><INPUT id="btnExit" onclick="self.close();" type="button" value="<%=GetLanguage("Exit")%>" name="btnExit" ACCESSKEY="X"
 						style="WIDTH: 73px; HEIGHT: 24px"></TD>
 			</TR>
 			<TR>

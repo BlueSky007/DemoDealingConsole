@@ -268,7 +268,9 @@ function Page_Onload() {
 function HistoryQuotationInitialize(grid) {
     var lFixedRows = 0;
     var lColIndex = 0;
-
+    var quoteFrm = window.dialogArguments.parent.quotationFrm;
+    var commonLanguage = quoteFrm.commonLanguage;
+    var com
     with (grid) {
         Rows = 1;
         FixedRows = 1;
@@ -284,19 +286,19 @@ function HistoryQuotationInitialize(grid) {
         ColHidden(lColIndex) = true;   //RowHidden(lRowIndex)
         lColIndex++;
 
-        TextMatrix(lFixedRows, lColIndex) = "Code";
+        TextMatrix(lFixedRows, lColIndex) = commonLanguage["InstrumentCode"];// "Code";
         ColKey(lColIndex) = "instrumentCode";
         ColWidth(lColIndex) = 2000;
         lColIndex++;
 
-        TextMatrix(lFixedRows, lColIndex) = "Time";
+        TextMatrix(lFixedRows, lColIndex) = commonLanguage["Timestamp"];
         ColKey(lColIndex) = "Timestamp";
         ColWidth(lColIndex) = 4000;
         ColDataType(lColIndex) = flexDTDate;
         //ColFormat(lColIndex) = "yyyy-MM-dd HH:mm:ss.fff";
         lColIndex++;
 
-        TextMatrix(lFixedRows, lColIndex) = "Origin";
+        TextMatrix(lFixedRows, lColIndex) = commonLanguage["Origin"];
         ColKey(lColIndex) = "Origin";
         ColWidth(lColIndex) = 1500;
         lColIndex++;

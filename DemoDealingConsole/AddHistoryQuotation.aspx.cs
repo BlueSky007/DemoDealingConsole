@@ -15,4 +15,15 @@ public partial class AddHistoryQuotation : System.Web.UI.Page
 	{
 
 	}
+    public string GetLanguage(string key)
+    {
+        if (((Hashtable)Session["Common"]).ContainsKey(key))
+        {
+            return ((Hashtable)Session["Common"])[key].ToString();
+        }
+        else
+        {
+            return key;
+        }
+    }
 }

@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Policy Management</title>
+    <title><%=GetLanguage("PolicyManagementPage")%></title>
     <meta name="GENERATOR" content="Microsoft Visual Studio 7.0">
     <meta name="CODE_LANGUAGE" content="C#">
     <meta name="vs_defaultClientScript" content="JavaScript">
@@ -40,7 +40,7 @@
         border="0" style="width: 100%; height: 20%;">
         <tr>
             <td nowrap>
-                Account Group:
+                <%=GetLanguage("AccountGroup")%>:
             </td>
             <td align="left">
                 <select id="_AccountGroupSelect" name="_AccountGroupSelect" style="width: 200px;">
@@ -50,25 +50,25 @@
             </td>
             <td colspan="4" align="left">
                 <input type="button" id="_QueryByAccountGroupButton" name="_QueryByAccountGroupButton"
-                    onclick="QueryByAccountGroupButton_Onclick();" value="  GO  " style="width: 60px;" />
+                    onclick="QueryByAccountGroupButton_Onclick();" value="<%=GetLanguage("Query") %>"  style="width: 60px;" />
             </td>
         </tr>
         <tr>
             <td nowrap>
-                Black List Only:
+                 <%=GetLanguage("BlackListOnly")%>:
             </td>
             <td align="left">
                 <input type="checkbox" id="Checkbox1" name="_BlackListCheckBox" checked />
             </td>
             <td colspan="4" align="left">
                 <input type="button" id="Button1" name="_QueryByBlackListAccountButton"
-                    onclick="QueryByBlackListAccountButton_Onclick();" value="  GO  " style="width: 60px;" />
+                    onclick="QueryByBlackListAccountButton_Onclick();" value="<%=GetLanguage("Query") %>" style="width: 60px;" />
             </td>
             
         </tr>
         <tr>
             <td nowrap>
-                Quote Policy:
+                <%=GetLanguage("QutoPolicy")%>:
             </td>
             <td>
                 <select id="_QuotePolicySelect" name="_QuotePolicySelect" style="width: 200px;">
@@ -76,10 +76,10 @@
             </td>
             <td align="left">
                 <input type="button" id="_QueryByQuotePolicyButton" name="_QueryByQuotePolicyButton"
-                    onclick="QueryByQuotePolicyButton_Onclick();" value="  GO  " style="width: 60px;" />
+                    onclick="QueryByQuotePolicyButton_Onclick();" value="<%=GetLanguage("Query") %>" style="width: 60px;" />
             </td>
             <td>
-                Replace with:
+                <%=GetLanguage("ReplaceWith")%>:
             </td>
             <td>
                 <select id="_ReplaceWithQuotePolicySelect" name="_ReplaceWithQuotePolicySelect" style="width: 200px;">
@@ -87,12 +87,12 @@
             </td>
             <td>
                 <input type="button" id="_ReplaceWithQuotePolicyButton" name="_ReplaceWithQuotePolicyButton"
-                    onclick="ReplaceWithQuotePolicyButton_Onclick();" value="GO Selected" style="width: 110px;" />
+                    onclick="ReplaceWithQuotePolicyButton_Onclick();" value="<%=GetLanguage("GoSelectedButton") %>" style="width: 110px;" />
             </td>
         </tr>
         <tr>
             <td nowrap>
-                Dealing Policy:
+                <%=GetLanguage("DealingPolicy")%>:
             </td>
             <td>
                 <select id="_DealingPolicySelect" name="_DealingPolicySelect" style="width: 200px;">
@@ -102,10 +102,10 @@
             </td>
             <td align="left">
                 <input type="button" id="_QueryByDealingPolicyButton" name="_QueryByDealingPolicyButton"
-                    onclick="QueryByDealingPolicyButton_Onclick();" value="  GO  " style="width: 60px;" />
+                    onclick="QueryByDealingPolicyButton_Onclick();" value="<%=GetLanguage("Query") %>" style="width: 60px;" />
             </td>
             <td>
-                Replace with:
+                <%=GetLanguage("ReplaceWith")%>:
             </td>
             <td>
                 <select id="_ReplaceWithDealingPolicySelect" name="_ReplaceWithDealingPolicySelect"
@@ -116,29 +116,30 @@
             </td>
             <td>
                 <input type="button" id="_ReplaceWithDealingPolicyButton" name="_ReplaceWithDealingPolicyButton"
-                    onclick="ReplaceWithDealingPolicyButton_Onclick();" value="GO Selected" style="width: 110px;" />
+                    onclick="ReplaceWithDealingPolicyButton_Onclick();" value="<%=GetLanguage("GoSelectedButton") %>" style="width: 110px;" />
             </td>
         </tr>
         <tr>
             <td>
-                Sorting on:
+                 <%=GetLanguage("SortingOn")%>:
             </td>
             <td nowrap colspan="5" align="left">
                 <select id="_OutlineSelect" name="_OutlineSelect" onchange="OutlineSelect_Onclick();"
                     style="width: 80px;">
-                    <option id="_AccountGroupOutlineOption" value="0" selected>Group</option>
-                    <option id="_DetailOutlineOption" value="1">Detail</option>
+                    <option id="_AccountGroupOutlineOption" value="0" selected><%=GetLanguage("SortingOnCombo1")%></option>
+                    <option id="_DetailOutlineOption" value="1"><%=GetLanguage("SortingOnCombo2")%></option>
                 </select>
             </td>
         </tr>
         <tr>
             <td colspan="3" align="left">
                 <input type="button" id="_SaveButton" name="_SaveButton" onclick="SaveButton_Onclick();"
-                    value="Save Selected" accesskey="s" style="width: 110px;" />
+                    value="<%=GetLanguage("SaveButton") %>" accesskey="s" style="width: 110px;" />
             </td>
             <td align="left">
                 <input type="checkbox" id="_IsApplyEmployChk" />
-                <asp:Label runat="server" Text="Apply Employee" />
+                <%=GetLanguage("ApplyEmployee")%>
+               <%-- <asp:Label runat="server" Text="Apply Employee" />--%>
             </td>
         </tr>
     </table>

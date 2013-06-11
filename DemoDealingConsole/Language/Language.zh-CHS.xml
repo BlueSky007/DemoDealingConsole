@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <!--注意Key不能重复-->
+  <Login>
+    <Item key="Ok" value="确定"/>
+    <Item key="Cancel" value="取消" />
+    <Item key="UserName" value="User Name / 用户名:"/>
+    <Item key="Password" value="Password / 口 令:" />
+    <Item key="LoginFailedMsg" value="验证失败, 请重试!" />
+    <Item key="MaxLoginTimes" value="超出最大登录次数,登录被锁定.请联系管理员." />
+    <Item key="LoginNameEmptyMsg" value="登录名不能为空!" />
+    <Item key="ChangePasswodTitle" value="修改密码" />
+    <Item key="ChangePasswod" value="用户密码修改" />
+    <Item key="OldPassword" value="当前密码" />
+    <Item key="NewPassword" value="新密码" />
+    <Item key="ConfirmPassword" value="确认密码" />
+    <Item key="PasswodMsg" value="新密码应该包含 8 -16 位数字和字母的组合." />
+    <Item key="SuccedChangePassword" value="成功修改密码!" />
+    <Item key="FailedChangePassword" value="修改密码失败!" />
+    <Item key="InvalidPassword" value="错误,请再一次输入新密码!" />
+    <Item key="IsValidPasswordInputMsg" value="错误，输入您的密码(8-16)!" />
+    <Item key ="InitDataEmpty" value="初始化数据为空!"/>
+    <Item key ="ProcessError" value="您与系统连接已经断开:\n -  您可能在另一个地方登陆!"/>
+  </Login>
+  <TooBarPage>
+    <Item key="QutoPolicy" value="报价策略"/>
+    <Item key="Source" value="价格源:"/>
+    <Item key="Parameter" value="参数"/>
+    <Item key="GoButton" value="执行"/>
+    <Item key="ReferencePrice" value="刷新价格"/>
+    <Item key="ChangePassword" value="修改密码"/>
+    <Item key="SearchOrder" value="单子查询"/>
+    <Item key="OpenInterest" value="持仓汇总"/>
+    <Item key="ExecuteOrder" value="成交单"/>
+    <Item key="LMTProcess" value="限价单处理"/>
+    <Item key="Option" value="选项"/>
+    <Item key="ChangeAutoToMenual" value="自动转人工"/>
+    <Item key="ResetParameter" value="复位到预设值"/>
+    <Item key="ModifyHistory" value="修改价格历史"/>
+    <Item key="DealingPolicy" value="买卖策略"/>
+    <Item key="Resume" value="恢复"/>
+    <Item key="Suspend" value="延缓"/>
+    <Item key="AllowLMT" value="允许限价单"/>
+    <Item key ="DisAllowLMT" value="拒绝限价单"/>
+    <Item key="LogoutButton" value="登出"/>
+  </TooBarPage>
+  <Common>
+    <Item key="Ok" value="确定"/>
+    <Item key="Cancel" value="取消" />
+    <Item key ="Go" value="执行"/>
+    
+    <!--Mian Page-->
+    <Item key ="History" value="历史"/>
+    <Item key ="Properties" value="属性"/>
+    <Item key ="InstantOrder" value="即市单"/>
+    <Item key ="Undo" value="撤销"/>
+    <Item key ="AP" value="侧水"/>
+    <Item key ="SP" value="价差"/>
+    <Item key ="SpreadReplace" value="替换"/>
+    <Item key ="OpenPriceButton" value="位置"/>
+    <!--Order Search Page-->
+    <Item key="OrderSearchPage" value="单子查询" />
+    <Item key="Query" value="查询" />
+    <Item key="QueryType" value="查询类型:" />
+    <Item key="Instrument" value="交易项目:" />
+    <Item key="Executed" value="已成交" />
+    <Item key="Cancelled" value="已取消" />
+    <Item key="TradeTime" value="交易日:" />
+    <Item key="AccountGroup" value="账号组:" />
+    <Item key="OrderType" value="单子类型:" />
+    <Item key="PrintButton" value="打印" />
+    <Item key="To" value="截止到:" />
+    <!--Open Interest Page-->
+    <Item key="OpenInterestPage" value="持仓分析" />
+    <Item key="GroupNetPosition" value="分组净仓" />
+    <Item key="Summary" value="汇总" />
+    <Item key="ShowActualQuantity" value="显示实际数量" />
+    <Item key="AccountStatus" value="账户状态" />
+    <Item key="Group" value="组" />
+    <Item key="Account" value="账户" />
+    <Item key="Order" value="单子" />
+    <Item key="Code" value="编号" />
+    <Item key="OriginCode" value="交易项目源编号" />
+    <Item key="BlotterSelection" value="过滤选项" />
+    <Item key="SortingOn" value="排序:" />
+    <!--Executed Orders Page-->
+    <Item key="ExecutedOrdersPage" value="成交单" />
+    <Item key="List" value="列表" />
+    <Item key="TimeRange" value="时间范围:" />
+    <Item key="PriceRange" value="价格范围" />
+    <Item key="Minutes" value="分钟" />
+    <Item key="Pips" value="点数" />
+    <!--Limit Process Page-->
+    <Item key="LimitProcessPage" value="限价单处理" />
+    <Item key="SourcePrice" value="来源价" />
+    <Item key="MarketPrice" value="市场价" />
+    <Item key="Bid" value="卖出价" />
+    <Item key="Ask" value="买入价" />
+    <Item key="Exit" value="退出" />
+    <Item key="Apply" value="应用" />
+    <Item key="Execute" value="成交" />
+    <!--Options Page-->
+    <Item key="OptionsPage" value="选项" />
+    <Item key="InstrumentsTab" value="交易项目" />
+    <Item key="ParametersTab" value="参数设置" />
+    <Item key="SoundTab" value="声音设置" />
+    <Item key="SetValueTab" value="预设值" />
+    <Item key="LimitTab" value="限价设置" />
+    <Item key="FontTab" value="字体设置" />
+    <Item key="SelectedInstruments" value="已选择的交易项目" />
+    <Item key="InstrumentSource" value="商品源" />
+    <Item key="Syn" value="同步" />
+    <Item key="MoveUp" value="上移" />
+    <Item key="MoveDown" value="下移" />
+    <Item key="GetWidth" value="获取宽度" />
+    <Item key="Layout" value="保存当前布局" />
+    <Item key="EnquiryTimeOut" value="询价超时" />
+    <Item key="ApplyAutoPts" value="应用侧水" />
+    <Item key="InactiveTimeOut" value="价格活跃时间" />
+    <Item key="PrintExecutedOrder" value="打印已成交订单" />
+    <Item key="PrintOrderCombo1" value="不显示打印单" />
+    <Item key="PrintOrderCombo2" value="显示打印单" />
+    <Item key="PrintOrderCombo3" value="发送单到打印机" />
+    <Item key="DisablePopup" value="禁用弹出窗口" />
+    <Item key="NoDisableCombo" value="不禁用" />
+    <Item key="DisableCombo" value="禁用" />
+    <Item key="DisableOrderReconfirmDialog" value="禁用订单确认对话框" />
+    <Item key="CopyFrom" value="复制自" />
+    <Item key="File" value="文件" />
+    <Item key ="TestButton" value="测试" />
+    <Item key ="SetButton" value="设置" />
+    <Item key ="SaveButton" value="保存" />
+    <Item key ="ClearButton" value="清除" />
+    <Item key ="Spread" value="价差" />
+    <Item key ="Limit" value="限制价格点数" />
+    <Item key ="ClosePriceRef" value="收市价参考" />
+    <Item key ="SetLimitButton" value="限价设置" />
+    <Item key ="Grid" value="网格" />
+    <Item key ="Height" value="高度" />
+    <Item key ="Font" value="字体" />
+    <Item key ="Size" value="大小" />
+    <Item key ="ApplyDealingPolicy" value="应用到买卖策略"/>
+    <!--UpdateHistoryQuotation.aspx-->
+    <Item key="UpdateHistoryQuotation" value="修改历史价格" />
+    <Item key="AskBid" value="买入/卖出价" />
+    <Item key="BeginTime" value="开始时间" />
+    <Item key="Origin" value="来源价" />
+    <Item key="Refresh" value="刷新" />
+    <Item key="Add" value="增加" />
+    <Item key="Delete" value="删除" />
+    <Item key="RestoreBefore" value="在...之前恢复" />
+    <Item key="TradeDay" value="交易日" />
+    <Item key="Confirm" value="确认" />
+    <Item key ="Restore" value="恢复"/>
+    <!--ManagementFrame.aspx-->
+    <Item key="ManagementPage" value="管理"/>
+    <Item key ="DealingPolicy" value="买卖策略"/>
+    <Item key ="CustomerManagementButton" value="客户管理"/>
+    <!--Dealing Policy Page-->
+    <Item key="DealingPolicyPage" value="买卖策略"/>
+    <Item key="ByDealingPolicy" value="买卖策略方向"/>
+    <Item key="ByInstrument" value="交易项目方向"/>
+    <Item key="BatchProcess" value="设置"/>
+    <Item key="Replace" value="替换"/>
+    <Item key="MaxDQLot" value="即市单最大手数"/>
+    <Item key="MaxOtherLot" value="其它单最大手数"/>
+    <Item key="DQQuoteMinLot" value="即市单询价最小手数"/>
+    <Item key="AutoDQMaxLot" value="自动成交即市单最大手数"/>
+    <Item key="AutoLmtMktMaxLot" value="自动成交限价单最大手数"/>
+    <Item key="AcceptDQVariation" value="即市单接受价差"/>
+    <Item key="AcceptLmtVariation" value="增仓限价单接受价差"/>
+    <Item key="AcceptCloseLmtVariation" value="减仓限价单接受价差"/>
+    <Item key="CancelLmtVariation" value="限价单取消价差"/>
+    <Item key="AutoAcceptMaxLot" value="自动接受挂单最大手数"/>
+    <Item key="AutoCancelMaxLot" value="自动审批挂单取消最大手数"/>
+    <Item key="AllowedNewTradeSides" value="允许新单方向"/>
+    <Item key="AutoDQDelay" value="自动成交延长秒数"/>
+    <Item key="HitPriceVariationForSTP" value="触发止损单成交于撞线价跳幅"/>
+    <Item key="AllowedNewTradeSidesCombo1" value="不允许下新单"/>
+    <Item key="AllowedNewTradeSidesCombo2" value="仅仅允许下买单"/>
+    <Item key="AllowedNewTradeSidesCombo3" value="仅仅允许下卖单"/>
+    <Item key="AllowedNewTradeSidesCombo4" value="允许下新单"/>
+    <!--Policy Management Page-->
+    <Item key="PolicyManagementPage" value="策略管理"/>
+    <Item key="BlackListOnly" value="仅仅黑名单"/>
+    <Item key="GoSelectedButton" value="查询所选"/>
+    <Item key="ApplyEmployee" value="应用到交易员"/>
+    <Item key="QutoPolicy" value="报价策略"/>
+    <Item key="ReplaceWith" value="替换成"/>
+    <Item key="SortingOnCombo1" value="组"/>
+    <Item key="SortingOnCombo2" value="明细"/>
+    <!--Add HistoryQuotatoin Page-->
+    <Item key="AddHistoryQuotatoinPage" value="添加历史价格"/>
+    <Item key ="Timestamp" value="时间"/>
+    <Item key ="ValueLessThan" value="值需小于:"/>
+    <!--ChangePriceForFPLCalc.aspx-->
+    <Item key ="ChangePriceForFPLCalcPage" value="修改计算浮动盈亏的价格"/>
+    <Item key ="ChangePriceTitle" value="修改计算浮动盈亏的价格"/>
+    <Item key="SpreadPoints" value="价差"/>
+    <Item key ="Operation" value="操作"/>
+    <Item key="Modify" value="修改"/>
+
+    <!--Account Status Query Page-->
+    <Item key ="AccountStatusQueryPage" value="账号状态查询"/>
+    <Item key ="RealtimeCalculate" value="实时计算"/>
+    <Item key ="UnitMsg" value="(单位：秒)"/>
+    <Item key ="Interval" value="间隔"/>
+    <Item key ="ChangePrice" value="修改价格"/>
+    <Item key ="UseMarketPrice" value="用市场价"/>
+    <Item key ="UserPrice" value="用修改价格"/>
+
+    <!--DQ Confirm-->
+    <Item key ="SetPrice" value="设置价格"/>
+    <Item key ="ExecutePrice" value="成交价格"/>
+    <Item key ="YesButton" value=" 是 "/>
+    <Item key ="NoButton" value="间隔"/>
+    <Item key="Prompt" value="提示"/>
+    <!--DealerCanViewAccountInfoConfirm.aspx-->
+    <Item key ="BL" value="黑名单"/>
+    <Item key ="Balance" value="结余"/>
+    <Item key ="Equity" value="有效保证金"/>
+    <Item key ="Necessary" value="保证金"/>
+    <Item key ="Usable" value="可用保证金"/>
+    <Item key ="TotalBuy" value="汇总买手数"/>
+    <Item key ="TotalSell" value="汇总卖手数"/>
+    <Item key ="Net" value="净余手数"/>
+    <Item key ="Lot" value="手数"/>
+    <!--Enquiry.aspx-->
+    <Item key="Adjust" value="调整价"/>
+    <Item key="Above" value="上"/>
+    <Item key="Below" value="下"/>
+    <Item key="Units" value="单位"/>
+    <Item key="Update" value ="更新"/>
+    <Item key="SelectAll" value ="全选"/>
+    <Item key="siMiliar" value ="类同"/>
+    <Item key="Quantity" value ="数量"/>
+    <Item key="ClearAll" value ="清除所有"/>
+    <Item key="Send" value ="发送"/>
+    <Item key="eXitButton" value ="退出"/>
+    <!--Blotter Selection-->
+    <Item key="BlotterSelectionPage" value="过滤选项"/>
+    <!--MooMoc Process-->
+    <Item key="MooMocProcessPage" value="开市市场单收市市场单"/>
+    <Item key="Reject" value="拒绝"/>
+    <Item key="Accept" value="接受"/>
+  </Common>
+
+  <AccountStatus>
+    <ReportPageTypeQuery>Account Status Query&lt;br&gt;帐户状况查询</ReportPageTypeQuery>
+    <SelectAccount>Please select an account/选择帐户查询</SelectAccount>
+    <PrinterError>Printer''s I/O was error! please check your printer/没有可连的打印设备, 请检查.</PrinterError>
+    <QueryType>Report Account Status Query 帐户状况查询</QueryType>
+    <ChangePrice>Change Price 价格选项</ChangePrice>
+    <Query>Query 查询</Query>
+    <UseMarketPrice>Use Market price 基于市价</UseMarketPrice>
+    <UserPrice>User price 用户自订参考价</UserPrice>
+    <Print>Print 打印</Print>
+
+    <AccountCode>A/C Code&lt;br&gt;帐户编号</AccountCode>
+    <TradeDay>Trade Day&lt;br&gt;交易日</TradeDay>
+    <Currency>Currency&lt;br&gt;帐户贷币</Currency>
+    <IsMultiCur>Is Multi Cur&lt;br&gt;多货币帐户</IsMultiCur>
+
+    <AccountName>A/C Name&lt;br&gt;帐户名称</AccountName>
+    <Employee>A/E Code&lt;br&gt;帐户代表</Employee>
+    <AccountGroup>Account Group&lt;br&gt;帐户组别</AccountGroup>
+    <Organization>Organization&lt;br&gt;公司</Organization>
+
+    <CrLot>Cr Lot&lt;br&gt;信货手数</CrLot>
+    <StartDate>Start Date&lt;br&gt;开始日期</StartDate>
+
+    <SMAmount>SM Amount&lt;br&gt;SM 数目</SMAmount>
+    <Credit>Credit&lt;br&gt;信贷额</Credit>
+    <Uncleared>Uncleared&lt;br&gt;未过帐入金</Uncleared>
+
+    <AccountDescription>Telephone Pin&lt;br&gt;电话密码</AccountDescription>
+    <Call>Call&lt;br&gt;追正数目</Call>
+    <NotValue>Not Valued Bal&lt;br&gt;未结算营亏</NotValue>
+    <Balance>Balance&lt;br&gt;帐户结存</Balance>
+    <Equity>Equity&lt;br&gt;有效保证金</Equity>
+
+    <Necessary>Necessary&lt;br&gt;即市所需保证金</Necessary>
+    <Usable>Usable&lt;br&gt;即市可用保证金</Usable>
+    <Floating>Floating&lt;br&gt;浮动营亏</Floating>
+    <Ratio>Ratio&lt;br&gt;保证金比率</Ratio>
+
+    <ONNecessary>ON Necessary&lt;br&gt;过夜所需保证金</ONNecessary>
+    <ONUsable>ON Usable&lt;br&gt;过夜有效保证金</ONUsable>
+    <Deposit>Deposit&lt;br&gt;入金数</Deposit>
+    <Adjustment>Adjustment&lt;br&gt;保证金调整</Adjustment>
+
+    <Level>Position&lt;br&gt;持仓概要</Level>
+    <NoOpenPosition>No Open Position 没有开仓信息</NoOpenPosition>
+    <FullyHedge>Fully Hedge 完全锁仓</FullyHedge>
+    <CallPrice>Call Price 追收按金价格</CallPrice>
+    <CutPrice>Cut Price 砍仓价格</CutPrice>
+
+    <LevelInstrument>Instrument 交易品种</LevelInstrument>
+    <LevelPL>P/L 盈亏</LevelPL>
+    <LevelNetLot>Net Lot 净余手数</LevelNetLot>
+    <LevelBuy>BUY 买</LevelBuy>
+    <LevelSell>SELL 卖</LevelSell>
+    <LevelRateIn>RateIn 买入汇率</LevelRateIn>
+    <LevelRateOut>RateOut 卖出汇率</LevelRateOut>
+    <LevelLot>Lot 手数</LevelLot>
+    <LevelAverage>Average 平均</LevelAverage>
+
+    <OpenList>Open List 未平仓单</OpenList>
+
+    <Date>Date&lt;br&gt;交易日</Date>
+    <OrderCode>Order Code&lt;br&gt;交易参考号</OrderCode>
+    <IsBuy>IsBuy&lt;br&gt;买入</IsBuy>
+    <Item>Item&lt;br&gt;交易品种</Item>
+    <BuySell>B/S&lt;br&gt;买卖</BuySell>
+    <Lot>Lot&lt;br&gt;手数</Lot>
+    <Price>Price&lt;br&gt;成交价</Price>
+    <RefPrice>Ref&lt;br&gt;参考价</RefPrice>
+    <Commission>Comm.&lt;br&gt;佣金</Commission>
+    <Levy>Levy&lt;br&gt;税收</Levy>
+    <Interest>Interest&lt;br&gt;浮动利息</Interest>
+    <Storage>Storage&lt;br&gt;浮动仓租</Storage>
+    <TradePL>Trade P/L&lt;br&gt;浮动盈亏</TradePL>
+    <RateIn>In&lt;br&gt;买入汇率</RateIn>
+    <RateOut>Out&lt;br&gt;卖出汇率</RateOut>
+    <SubmitTime>Submit Time&lt;br&gt;提交时间</SubmitTime>
+    <IsOpen>N/C&lt;br&gt;开/平</IsOpen>
+    <Item>Item&lt;br&gt;交易品种</Item>
+    <LotBalance>LotBalance&lt;br&gt;结余手数</LotBalance>
+    <SetPrice>Set Price&lt;br&gt;设置价格</SetPrice>
+    <ContractSize>ContractSize&lt;br&gt;合约大小</ContractSize>
+    <OrderType>Order Type&lt;br&gt;类型</OrderType>
+    <OpenPosition>Open Position&lt;br&gt;开平仓单关系</OpenPosition>
+    <Dealer>Dealer&lt;br&gt;交易员</Dealer>
+    <ExecutePrice>Execute Price&lt;br&gt;成交价</ExecutePrice>
+    <ExecuteTime>Execute Time&lt;br&gt;成交时间</ExecuteTime>
+    <OrderList>Open Position/订单列表:</OrderList>
+    <CurrentTradeDayOrderList>Current TradeDay Order List/交易日订单列表:</CurrentTradeDayOrderList>
+    <LMTOrder>LMT Order/限价单:</LMTOrder>
+    <EndTime>End Time/失效时间</EndTime>
+  </AccountStatus>
+  <!--网格多语言加载到客户端-->
+  <GridLanguages>
+    <QuotationGrid>
+      <Item key="Item" value="交易项目"/>
+      <Item key="Time" value="时间"/>
+      <Item key="SourceBid" value="卖价来源"/>
+      <Item key="SourceAsk" value="买价来源"/>
+      <Item key="Source" value="价格源"/>
+      <Item key="Adjust" value="调整价"/>
+      <Item key="Bid" value="卖出价"/>
+      <Item key="Ask" value="买入价"/>
+      <Item key="HistoryBid" value="卖出价历史"/>
+      <Item key="HistoryAsk" value="买入价历史"/>
+      <Item key="High" value="最高价"/>
+      <Item key="Low" value="最低价"/>
+      <Item key="Count" value="倒计时"/>
+      <Item key="OpenTime" value="开市时间"/>
+      <Item key="CloseTime" value="收市时间"/>
+      <Item key="BuyLot" value="买手数"/>
+      <Item key="SellLot" value="卖手数"/>
+      <Item key="LastLot" value="上次手数"/>
+      <Item key="LastSales" value="最后销售额"/>
+      <Item key="ResumeOrSuspend" value="恢复/延缓"/>
+      <Item key="AllowOrRejectLMT" value="允许/拒绝止损限价单"/>
+    </QuotationGrid>
+    <InstrumentPropertyGrid>
+      <Item key="MaxSpreadPoints" value="最大价差"/>
+      <Item key="SpreadPoints" value="价差"/>
+      <Item key="SpreadPoints2" value="预设价差2"/>
+      <Item key="SpreadPoints3" value="预设价差3"/>
+      <Item key="SpreadPoints4" value="预设价差4"/>
+      <Item key="MaxAutoAdjustPoints" value="最大侧水"/>
+      <Item key="AutoAdjustPoints" value="预设侧水"/>
+      <Item key="AutoAdjustPoints2" value="预设侧水2"/>
+      <Item key="AutoAdjustPoints3" value="预设侧水3"/>
+      <Item key="AutoAdjustPoints4" value="预设侧水4"/>
+      <Item key="IsOriginHiLo" value="采用源高低价"/>
+      <Item key="PriceType" value="价格类型"/>
+      <Item key="OriginType" value="源价格类型"/>
+      <Item key="AllowedSpotTradeOrderSides" value="即市单允许新单方向"/>
+      <Item key="OriginInactiveTime" value="价格源静止秒数"/>
+      <Item key="AlertVariation" value="价差警示"/>
+      <Item key="NormalWaitTime" value="正常价等待秒数"/>
+      <Item key="AlertWaitTime" value="警报等待秒数"/>
+      <Item key="MaxDQLot" value="即市单最大手数"/>
+      <Item key="MaxOtherLot" value="其它单最大手数"/>
+      <Item key="DQQuoteMinLot" value="即市单询价最小手数"/>
+      <Item key="AutoDQMaxLot" value="自动成交即市单最大手数"/>
+      <Item key="AutoLmtMktMaxLot" value="自动成交限价单最大手数"/>
+      <Item key="AcceptDQVariation" value="即市单接受价差"/>
+      <Item key="AcceptLmtVariation" value="增仓限价单接受价差"/>
+      <Item key="AcceptCloseLmtVariation" value="减仓限价单接受价差"/>
+      <Item key="CancelLmtVariation" value="限价单取消价差"/>
+      <Item key="MaxMinAdjust" value="最大最小调整"/>
+      <Item key="IsBetterPrice" value="采用有利公司成交价"/>
+      <Item key="AutoAcceptMaxLot" value="自动接受挂单最大手数"/>
+      <Item key="AutoCancelMaxLot" value="自动审批挂单取消最大手数"/>
+      <Item key="AllowedNewTradeSides" value="允许新单方向"/>
+      <Item key="HitTimes" value="撞线次数"/>
+      <Item key="PenetrationPoint" value="穿越点数"/>
+      <Item key="PriceValidTime" value="价格有效秒数"/>
+      <Item key="LastAcceptTimeSpan" value="最后接受的秒数范围"/>
+      <Item key="IsAutoEnablePrice" value="是否自动有效价格"/>
+      <Item key="IsAutoFill" value="是否自动成交"/>
+      <Item key="IsPriceEnabled" value="是否价格有效"/>
+      <Item key="AutoDQDelay" value="自动成交延长秒数"/>
+      <Item key="HitPriceVariationForSTP" value="触发止损单成交于撞线价跳幅"/>
+    </InstrumentPropertyGrid>
+    <OptionGrid>
+      <Item key="QuotationGrid" value="行情"/>
+      <Item key="QuotationTaskGrid" value="价格处理"/>
+      <Item key="QuotePolicyGrid" value="报价策略"/>
+      <Item key="SourceLevelAdjustmentGrid" value="侧水调整"/>
+      <Item key="OrderGrid" value="单子列表"/>
+      <Item key="HistoryGrid" value="历史价格"/>
+      <Item key="PropertiesGrid" value="交易项目属性"/>
+      <Item key="SearchGrid" value="单子查询-成交单"/>
+      <Item key="SearchGridForCancelledOrder" value="单子查询-取消单"/>
+      <Item key="InterestGrid" value="持仓"/>
+      <Item key="GroupNetPositionGrid" value="分组净仓"/>
+      <Item key="InterestSummaryGrid" value="持仓汇总"/>
+      <Item key="ExecutedGrid" value="成交单查询"/>
+      <Item key="ExecuteOrderSummaryGrid" value="成交单汇总"/>
+      <Item key="InstantOrderListGrid" value="即市单处理"/>
+      <Item key="UnclosedOrderGrid" value="未平仓单查询"/>
+      <Item key="DealingPolicyDetailGrid" value="买卖策略设置"/>
+      <Item key="CustomerPolicyManagementGrid" value="客户管理"/>
+      <Item key="BlotterSelectionGrid" value="过滤选项"/>
+      <Item key="OrderPrintGrid" value="成交单打印窗口"/>
+    </OptionGrid>
+    <QuotationTaskGrid>
+      <Item key="QuotationButtonA" value="行为"/>
+      <Item key="QuotationButtonB" value="行为"/>
+      <Item key="QuotationButtonC" value="行为"/>
+      <Item key="QuotationButtonD" value="行为"/>
+      <Item key="Quotation" value="报价"/>
+      <Item key="Item" value="交易项目"/>
+      <Item key="Time" value="时间"/>
+      <Item key="Count" value="倒计时"/>
+      <Item key="Source" value="来源价"/>
+      <Item key="Last" value="最后一口价"/>
+      <Item key="Diff" value="差值"/>
+      <Item key="Bid" value="卖出价"/>
+      <Item key="Ask" value="买入价"/>
+      <Item key="Lot" value="手数"/>
+      <Item key="ClientCode" value="客户编号"/>
+    </QuotationTaskGrid>
+    <QuotePolicyGrid>
+      <Item key="Bid" value="卖出价"/>
+      <Item key="Ask" value="买入价"/>
+      <Item key="AutoAdjustPoints" value="侧水"/>
+      <Item key="IncreaseAutoAdjustPoints" value="+"/>
+      <Item key="DecreaseAutoAdjustPoints" value="-"/>
+      <Item key="SpreadPoints" value="价差"/>
+      <Item key="IncreaseSpreadPoints" value="+"/>
+      <Item key="DecreaseSpreadPoints" value="-"/>
+      <Item key="BuyLot" value="买"/>
+      <Item key="SellLot" value="卖"/>
+    </QuotePolicyGrid>
+    <SourceLevelAdjustmentGrid>
+      <Item key="OriginCode" value="侧水"/>
+      <Item key="IncreaseAutoAdjustPoints" value="上"/>
+      <Item key="DecreaseAutoAdjustPoints" value="下"/>
+      <Item key="ReferenceAutoAdjustPoints" value="参照侧水"/>
+    </SourceLevelAdjustmentGrid>
+    <OrderGrid>
+      <Item key="DQAccept" value="即市单"/>
+      <Item key="DQReject" value="即市单"/>
+      <Item key="OrderPlacing" value="挂单"/>
+      <Item key="OrderPending" value="挂单"/>
+      <Item key="OrderCanceled" value="挂单"/>
+      <Item key="OrderExecuted" value="挂单"/>
+      <Item key="Item" value="交易项目"/>
+      <Item key="Time" value="时间"/>
+      <Item key="SubmitTime" value="提交时间"/>
+      <Item key="Account" value="账户"/>
+      <Item key="BuyLot" value="买卖"/>
+      <Item key="SellLot" value="手数"/>
+      <Item key="OpenClose" value="新单平仓"/>
+      <Item key="TradeOption" value="交易选项"/>
+      <Item key="QuotePolicyCode" value="报价策略"/>
+      <Item key="SetPrice" value="设置价格"/>
+      <Item key="BestPrice" value="最合理价格"/>
+      <Item key="RefPrice" value="参考价"/>
+      <Item key="PriceDif" value="价差"/>
+      <Item key="DQMaxMove" value="即市单最大波幅"/>
+      <Item key="HitCount" value="撞线次数"/>
+      <Item key="BestTime" value="最合理时间"/>
+      <Item key="TransactionCode" value="交易号"/>
+      <Item key="ContractSize" value="合约大小"/>
+      <Item key="Type" value="类型"/>
+      <Item key="ExpireTime" value="终止时间"/>
+      <Item key="OpenPrice" value="开市价"/>
+    </OrderGrid>
+    <HistoryGrid>
+      <Item key="Bid" value="卖出价"/>
+      <Item key="Ask" value="买入价"/>
+      <Item key="Time" value="时间"/>
+    </HistoryGrid>
+    <SearchGrid>
+      <Item key="Item" value="交易项目"/>
+      <Item key="IsBuy" value="买/卖"/>
+      <Item key="OpenClose" value="新单/平仓"/>
+      <Item key="Lot" value="手数"/>
+      <Item key="OrderCode" value="订单编号"/>
+      <Item key="Account" value="账户"/>
+      <Item key="Price" value="价格"/>
+      <Item key="Type" value="类型"/>
+      <Item key="ExecuteTime" value="成交时间"/>
+      <Item key="Relation" value="平仓关系"/>
+      <Item key="Dealer" value="交易员"/>
+      <Item key="Reason" value="原因"/>
+    </SearchGrid>
+    <InterestGrid>
+      <Item key="Code" value="编号"/>
+      <Item key="AccountCode" value="账户"/>
+      <Item key="BS" value="买/卖"/>
+      <Item key="ContractSize" value="合约大小"/>
+      <Item key="ExecuteTime" value="成交时间"/>
+      <Item key="ExecutePrice" value="成交价"/>
+      <Item key="LotBalance" value="剩余手数"/>
+      <Item key="AutoLimitPrice" value="自动限制价"/>
+      <Item key="AutoStopPrice" value="自动止损价"/>
+    </InterestGrid>
+    <GroupNetPositionGrid>
+      <Item key="GroupCode" value="账户组"/>
+      <Item key="Selected" value="选择"/>
+      <Item key="OIPercent" value="百分比"/>
+      <Item key="LotBalance" value="剩余手数"/>
+      <Item key="Quantity" value="数量"/>
+    </GroupNetPositionGrid>
+    <InterestSummaryGrid>
+      <Item key="Code" value="编号"/>
+      <Item key="SellLot" value="卖手数"/>
+      <Item key="SellAvgPrice" value="卖平均价格"/>
+      <Item key="SellContractSize" value="卖合约大小"/>
+      <Item key="BuyLot" value="买手数"/>
+      <Item key="BuyAvgPrice" value="买平均价格"/>
+      <Item key="BuyContractSize" value="买合约大小"/>
+      <Item key="NetLot" value="头寸"/>
+      <Item key="NetContractSize" value="头寸合约大小"/>
+      <Item key="Exclude" value="排除"/>
+    </InterestSummaryGrid>
+    <ExecuteOrderSummaryGrid>
+      <Item key="Range" value="范围"/>
+      <Item key="OrderCount" value="单子数"/>
+      <Item key="SellAvgPrice" value="卖平均价格"/>
+      <Item key="SellLot" value="卖手数"/>
+      <Item key="BuyAvgPrice" value="买平均价格"/>
+      <Item key="BuyLot" value="买手数"/>
+    </ExecuteOrderSummaryGrid>
+    <InstantOrderListGrid>
+      <Item key="AcceptAction" value="接受"/>
+      <Item key="DiffPrice" value="价格差值"/>
+      <Item key="RejectAction" value="取消"/>
+      <Item key="SetPrice" value="设置价格"/>
+      <Item key="Lot" value="手数"/>
+      <Item key="IsOpen" value="是否开仓单"/>
+      <Item key="QuotePolicyCode" value="报价策略"/>
+    </InstantOrderListGrid>
+    <ExecutedGrid>
+      <Item key="Item" value="交易项目"/>
+      <Item key="IsBuy" value="买/卖"/>
+      <Item key="OpenClose" value="开仓平仓"/>
+      <Item key="Lot" value="手数"/>
+      <Item key="OrderCode" value="单号"/>
+      <Item key="Account" value="账号"/>
+      <Item key="Blacklist" value="黑名单"/>
+      <Item key="QuotePolicyCode" value="报价策略"/>
+      <Item key="Price" value="价格"/>
+      <Item key="Type" value="类型"/>
+      <Item key="ExecuteTime" value="成交时间"/>
+      <Item key="RelationString" value="平仓关系"/>
+      <Item key="Dealer" value="交易员"/>
+    </ExecutedGrid>
+    <UnclosedOrderGrid>
+      <Item key="InstrumentCode" value="交易项目"/>
+      <Item key="IsBuy" value="买/卖"/>
+      <Item key="ContractSize" value="合约大小"/>
+      <Item key="LotBalance" value="剩余手数"/>
+      <Item key="OrderCode" value="单号"/>
+      <Item key="ExecutePrice" value="成交价格"/>
+      <Item key="OrderTypeID" value="类型"/>
+      <Item key="ExecuteTime" value="成交时间"/>
+    </UnclosedOrderGrid>
+    <OrderPrintGrid>
+      <Item key="TranCode" value="交易编号"/>
+      <Item key="Instrument" value="交易项目"/>
+      <Item key="Account" value="账户"/>
+      <Item key="IsOpen" value="是否开仓单"/>
+      <Item key="IsBuy" value="买/卖"/>
+      <Item key="Lot" value="手数"/>
+      <Item key="ExecutePrice" value="成交价格"/>
+      <Item key="ExecuteTime" value="成交时间"/>
+    </OrderPrintGrid>
+    <DealingPolicyDetailGrid>
+      <Item key="MaxDQLot" value="即市单最大手数"/>
+      <Item key="MaxOtherLot" value="其它单最大手数"/>
+      <Item key="DQQuoteMinLot" value="即市单询价最小手数"/>
+      <Item key="AutoDQMaxLot" value="自动成交即市单最大手数"/>
+      <Item key="AutoLmtMktMaxLot" value="自动成交限价单最大手数"/>
+      <Item key="AcceptDQVariation" value="即市单接受价差"/>
+      <Item key="AcceptLmtVariation" value="增仓限价单接受价差"/>
+      <Item key="AcceptCloseLmtVariation" value="减仓限价单接受价差"/>
+      <Item key="CancelLmtVariation" value="交易编号"/>
+      <Item key="AutoDQDelay" value="自动成交延长秒数"/>
+      <Item key="AllowedNewTradeSides" value="允许新单方向"/>
+      <Item key="AutoAcceptMaxLot" value="自动接受挂单最大手数"/>
+      <Item key="AutoCancelMaxLot" value="自动审批挂单取消最大手数"/>
+      <Item key="HitPriceVariationForSTP" value="触发止损单成交于撞线价跳幅"/>
+    </DealingPolicyDetailGrid>
+    <CustomerPolicyManagementGrid>
+      <Item key="Code" value="账号"/>
+      <Item key="Select" value="选择"/>
+      <Item key="CustomerCode" value="客户"/>
+      <Item key="QuotePolicyCode" value="报价策略"/>
+      <Item key="DealingPolicyCode" value="买卖策略"/>
+      <Item key="SaleSelect" value="营业员选择"/>
+      <Item key="SalesCode" value="营业员"/>
+      <Item key="SalesQuotePolicyCode" value="营业员报价策略"/>
+      <Item key="SalesDealingPolicyCode" value="营业员买卖策略"/>
+    </CustomerPolicyManagementGrid>
+    <BlotterSelectionGrid>
+      <Item key="Code" value="账号"/>
+      <Item key="Select" value="选择"/>
+    </BlotterSelectionGrid>
+    <LimitProcessGrid>
+      <Item key="Unconfirm" value="未确认"/>
+      <Item key="Account" value="账号" />
+      <Item key ="OrderDate" value="单子日期"/>
+      <Item key="OpenClose" value="新单/平仓"/>
+      <Item key ="BuyLot" value="买入手数"/>
+      <Item key ="SellLot" value="卖出手数"/>
+      <Item key ="QuotePolicyCode" value="报价策略"/>
+      <Item key ="Price" value="价格"/>
+      <Item key ="Message" value="消息"/>
+    </LimitProcessGrid>
+    <Common>
+      <Item key="Ok" value="确定"/>
+      <Item key="Cancel" value="取消" />
+      <Item key ="Go" value="执行"/>
+      <Item key="Buy" value="买"/>
+      <Item key="Sell" value="卖"/>
+      <Item key="Open" value="新单"/>
+      <Item key="Close" value="平仓"/>
+      <Item key="TotalBuy" value = "汇总买手数"/>
+      <Item key="TotalSell" value ="汇总卖手数"/>
+      <Item key ="ExecuteAllButton" value="成交所有"/>
+      <Item key ="VariationLable" value="点差"/>
+      <Item key ="Column" value="列"/>
+      <Item key ="ColWidth" value="列宽"/>
+      <Item key ="ColHidden" value="隐藏"/>
+      <Item key ="InstrumentCode" value="交易项目"/>
+      <Item key ="Timestamp" value="时间"/>
+      <Item key ="Origin" value="来源价"/>
+      <Item key ="Select" value="选择"/>
+      <Item key ="Instrument" value="交易项目"/>
+      <Item key ="ParameterName" value="参数名"/>
+      <Item key ="ParameterValue" value="值"/>
+      <Item key ="Lot" value="手数"/>
+      <Item key ="Quantity" value="数量"/>
+      <Item key ="OnAcceptQutation" value="接受"/>
+      <Item key ="OnDiscardQutation" value="放弃"/>
+      <Item key ="OnAbandonQutation" value="忽略"/>
+      <Item key ="OnUpdateQutation" value="更新"/>
+      <Item key ="OnModifyQutation" value="修改"/>
+      <Item key ="OnSendQutation" value="发送"/>
+      <Item key ="OnModify2Qutation" value="修改"/>
+      <Item key ="Inactive" value="不活动的价格"/>
+      <Item key ="OutOfRange" value="价格超出范围"/>
+      <Item key ="Enquiry" value="询价"/>
+      <Item key ="Enquiry2" value="询价2"/>
+      
+      <Item key ="AcceptCaption" value="接受"/>
+      <Item key ="RejectCaption" value="拒绝"/>
+      <Item key ="DetailCaption" value="明细"/>
+      <Item key ="uPdateCaption" value="更新"/>
+      <Item key ="modiFyCaption" value="修改"/>
+      <Item key ="waItCaption" value="等待"/>
+      <Item key ="ExecuteCaption" value="成交"/>
+      <Item key ="CancelCaption" value="取消"/>
+      <Item key ="Placing" value="下单"/>
+      <Item key ="Placed" value="处理"/>
+      <Item key ="Canceled" value="取消"/>
+      <Item key ="Executed" value="成交"/>
+      <Item key ="Completed" value="完成"/>
+      <Item key ="Deleted" value="删除"/>
+      <Item key ="WaitServerResponse" value="等待服务器响应"/>
+      <Item key ="Deleting" value="正在删除中.."/>
+      <Item key ="WaitOutPriceDQ" value="超出最高/最低价范围, 接受 或 取消?"/>
+      <Item key ="WaitOutLotDQ" value="接受/取消?"/>
+      <Item key ="WaitOutPriceLMT" value="超出最高/最低价范围, 等待 或 执行?"/>
+      <Item key ="WaitOutLotLMTOrigin" value="更新、 等待或执行?"/>
+      <Item key ="WaitOutLotLMT" value="更新、修改、等待或执行？"/>
+      <Item key ="SendFailed" value="发送失败."/>
+      <Item key ="WaitNextPrice" value="等待价格."/>
+      <Item key ="WaitTime" value="等待执行时间."/>
+      <Item key ="TimeArrived" value="时间到, 等待处理."/>
+      <Item key ="WaitAcceptRejectPlace" value="接受 或 拒绝下单?"/>
+      <Item key ="WaitAcceptRejectCancel" value="接受 或 拒绝取消单?"/>
+      <Item key ="WaitAutoExecuteDQ" value="等待价格."/>
+      <Item key ="InputNewPrice" value="输入新价格:"/>
+      <Item key ="InputLotMustLessThan" value="输入手数必须小于 "/>
+      <Item key ="ClientCode" value="客户编号"/>
+      <Item key ="BSStatus" value="买卖状态"/>
+      <Item key ="QuotePolicy" value="报价策略"/>
+      <Item key ="Bid" value="卖出价"/>
+      <Item key ="Ask" value="买入价"/>
+      <Item key ="AnswerLot" value="手数"/>
+      <Item key ="SelectAccount" value="选择帐户查询"/>
+      <Item key ="SelectAccountName" value="选择帐户名查询"/>
+      <Item key ="AccountStatusMsg" value="请选择一个账号来查询!"/>
+    </Common>
+    <ComboList>
+      <Item key="Reject" value="拒绝"/>
+      <Item key="Resume" value="恢复"/>
+      <Item key="Suspend" value="延缓"/>
+      <Item key="AllowLMT" value="允许限价单"/>
+      <Item key ="DisAllowLMT" value="拒绝限价单"/>
+      <Item key ="OrderTypeComboList" value="None;所有|SPT;即市单|LMT;限价单|MKT;市价单|MOO;开市市场单|MOC;收市市场单|SYS;系统单"/>
+
+      <Item key ="PriceTypeComboList" value="#1;单一价|#3;买卖价"/>
+      <Item key ="OriginTypeComboList" value="#0;卖价|#1;买价|#2;(卖价+买价)/2"/>
+      <Item key ="AllowedOrderSidesComboList" value="#0;无|#1;买方向|#2;卖方向|#3;买卖方向"/>
+      <Item key ="AllowedNewTradeSidesTypeComboList" value="#0;不允许下新单|#1;仅仅允许下买单|#2;仅仅允许下卖单|#3;允许下新单"/>
+    </ComboList>
+    <Message>
+      <Item key ="AlertContent" value="您确定吗?"/>
+      <Item key ="AlertYesButton" value="确定"/>
+      <Item key ="AlertNoButton" value="取消"/>
+      <Item key ="ExecuteAllMsg" value="请选择价格源."/>
+      <Item key ="ExecuteAllAlert" value="价格源不合法."/>
+      <Item key ="LMTProcessAlert" value="价格源不合法."/>
+      <Item key ="AlertAcceptButton" value="价格源不合法."/>
+      <Item key ="AlertRejectButton" value="价格源不合法."/>
+
+      <Item key ="InitDataError" value="初始化数据不能为空!"/>
+      <Item key ="FailedUpdateInstrument" value="更新交易项目失败!"/>
+      <Item key ="FailedUpdateParameter" value="更新交易项目参数失败!"/>
+      <Item key ="NoDataEffectMsg" value="没有数据受影响!"/>
+      <Item key ="ResumeFailed" value="恢复数据失败"/>
+      <Item key ="SuspendFailed" value="延缓数据失败"/>
+      <Item key ="AllowLMTFailed" value="允许限价单执行失败"/>
+      <Item key ="DisallowLMTFailed" value="拒绝限价单执行失败"/>
+      <Item key ="SetAutoToManualFailed" value="自动转人工操作失败"/>
+      <Item key ="FailedUpdateQuotePoliyDetail" value="更新报价策略失败!"/>
+      <Item key ="UpdateQuotePolicAlert" value="价差取值不能大于最大值限制!"/>
+      <Item key ="CancelTransactionMsg" value="该单子已经被取消"/>
+      <Item key ="CancelTransactionFailed" value="取消单失败!"/>
+      <Item key ="ComfirmCancelTransactionMsg" value="失败取发送取消单!"/>
+      <Item key ="RejectCancelLmtOrderAlert" value="失败拒绝取消单!"/>
+      <Item key ="RejectCancelLmtOrderMsg" value="成功拒绝取消单!"/>
+      <Item key ="UpdateSystemParametersMsg" value="更新系统参数失败!"/>
+      <Item key ="UpdateEnquiryOutTimeMsg" value="更新有效时间失败!"/>
+      <Item key ="SetActiveSourceInstrumentMsg" value="成功设置价格源!"/>
+      <Item key ="SetActiveSourceInstrumentAlert" value="失败取设置价格源!"/>
+      <Item key ="UpdateDealingPolicyDetailMsg" value="成功更新买卖策略!"/>
+      <Item key ="UpdateDealingPolicyDetailAlert" value="更新买卖策略失败!"/>
+      <Item key ="SelectInstrumentAlert" value="请选择一个交易项目!"/>
+    </Message>
+  </GridLanguages>
+</Languages>

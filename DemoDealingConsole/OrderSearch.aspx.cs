@@ -1,5 +1,6 @@
 using System;
 using iExchange.Common;
+using System.Collections;
 
 namespace iExchange.DealingConsole
 {
@@ -37,6 +38,18 @@ namespace iExchange.DealingConsole
         {
             Token token = (Token)this.Session["Token"];
             return DealingConsoleServer.GetAllAccountGroupOptions(token);
+        }
+
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
         }
 
 	}

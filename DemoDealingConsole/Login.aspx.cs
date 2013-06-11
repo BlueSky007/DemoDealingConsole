@@ -22,6 +22,7 @@ using System.Web.Security;
 using iExchange.Common;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Globalization;
 
 namespace iExchange.DealingConsole
 {
@@ -40,6 +41,7 @@ namespace iExchange.DealingConsole
 		protected void Page_Load(object sender, System.EventArgs e)
 		{
 			// Put user code to initialize the page here
+            this.SettingLanguage();
 		}
 
 		#region Web Form Designer generated code
@@ -77,7 +79,7 @@ namespace iExchange.DealingConsole
 			lblLoginPrompt.Text = "";
 			if (txtLoginID.Text == "")
 			{
-				lblLoginPrompt.Text="Login name must not be empty!";
+                lblLoginPrompt.Text = this.GetLanguage("LoginNameEmptyMsg");
 				lblLoginPrompt.Visible=true;
 				return;
 			}
@@ -133,13 +135,13 @@ namespace iExchange.DealingConsole
 						this.ForceChangePassword(txtLoginID.Text, ConfigurationSettings.AppSettings["ConnectionString"]);
 
 						txtPassword.Text = string.Empty;
-						lblLoginPrompt.Text = "Max try times,Login Locked.Please contact administrator.";
+                        lblLoginPrompt.Text = this.GetLanguage("MaxLoginTimes");
 						lblLoginPrompt.Visible = true;
 					}
 					else
 					{
 						txtPassword.Text = string.Empty;
-						lblLoginPrompt.Text = "Authenication failed, please try again!";
+                        lblLoginPrompt.Text = this.GetLanguage("LoginFailedMsg");
 						lblLoginPrompt.Visible = true;
 					}
 
@@ -149,7 +151,7 @@ namespace iExchange.DealingConsole
 			else
 			{
 				txtPassword.Text = string.Empty;
-				lblLoginPrompt.Text = "Max try times,Login Locked.Please contact administrator.";
+                lblLoginPrompt.Text = this.GetLanguage("MaxLoginTimes");
 				lblLoginPrompt.Visible = true;
 			}
 		}
@@ -251,7 +253,43 @@ namespace iExchange.DealingConsole
 		{
 			this.OnUnload(e);		
 		}
-		
+
+        protected void _LanguageDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LanguageManager.CultureInfo = new CultureInfo(Convert.ToInt32(this._LanguageDropDownList.SelectedValue));
+            this.Session["CultureInfor"] = LanguageManager.CultureInfo;
+            this.Context.Response.Redirect("Login.aspx");
+        }
+
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["LoginLanguage"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["LoginLanguage"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
+
+        private void SettingLanguage()
+        {
+            CultureInfo sesstionCultrueInfor = (CultureInfo)this.Session["CultureInfor"];
+            LanguageHelper.BindDataListForLanguage(this._LanguageDropDownList, sesstionCultrueInfor);
+
+            string filePath = this.MapPath(@"Language\" + LanguageManager.LanguageXml);
+
+            this.Session["LanguageXml"] = LanguageHelper.GetLanguageXml(filePath);
+            this.Session["LoginLanguage"] = LanguageHelper.GetLanguage(filePath, "Login");
+            this.Session["TooBarPage"] = LanguageHelper.GetLanguage(filePath, "TooBarPage");
+            this.Session["Common"] = LanguageHelper.GetLanguage(filePath, "Common");
+            this.Session["AccountStatusLanguage"] = LanguageHelper.GetLanguage2(filePath, "AccountStatus");
+
+            this.btnOk.Text = this.GetLanguage("Ok");
+            this.btnCancel.Text = this.GetLanguage("Cancel");
+   
+        }
 	}
 	
 }

@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-    <title>Blotter Selection</title>
+    <title><%=GetLanguage("BlotterSelectionPage")%></title>
     <script language="jscript" src="JavaScript/flexConst.js"></script>
     <script language="jscript" src="JavaScript/GlobalFun.js"></script>
     <script language="jscript" src="JavaScript/FormBlotterSelection.js"></script>
@@ -99,12 +99,12 @@
     <table border="0">
         <tr>
         <td align="left" nowrap>
-            <input type="button" id="_SelectAllButton" name="_SelectAllButton" value="  Select All  " accesskey="a" onclick="SelectAllButton_Click();" style="width:70px;" />
-            <input type="button" id="_ClearAllButton" name="_ClearAllButton" value="  Clear All  " accesskey="r" onclick="ClearAllButton_Click();" style="width:70px;" />        
+            <input type="button" id="_SelectAllButton" name="_SelectAllButton" value="<%=GetLanguage("SelectAll")%>" accesskey="a" onclick="SelectAllButton_Click();" style="width:70px;" />
+            <input type="button" id="_ClearAllButton" name="_ClearAllButton" value="<%=GetLanguage("ClearAll")%>" accesskey="r" onclick="ClearAllButton_Click();" style="width:70px;" />        
         </td>
         <td align="right" nowrap>
-            <input type="button" id="_OkButton" name="_OkButton" value="  OK  " onclick="OkButton_Click();" accesskey="o" style="width:70px;" />
-            <input type="button" id="_CancelButton" name="_CancelButton" value="  Cancel  " onclick="CancelButton_Click();" accesskey="c" style="width:70px;" />
+            <input type="button" id="_OkButton" name="_OkButton" value="<%=GetLanguage("Ok")%>" onclick="OkButton_Click();" accesskey="o" style="width:70px;" />
+            <input type="button" id="_CancelButton" name="_CancelButton" value="<%=GetLanguage("Cancel")%>" onclick="CancelButton_Click();" accesskey="c" style="width:70px;" />
         </td>
         </tr>
     </table>

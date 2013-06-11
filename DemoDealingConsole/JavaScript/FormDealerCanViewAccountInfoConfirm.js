@@ -24,7 +24,7 @@
         window.trLot.style.display = "none";
     }
 
-    if (order.dQMaxMove > 0) {
+    if (order.IsNeedDQMaxMove()) {
         window.trSetPrice.style.display = "inline";
         window.trDQMaxMovePrice.style.display = "inline";
         window.trRange.style.display = "inline";
@@ -65,7 +65,8 @@ function GetAcountInfoResult(tran, msXml) {
     var accountInfoNode = msXml.childNodes.item(0);
     if (accountInfoNode.baseName == "TransactionCanceledOrCannotExecute") {
         var sMsg = "Order is canceled or executed already";
-        window.showModalDialog("Alert.aspx", sMsg, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
+        alert(sMsg);
+        //window.showModalDialog("Alert.aspx", sMsg, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
         tran.Cancel();
         window.close();
         return;
@@ -122,7 +123,7 @@ function Submit() {
     CheckLot();
 
     var order = dialogArguments[3];
-    if (order.dQMaxMove > 0) {
+    if (order.IsNeedDQMaxMove()) {
         order.executePrice = order.ToPrice(window.textDQMaxMovePrice.value);
     }
 

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using iExchange.Common;
+using System.Collections;
 
 namespace iExchange.DealingConsole
 {
@@ -19,7 +20,17 @@ namespace iExchange.DealingConsole
         {
             return DealingConsoleServer.GetDealingPolicyOptions();
         }
-
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
         public string GetAccountGroupOptions()
         {
             Token token = (Token)this.Session["Token"];

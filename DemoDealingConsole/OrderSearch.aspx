@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>
-		<title>Order Search</title>
+		<title><%=GetLanguage("OrderSearchPage")%></title>
 		<meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
 		<meta content="C#" name="CODE_LANGUAGE">
 		<meta content="JavaScript" name="vs_defaultClientScript">
@@ -19,36 +19,36 @@
 				<td style="HEIGHT: 55px" vAlign="center" align="middle">
 					<TABLE id="Table2" height="100%" cellSpacing="2" cellPadding="2" width="100%" align="center" bgColor="buttonface" border="0">
 						<TR>
-							<TD style="WIDTH: 90px" noWrap align="right"><FONT face="system">Query Type: </FONT>
+							<TD style="WIDTH: 90px" noWrap align="right"><FONT size="2px" face="system"><%=GetLanguage("QueryType")%></FONT>
 							</TD>
 							<TD style="WIDTH: 120px" noWrap align="right" width="190">
 								<SELECT id="QueryTypeSelect" style="WIDTH: 100%" name="QueryTypeSelect">
-									<option value="0" selected>Executed</option>
-									<option value="1">Cancelled</option>
+									<option value="0" selected><%=GetLanguage("Executed")%></option>
+									<option value="1"><%=GetLanguage("Cancelled")%></option>
 								</SELECT></TD>
-							<TD style="WIDTH: 80px" noWrap align="right"><FONT face="system">Instrument: </FONT>
+							<TD style="WIDTH: 80px" noWrap align="right"><FONT size="2px" face="system"><%=GetLanguage("Instrument")%></FONT>
 							</TD>
 							<TD style="WIDTH: 120px" noWrap align="right"><SELECT id="Select1" style="WIDTH: 100%" name="Select1"></SELECT></TD>
-							<TD style="WIDTH: 80px" noWrap align="right" ><FONT face="system">Trade Time: </FONT>
+							<TD style="WIDTH: 80px" noWrap align="right" ><FONT size="2px" face="system"><%=GetLanguage("TradeTime")%></FONT>
 							</TD>
 							<TD noWrap align="left"><INPUT id="TextStart" type="text" size="15" name="Text2"><FONT face="system"></FONT>
 								<INPUT id="Button4" onclick="BtnStartTime_onclick()" type="button" value="..." name="Button4"></TD>
-							<TD noWrap align="left"><INPUT style="width:90px" id="btnQuery" accessKey="q" onclick="Query();" type="button" value="Query" name="btnQuery"></TD>
+							<TD noWrap align="left"><INPUT style="width:90px" id="btnQuery" accessKey="q" onclick="Query();" type="button" value="<%=GetLanguage("Query") %>" name="btnQuery"></TD>
 						</TR>
 						<TR>
-							<TD style="WIDTH: 90px" noWrap align="right"><FONT face="system">AC Group:</FONT></TD>
+							<TD style="WIDTH: 90px" noWrap align="right"><FONT size="2px" face="system"><%=GetLanguage("AccountGroup")%></FONT></TD>
 							<TD style="WIDTH: 120px" noWrap align="right">
                             <SELECT id="_AccountGroupSelect" style="WIDTH: 100%" name="_AccountGroupSelect">
                             <option id="_AccountGroupOptionAll" value="">&lt;All&gt;</option>
                                 <%=GetAccountGroupOptions()%>
                             </select></SELECT></TD>
-							<TD style="WIDTH: 80px" noWrap align="right"><FONT face="system">Order Type:</FONT></TD>
+							<TD style="WIDTH: 80px" noWrap align="right"><FONT size="2px" face="system"><%=GetLanguage("OrderType")%></FONT></TD>
 							<TD style="WIDTH: 120px" noWrap align="right"><SELECT id="Select2" style="WIDTH: 100%" name="Select2"></SELECT></FONT></TD>
-							<TD style="WIDTH: 80px" noWrap align="right" ><FONT face="system">To:</FONT>
+							<TD style="WIDTH: 80px" noWrap align="right" ><FONT size="2px" face="system"><%=GetLanguage("To") %></FONT>
 							</TD>
 							<TD noWrap align="left"><INPUT id="TextEnd" type="text" size="15" name="Text1">
 								<INPUT id="Button3" style="WIDTH: 21px" onclick="BtnEndTime_onclick()" type="button" value="..." name="Button3"></FONT></TD>
-							<TD noWrap align="left"><INPUT style="width:90px" id="btnPrint" accessKey="p" onclick="Print();" type="button" value="Print" name="btnPrint"></TD>
+							<TD noWrap align="left"><INPUT style="width:90px" id="btnPrint" accessKey="p" onclick="Print();" type="button" value="<%=GetLanguage("PrintButton") %>" name="btnPrint"></TD>
 						</TR>
 					</TABLE>
 				</td>

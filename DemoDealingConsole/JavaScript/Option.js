@@ -220,6 +220,9 @@ function SetValueInit()
 	window.document.all.lblPenetrationPoint.innerText = instrumentPropertyLanguage.PenetrationPoint;
 	window.document.all.lblPriceValidTime.innerText = instrumentPropertyLanguage.PriceValidTime;
 	window.document.all.lblLastAcceptTimeSpan.innerText = instrumentPropertyLanguage.LastAcceptTimeSpan;
+	window.document.all.lblAutoDQDelay.innerText = instrumentPropertyLanguage.AutoDQDelay;
+	window.document.all.lblAcceptCloseLmtVariation.innerText = instrumentPropertyLanguage.AcceptCloseLmtVariation;
+	window.document.all.lblHitPriceVariationForSTP.innerText = instrumentPropertyLanguage.HitPriceVariationForSTP;
 
 	SetDealerParameterEditable();
 	
@@ -228,6 +231,7 @@ function SetValueInit()
 
 //Grid init
 function OptionInstrumentInit() {
+    var commonLanguage = window.dialogArguments.parent.quotationFrm.commonLanguage;
     with (vsflexItemSource) {
         //Fill ColKey
         Rows = 1;
@@ -235,11 +239,11 @@ function OptionInstrumentInit() {
         FixedCols = 0;
         Cols = 3;
 
-        TextMatrix(0, 0) = "Select";
+        TextMatrix(0, 0) = commonLanguage["Select"]; //"Select";
         ColKey(0) = "Select";
         ColDataType(0) = flexDTBoolean;
 
-        TextMatrix(0, 1) = "Instrument";
+        TextMatrix(0, 1) = commonLanguage["Instrument"]; //"Instrument";
         ColKey(1) = "Instrument";
 
         TextMatrix(0, 2) = "OriginCode";
@@ -258,11 +262,11 @@ function OptionInstrumentInit() {
         FixedCols = 0;
         Cols = 3;
 
-        TextMatrix(0, 0) = "Select";
+        TextMatrix(0, 0) = commonLanguage["Select"]; //"Select";
         ColKey(0) = "Select";
         ColDataType(0) = flexDTBoolean;
 
-        TextMatrix(0, 1) = "Instrument";
+        TextMatrix(0, 1) = commonLanguage["Instrument"]; //"Instrument";
         ColKey(1) = "Instrument";
 
         TextMatrix(0, 2) = "OriginCode";
@@ -1662,6 +1666,7 @@ function Setting2()
     };
 
     this.SettingGridInit = function () {
+        var commonLanguage = window.dialogArguments.parent.quotationFrm.commonLanguage;	
         var lColIndex = 0;
         with (window.SettingGrid) {
             Rows = 1;
@@ -1676,17 +1681,17 @@ function Setting2()
             ColHidden(lColIndex) = true;
             lColIndex++;
 
-            TextMatrix(0, lColIndex) = "Column";
+            TextMatrix(0, lColIndex) = commonLanguage["Column"]; // "Column";
             ColKey(lColIndex) = "Column";
             ColWidth(lColIndex) = 2500;
             lColIndex++;
 
-            TextMatrix(0, lColIndex) = "Width";
+            TextMatrix(0, lColIndex) = commonLanguage["ColWidth"];
             ColKey(lColIndex) = "ColWidth";
             ColWidth(lColIndex) = 800;
             lColIndex++;
 
-            TextMatrix(0, lColIndex) = "Hidden";
+            TextMatrix(0, lColIndex) = commonLanguage["ColHidden"]; ;
             ColKey(lColIndex) = "ColHidden";
             ColWidth(lColIndex) = 500;
             ColDataType(lColIndex) = flexDTBoolean;

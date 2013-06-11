@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html xmlns:mpc>
 <head runat="server">
-    <title>Modify History Quotation</title>
+    <title><%=GetLanguage("UpdateHistoryQuotation")%></title>
     <meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
     <meta content="C#" name="CODE_LANGUAGE">
     <meta content="JavaScript" name="vs_defaultClientScript">
@@ -48,20 +48,20 @@
     <!--input type="hidden" id="_CurrentTradeDateTime" name="_CurrentTradeDateTime" value="<%=GetCurrentTradeDateTime() %>" /-->
     <mpc:container id="_UpdateQuotationHistoryContainer" style="display: block; width: 408px;
         height: 2752px">
-		<mpc:page id="_UpdateAskBidHistoryPage" TABTEXT="Ask/Bid" TABTITLE="Ask/Bid">
+		<mpc:page id="_UpdateAskBidHistoryPage" TABTEXT="<%=GetLanguage("AskBid")%>" TABTITLE="<%=GetLanguage("AskBid")%>">
 		    <DIV id="_UpdateAskBidHistoryDiv" style="WIDTH: 424px; POSITION: relative; HEIGHT: 382px">
 		        <table style="width: 100%; height: 90%">
 		            <tr>
 			            <td style="height: 14px; width: 829px;">
 				            <div style="width: 831px; font-size: small;" align="left">
-                                Begin Date Time:<input style="width: 107px; height: 21px" id="_BeginDateTimeText" tabindex="3"
+                                <%=GetLanguage("BeginTime")%>:<input style="width: 107px; height: 21px" id="_BeginDateTimeText" tabindex="3"
 						            type="text" onblur="OnSetBeginDateTime(event);" value="<%=GetCurrentTradeDateTime() %>" />
-					            &nbsp;&nbsp;Select Instrument:<select id="_InstrumentForAskBidSelect" style="width: 117px">
-					            </select><input id="_RefreshInstrumentForAskBidButton" type="button" value="Refresh" onclick="return RefreshInstrumentForAskBidButton_onclick()" style="width: 57px" />&nbsp;
-					            Origin:<input id="_OriginPriceForAskBidText" style="width: 63px" type="text" />
-					            <input id="_RefreshAskBidButton" type="button" value="Refresh" onclick="return RefreshAskBidButton_onclick()" style="width: 57px" />&nbsp;
-					            <input id="_AddAskBidButton" type="button" value="Add" onclick="return AddAskBidButton_onclick()" />
-					            <input id="_DeleteButton" style="display:<%if (GetAllowDeleteOverridedQuotation()=="TRUE"){ %>inline<%} else {%>none<%}%>;" type="button" value="Delete" onclick="return DeleteAskBidButton_onclick()" />
+					            &nbsp;&nbsp;<%=GetLanguage("Instrument")%>:<select id="_InstrumentForAskBidSelect" style="width: 117px">
+					            </select><input id="_RefreshInstrumentForAskBidButton" type="button" value="<%=GetLanguage("Refresh")%>" onclick="return RefreshInstrumentForAskBidButton_onclick()" style="width: 57px" />&nbsp;
+					            <%=GetLanguage("Origin")%>:<input id="_OriginPriceForAskBidText" style="width: 63px" type="text" />
+					            <input id="_RefreshAskBidButton" type="button" value="<%=GetLanguage("Refresh")%>" onclick="return RefreshAskBidButton_onclick()" style="width: 57px" />&nbsp;
+					            <input id="_AddAskBidButton" type="button" value="<%=GetLanguage("Add")%>" onclick="return AddAskBidButton_onclick()" />
+					            <input id="_DeleteButton" style="display:<%if (GetAllowDeleteOverridedQuotation()=="TRUE"){ %>inline<%} else {%>none<%}%>;" type="button" value="<%=GetLanguage("Delete")%>" onclick="return DeleteAskBidButton_onclick()" />
 					            </div>					            
 			            </td>
 		            </tr>
@@ -154,18 +154,18 @@
 		            <tr>
 			            <td style="height: 15px; width: 829px;">
 			            <div align="center" style="width: 826px">
-                            Restore before:
+                            <%=GetLanguage("RestoreBefore")%>:
                             <select id="_RestoreHighLowSelect" name="_RestoreHighLowSelect" onchange="RestoreHighLowSelect_Onchange();">
                             </select>
-                            <input type="button" id="_RefreshRestoreHighLowInfoButton" value="Refresh" onclick="RefreshRestoreHighLowInfoButton_Onclick();" />
-                            &nbsp;&nbsp;<input type="button" id="_RestoreHighLowButton" value="Restore" onclick="RestoreHighLowButton_Onclick();"/>
+                            <input type="button" id="_RefreshRestoreHighLowInfoButton" value="<%=GetLanguage("Refresh")%>" onclick="RefreshRestoreHighLowInfoButton_Onclick();" />
+                            &nbsp;&nbsp;<input type="button" id="_RestoreHighLowButton" value="<%=GetLanguage("Restore")%>" onclick="RestoreHighLowButton_Onclick();"/>
 				             </div>
 			            </td>
 		            </tr>
                      <tr>
 			            <td style="height: 15px; width: 829px;">
 			            <div align="center" style="width: 826px"><input id="_ConfirmAskBidButton"
-					            type="button" value="Confirm" onclick="return ConfirmAskBidButton_onclick()" />
+					            type="button" value="<%=GetLanguage("Confirm")%>" onclick="return ConfirmAskBidButton_onclick()" />
 				            </div>
 			            </td>
 		            </tr>
@@ -178,12 +178,12 @@
 		            <tr>
 			            <td style="height: 14px; width: 829px;">
 				            <div style="width: 831px; font-size: small;" align="left">
-                                TradeDay:<input style="width: 107px; height: 21px" id="_TradeDayText" tabindex="3"
+                                <%=GetLanguage("TradeDay")%>:<input style="width: 107px; height: 21px" id="_TradeDayText" tabindex="3"
 						            type="text" onblur="OnSetTradeDay();" value="<%=GetCurrentTradeDay() %>" />
 					            &nbsp;&nbsp;Select Instrument:<select id="_InstrumentForHighLowSelect" style="width: 117px">
-					            </select><input id="_RefreshInstrumentForHighLowButton" type="button" value="Refresh" onclick="return RefreshInstrumentForHighLowButton_onclick()" style="width: 57px" />&nbsp;
-					            Origin:<input id="_OriginPriceForHighLowText" style="width: 63px" type="text" />
-					            <input id="_RefreshHighLowButton" type="button" value="Refresh" onclick="return RefreshHighLowButton_onclick()" style="width: 57px" />&nbsp;
+					            </select><input id="_RefreshInstrumentForHighLowButton" type="button" value="<%=GetLanguage("Refresh")%>" onclick="return RefreshInstrumentForHighLowButton_onclick()" style="width: 57px" />&nbsp;
+					            <%=GetLanguage("Origin")%>:<input id="_OriginPriceForHighLowText" style="width: 63px" type="text" />
+					            <input id="_RefreshHighLowButton" type="button" value="<%=GetLanguage("Refresh")%>" onclick="return RefreshHighLowButton_onclick()" style="width: 57px" />&nbsp;
 					            <span id="_IsLowSpan">
 					                <input id="_IsLowCheckbox" type="checkbox" onclick="RefreshHighLowButton_onclick()" />IsLow &nbsp; 
 					            </span>
@@ -280,7 +280,7 @@
 			            <td style="height: 15px; width: 829px;">
 			            <div align=center style="width: 826px">
 				            <input id="_ConfirmHighLowButton"
-					            type="button" value="Confirm" onclick="return ConfirmHighLowButton_onclick()" />
+					            type="button" value="<%=GetLanguage("Confirm")%>" onclick="return ConfirmHighLowButton_onclick()" />
 				            </div>
 			            </td>
 		            </tr>

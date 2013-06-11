@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
 <head>
-    <title>Open Interest</title>
+    <title><%=GetLanguage("OpenInterestPage")%></title>
     <meta name="GENERATOR" content="Microsoft Visual Studio 7.0">
     <meta name="CODE_LANGUAGE" content="C#">
     <meta name="vs_defaultClientScript" content="JavaScript">
@@ -66,24 +66,24 @@
                     <%--<input type="button" id="_OpenInterestListButton0" name="_OpenInterestListButton0"
                         style="width: 80px;" value="    List    " accesskey="l" onclick="OpenInterestListShow();" />--%>
                     <input type="button" id="_GroupNetPositionButton0" name="_GroupNetPositionButton0"
-                        style="width: 130px;" value="    Group Net Position    " accesskey="g" onclick="GroupNetPositionShow();" />
+                        style="width: 130px;" value="<%=GetLanguage("GroupNetPosition")%>" accesskey="g" onclick="GroupNetPositionShow();" />
                     <input type="button" id="_OpenInterestSummaryButton0" name="_OpenInterestSummaryButton0"
-                        style="width: 80px;" value="Summary" accesskey="s" onclick="OpenInterestSummaryShow();" />
+                        style="width: 80px;" value="<%=GetLanguage("Summary")%>" accesskey="s" onclick="OpenInterestSummaryShow();" />
                 </td>
                 <td>
                     |
                 </td>
                 <td nowrap colspan="5" align="left" style="width: 80%;">
-                    <input type="checkbox" id="_ShowActualQuantityCheckbox" name="_ShowActualQuantityCheckbox" checked="checked" onclick="HideQuantityCol();"/>Show Actual Quantity&nbsp;
-                    <input type="button" id="_ShowBlotterSelectionGroupNetPositionButton" name="_ShowBlotterSelectionGroupNetPositionButton" value="Blotter Selection" onclick="ShowBlotterSelectionGroupNetPositionButton_Onclick();" />
+                    <input type="checkbox" id="_ShowActualQuantityCheckbox" name="_ShowActualQuantityCheckbox" checked="checked" onclick="HideQuantityCol();"/><%=GetLanguage("ShowActualQuantity")%>&nbsp;
+                    <input type="button" id="_ShowBlotterSelectionGroupNetPositionButton" name="_ShowBlotterSelectionGroupNetPositionButton" value="<%=GetLanguage("BlotterSelection") %>" onclick="ShowBlotterSelectionGroupNetPositionButton_Onclick();" />
                     <input type="button"  id="btnQueryGroupNetPosition" name="btnQueryGroupNetPosition" onclick="QueryGroupNetPosition(false);"
-                        value=" Go " />
+                        value="<%=GetLanguage("Go")%>" />
                     <input type="button" style="width:20px;visibility:hidden;" id="HideQuantity" name="btnHideQuantity" onclick="HideQuantityCol();"
-                    value=" Go " />
+                    value="<%=GetLanguage("Go")%>" />
                     &nbsp;&nbsp;&nbsp;<input id="btnPrintGroupNetPosition" onclick="PrintGroupNetPosition();" style="width: 100px;"
-                        accesskey="p" type="button" value="Print" name="btnPrintGroupNetPosition">
+                        accesskey="p" type="button" value="<%=GetLanguage("PrintButton")%>" name="btnPrintGroupNetPosition">
                     &nbsp;&nbsp;&nbsp;<input type="button" id="Button6" name="_ShowAccountStatus"
-                        onclick="ShowAccountStatusGNP();" value="Account Status" />
+                        onclick="ShowAccountStatusGNP();" value="<%=GetLanguage("AccountStatus")%>" />
                 </td>
             </tr>
             <tr>
@@ -178,7 +178,7 @@
                     <%--<input type="button" id="_OpenInterestListButton1" name="_OpenInterestListButton1"
                         style="width: 80px;" value="    List    " accesskey="l" onclick="OpenInterestListShow();" />--%>
                     <input type="button" id="_GroupNetPositionButton1" name="_GroupNetPositionButton1"
-                        style="width: 130px;" value="    Group Net Position    " accesskey="g" onclick="GroupNetPositionShow();" />
+                        style="width: 130px;" value="<%=GetLanguage("GroupNetPosition") %>" accesskey="g" onclick="GroupNetPositionShow();" />
                     <input type="button" id="_OpenInterestSummaryButton1" name="_OpenInterestSummaryButton1"
                         style="width: 80px;" value="Summary" accesskey="s" onclick="OpenInterestSummaryShow();" />
                 </td>
@@ -273,13 +273,13 @@
                         pressedsrc="images\\Refresh.gif" hoversrc="images\\Refresh.gif" designtimedragdrop="148">
                 </td>
                 <td nowrap colspan="3" align="left" style="width: 80%;">
-                    <input type="button" id="_ShowBlotterSelectionListButton" name="_ShowBlotterSelectionListButton" value="Blotter Selection" onclick="ShowBlotterSelectionListButton_Onclick();" />
+                    <input type="button" id="_ShowBlotterSelectionListButton" name="_ShowBlotterSelectionListButton" value="<%=GetLanguage("BlotterSelection")%>" onclick="ShowBlotterSelectionListButton_Onclick();" />
                     <input type="button" id="btnQueryList" name="btnQueryList" onclick="QueryList();"
-                        value=" Go " />
+                        value="<%=GetLanguage("Go")%>" />
                     &nbsp;&nbsp;&nbsp;<input id="btnPrint" onclick="PrintList();" style="width: 100px;"
-                        accesskey="p" type="button" value="Print" name="btnPrint">
+                        accesskey="p" type="button" value="<%=GetLanguage("PrintButton")%>" name="btnPrint">
                     &nbsp;&nbsp;&nbsp;<input type="button" id="_ShowAccountStatus" name="_ShowAccountStatus"
-                        onclick="vsflexOpenInterest_DblClick();" value="Account Status" />
+                        onclick="vsflexOpenInterest_DblClick();" value="<%=GetLanguage("AccountStatus")%>" />
                 </td>
             </tr>
             <tr>
@@ -400,19 +400,19 @@
                     <%--<input type="button" id="_OpenInterestListButton2" name="_OpenInterestListButton2"
                         style="width: 80px;" value="    List    " accesskey="l" onclick="OpenInterestListShow();" />--%>
                     <input type="button" id="_GroupNetPositionButton2" name="_GroupNetPositionButton2"
-                        style="width: 130px;" value="    Group Net Position    " accesskey="g" onclick="GroupNetPositionShow();" />
+                        style="width: 130px;" value="<%=GetLanguage("GroupNetPosition")%>" accesskey="g" onclick="GroupNetPositionShow();" />
                     <input type="button" id="_OpenInterestSummaryButton2" name="_OpenInterestSummaryButton2"
-                        style="width: 80px;" value="Summary" accesskey="s" onclick="OpenInterestSummaryShow();" />
+                        style="width: 80px;" value="<%=GetLanguage("Summary")%>" accesskey="s" onclick="OpenInterestSummaryShow();" />
                 </td>
                 
                 <td nowrap colspan="1" align="left">
-                    Sorting on:
+                    <%=GetLanguage("SortingOn")%>:
                     <select id="_OutlineSelect" name="_OutlineSelect" onchange="OutlineSelect_Onclick();"
                         style="width: 80px;">
-                         <option id="_InstrumentOutlineOption" value="0">Instrument</option>
-                        <option id="_AccountGroupOutlineOption" value="1" selected>Group</option>
-                        <option id="_AccountOutlineOption" value="2">Account</option>
-                        <option id="_OrderOutlineOption" value="3">Order</option>
+                         <option id="_InstrumentOutlineOption" value="0"><%=GetLanguage("Instrument")%></option>
+                        <option id="_AccountGroupOutlineOption" value="1" selected><%=GetLanguage("Group")%></option>
+                        <option id="_AccountOutlineOption" value="2"><%=GetLanguage("Account")%></option>
+                        <option id="_OrderOutlineOption" value="3"><%=GetLanguage("Order")%></option>
                     </select>
                     <%--<input type="radio" id="_AccountGroupOutlineRadio" name="_AccountGroupOutlineRadio" value="1" checked onclick="AccountGroupOutlineRadio_Onclick();" />Group
                     <input type="radio" id="_AccountOutlineRadio" name="_AccountOutlineRadio" value="2" onclick="AccountOutlineRadio_Onclick();" />Account
@@ -423,9 +423,9 @@
                 </td>
                 <td id="Td1" nowrap style="width: 10%;" align="left">
                     <input type="radio" id="_SelectCodeCheckbox" name="_SelectEitherCodeOrOrignCodeCheckbox"
-                        checked onclick="SelectEitherCodeOrOrignCodeCheckboxOnclick();" />Code
+                        checked onclick="SelectEitherCodeOrOrignCodeCheckboxOnclick();" /><%=GetLanguage("Code")%>
                     <input type="radio" id="_SelectOriginCodeCheckbox" name="_SelectEitherCodeOrOrignCodeCheckbox"
-                        onclick="SelectEitherCodeOrOrignCodeCheckboxOnclick();" />Origin Code
+                        onclick="SelectEitherCodeOrOrignCodeCheckboxOnclick();" /><%=GetLanguage("OriginCode")%>
                 </td>
                 <%--<td nowrap style="width: 160px;" align="right">
                     <object id="_OpenInterestSummaryInstrumentSelectGrid" style="padding-right: 0px;
@@ -515,14 +515,14 @@
                         pressedsrc="images\\Refresh.gif" hoversrc="images\\Refresh.gif" designtimedragdrop="148">
                 </td>--%>
                 <td nowrap colspan="3" align="left">
-                    <input type="button" id="_ShowBlotterSelectionSummaryButton" name="_ShowBlotterSelectionSummaryButton" value="Blotter Selection" onclick="ShowBlotterSelectionSummaryButton_Onclick();" />
+                    <input type="button" id="_ShowBlotterSelectionSummaryButton" name="_ShowBlotterSelectionSummaryButton" value="<%=GetLanguage("BlotterSelection")%>" onclick="ShowBlotterSelectionSummaryButton_Onclick();" />
                     <input type="button" id="btnQuerySummary" name="btnQuerySummary" onclick="QuerySummary();"
-                        value=" Go " />
+                        value="<%=GetLanguage("Go")%>" />
                     <%--<input type="button" id="_RecalculateButton" name="_RecalculateButton" onclick="Recalculate();" value="Recalculate" />--%>
                     &nbsp;&nbsp;&nbsp;<input id="Button2" onclick="PrintSummary();" style="width: 100px;"
-                        accesskey="p" type="button" value="Print" name="btnPrint">
+                        accesskey="p" type="button" value="<%=GetLanguage("PrintButton") %>" name="btnPrint">
                     &nbsp;&nbsp;&nbsp;<input type="button" id="Button3" name="_ShowAccountStatus" onclick="ShowAccountStatus(true);"
-                        value="Account Status" />
+                        value="<%=GetLanguage("AccountStatus") %>" />
                 </td>
             </tr>
             <tr>

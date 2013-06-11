@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html xmlns:mpc>
 <head>
-    <title>Options</title>
+    <title><%=GetLanguage("OptionsPage")%></title>
     <meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
     <meta content="C#" name="CODE_LANGUAGE">
     <meta content="JavaScript" name="vs_defaultClientScript">
@@ -67,11 +67,12 @@
     </font><font style="background-color: #ffffff" face="system"></font>
     <br>
     <div id="oBody">
-        <mpc:container id="mpcOption" style="display: block; width: 408px; height: 2730px"><mpc:page id="Instruments" TABTEXT="Instruments" TABTITLE="Instruments">
+        <mpc:container id="mpcOption" style="display: block; width: 408px; height: 2700px">
+        <mpc:page id="Instruments" TABTEXT="<%=GetLanguage("InstrumentsTab")%>" TABTITLE="<%=GetLanguage("InstrumentsTab")%>">
 					<DIV id="divCommodity" style="WIDTH: 424px; POSITION: relative; HEIGHT: 382px">
-						<DIV id="DIV1" style="Z-INDEX: 100; LEFT: 256px; WIDTH: 136px; POSITION: absolute; TOP: 8px; HEIGHT: 20px">Selected Instruments
+						<DIV id="DIV1" style="Z-INDEX: 100; LEFT: 256px; WIDTH: 136px; POSITION: absolute; TOP: 8px; HEIGHT: 20px"><%=GetLanguage("SelectedInstruments")%>
 						</DIV>
-						<DIV style="Z-INDEX: 101; LEFT: 30px; WIDTH: 53px; POSITION: absolute; TOP: 9px; HEIGHT: 20px">Source
+						<DIV style="Z-INDEX: 101; LEFT: 30px; WIDTH: 73px; POSITION: absolute; TOP: 9px; HEIGHT: 20px"><%=GetLanguage("InstrumentSource")%>
 						</DIV>
 						<INPUT id="btnSelectAll" style="Z-INDEX: 102; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 30px; HEIGHT: 24px"
 							onclick="OnSelectAll(vsflexItemSource, vsflexItemSelected)" type="button" value=">>"
@@ -238,54 +239,54 @@
 							onclick="OnSelect(vsflexItemSource, vsflexItemSelected)" type="button" value=">" name="btnSelect"><INPUT id="btnUnselect" style="Z-INDEX: 106; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 122px; HEIGHT: 24px"
 							onclick="OnSelect(vsflexItemSelected, vsflexItemSource)" type="button" value="<" name="btnUnselect"><INPUT id="btnUnselectAll" style="Z-INDEX: 107; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 168px; HEIGHT: 24px"
 							onclick="OnSelectAll(vsflexItemSelected, vsflexItemSource)" type="button" value="<<" name="btnUnselectAll"><INPUT id="btnUp" style="Z-INDEX: 108; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 214px; HEIGHT: 24px"
-							onclick="OnUp(vsflexItemSelected)" type="button" value="Up" name="btnUp"><INPUT id="btnDown" style="Z-INDEX: 109; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 260px; HEIGHT: 24px"
-							onclick="OnDown(vsflexItemSelected)" type="button" value="Down" name="btnDown"><INPUT id="btnSyn" style="Z-INDEX: 110; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 308px; HEIGHT: 24px"
-							onclick="OnSyn()" type="button" value="Syn" name="Button7"><INPUT id="btnInstrumentApply" style="Z-INDEX: 111; LEFT: 320px; WIDTH: 75px; POSITION: absolute; TOP: 344px; HEIGHT: 24px"
-							onclick="OnInstrumentApply()" type="button" value="Apply" name="btnInstrumentApply">
+							onclick="OnUp(vsflexItemSelected)" type="button" value="<%=GetLanguage("MoveUp")%>" name="btnUp"><INPUT id="btnDown" style="Z-INDEX: 109; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 260px; HEIGHT: 24px"
+							onclick="OnDown(vsflexItemSelected)" type="button" value="<%=GetLanguage("MoveDown")%>" name="btnDown"><INPUT id="btnSyn" style="Z-INDEX: 110; LEFT: 182px; WIDTH: 49px; POSITION: absolute; TOP: 308px; HEIGHT: 24px"
+							onclick="OnSyn()" type="button" value="<%=GetLanguage("Syn")%>" name="Button7"><INPUT id="btnInstrumentApply" style="Z-INDEX: 111; LEFT: 320px; WIDTH: 75px; POSITION: absolute; TOP: 344px; HEIGHT: 24px"
+							onclick="OnInstrumentApply()" type="button" value="<%=GetLanguage("Apply")%>" name="btnInstrumentApply">
 					</DIV>
 				</mpc:page>
-				<mpc:page id="Parameters" TABTEXT="Parameters" TABTITLE="Parameters">
+				<mpc:page id="Parameters" TABTEXT="<%=GetLanguage("ParametersTab")%>" TABTITLE="<%=GetLanguage("ParametersTab")%>">
 					<DIV style="WIDTH: 424px; POSITION: relative; HEIGHT: 382px"><FONT face="system">&nbsp;
 						</FONT>
-						<DIV style="Z-INDEX: 101; LEFT: 32px; WIDTH: 176px; POSITION: absolute; TOP: 32px; HEIGHT: 16px">Enquiry time out:
+						<DIV style="Z-INDEX: 101; LEFT: 32px; WIDTH: 176px; POSITION: absolute; TOP: 32px; HEIGHT: 16px"><%=GetLanguage("EnquiryTimeOut")%>:
 						</DIV>
 						<INPUT id="textEnquiry" style="Z-INDEX: 102; LEFT: 224px; WIDTH: 171px; POSITION: absolute; TOP: 32px; HEIGHT: 22px"
 							type="text" size="23" name="Text1">
                         
-                        <DIV style="Z-INDEX: 101; LEFT: 32px; WIDTH: 176px; POSITION: absolute; TOP: 72px; HEIGHT: 16px">Apply AutoPts:
+                        <DIV style="Z-INDEX: 101; LEFT: 32px; WIDTH: 176px; POSITION: absolute; TOP: 72px; HEIGHT: 16px"><%=GetLanguage("ApplyAutoPts")%>:
 						</DIV>
                         <INPUT type="checkbox" id="_ApplyAutoAdjustPointsCheckbox" name="_ApplyAutoAdjustPointsCheckbox" style="Z-INDEX: 102; LEFT: 224px; WIDTH: 171px; POSITION: absolute; TOP: 72px; HEIGHT: 22px" />
 
-                        <DIV  style="display:none" id="DIV2" style="Z-INDEX: 103; LEFT: 32px; WIDTH: 176px; POSITION: absolute; TOP: 72px; HEIGHT: 16px">Inactive time out:
+                        <DIV  style="display:none" id="DIV2" style="Z-INDEX: 103; LEFT: 32px; WIDTH: 176px; POSITION: absolute; TOP: 72px; HEIGHT: 16px"><%=GetLanguage("InactiveTimeOut")%>:
 						</DIV>
 						<INPUT style="display:none" id="textInactive" style="Z-INDEX: 104; LEFT: 224px; WIDTH: 171px; POSITION: absolute; TOP: 72px; HEIGHT: 22px"
 							type="text" size="23" name="Text1">
-						<DIV id="DIV3" style="Z-INDEX: 105; LEFT: 32px; WIDTH: 175px; POSITION: absolute; TOP: 112px; HEIGHT: 22px">Print executed order:
+						<DIV id="DIV3" style="Z-INDEX: 105; LEFT: 32px; WIDTH: 175px; POSITION: absolute; TOP: 112px; HEIGHT: 22px"><%=GetLanguage("PrintExecutedOrder")%>:
 						</DIV>
 						<INPUT id="btnParamApply" style="Z-INDEX: 111; LEFT: 320px; WIDTH: 75px; POSITION: absolute; TOP: 344px; HEIGHT: 24px"
-							onclick="OnParamApply()" type="button" value="Apply" name="btnPramApply">&nbsp;
+							onclick="OnParamApply()" type="button" value="<%=GetLanguage("Apply")%>" name="btnPramApply">&nbsp;
 						<SELECT id="cmbPriceOrderSetting" style="Z-INDEX: 110; LEFT: 224px; WIDTH: 176px; POSITION: absolute; TOP: 112px; HEIGHT: 208px"
 							accessKey="p">
-							<OPTION value="0" selected>No show upon execution</OPTION>
-							<OPTION value="1">Show order upon execution</OPTION>
-							<OPTION value="2">Send order to printer</OPTION>
+							<OPTION value="0" selected><%=GetLanguage("PrintOrderCombo1")%></OPTION>
+							<OPTION value="1"><%=GetLanguage("PrintOrderCombo2")%></OPTION>
+							<OPTION value="2"><%=GetLanguage("PrintOrderCombo3")%></OPTION>
 						</SELECT>
-						<DIV id="DIV3" style="Z-INDEX: 105; LEFT: 32px; WIDTH: 175px; POSITION: absolute; TOP: 152px; HEIGHT: 22px">Disable popup:
+						<DIV id="DIV3" style="Z-INDEX: 105; LEFT: 32px; WIDTH: 175px; POSITION: absolute; TOP: 152px; HEIGHT: 22px"><%=GetLanguage("DisablePopup")%>:
 						</DIV>
 						<SELECT id="cmbDisablePopup" style="Z-INDEX: 110; LEFT: 224px; WIDTH: 176px; POSITION: absolute; TOP: 152px; HEIGHT: 208px"
 							accessKey="p">
-							<OPTION value="0" selected>False</OPTION>
-							<OPTION value="1">True</OPTION>
+							<OPTION value="0" selected><%=GetLanguage("NoDisableCombo")%></OPTION>
+							<OPTION value="1"><%=GetLanguage("DisableCombo")%></OPTION>
 						</SELECT>
-						<DIV style="display:inline;" id="DIV4" style="Z-INDEX: 105; LEFT: 32px; WIDTH: 175px; POSITION: absolute; TOP: 192px; HEIGHT: 22px">Disable order reconfirm dialog:
+						<DIV style="display:inline;" id="DIV4" style="Z-INDEX: 105; LEFT: 32px; WIDTH: 175px; POSITION: absolute; TOP: 192px; HEIGHT: 22px"><%=GetLanguage("DisableOrderReconfirmDialog")%>:
 						</DIV>
 						<select style="display:inline;" id="cmbAutoConfirm" name="cmbAutoConfirm" accesskey="a" style="z-index: 110; left: 224px; width: 176px; position: absolute; top: 192px; height: 208px">
-							<option selected="selected" value="0">False</option>
-							<option value="1">True</option>
+							<option selected="selected" value="0"><%=GetLanguage("NoDisableCombo")%></option>
+							<option value="1"><%=GetLanguage("DisableCombo")%></option>
 						</select>
 					</DIV>
 				</mpc:page>
-				<mpc:page id="Sound" TABTEXT="Sound" TABTITLE="Sound">
+				<mpc:page id="Sound" TABTEXT="<%=GetLanguage("SoundTab")%>" TABTITLE="<%=GetLanguage("SoundTab")%>">
 					<DIV style="WIDTH: 424px; POSITION: relative; HEIGHT: 382px">
 						<OBJECT id="vsflexSound" style="Z-INDEX: 100; LEFT: 24px; WIDTH: 376px; POSITION: absolute; TOP: 16px; HEIGHT: 284px"
 							codeBase="./Cab/vsflex7.CAB#Version=7,0,1,160" height="284" width="376" classid="clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949">
@@ -367,25 +368,25 @@
 							<PARAM NAME="WallPaperAlignment" VALUE="9">
 						</OBJECT>
                         <DIV style="Z-INDEX: 103; LEFT: 24px; POSITION: absolute; TOP: 319px; height: 11px; width: 100px;">
-                        Copy From:&nbsp;</DIV>
+                        <%=GetLanguage("CopyFrom")%>:&nbsp;</DIV>
                         <select name="cmbCopyFromForSound" id="cmbCopyFromForSound" 
                             style="Z-INDEX: 103; LEFT: 106px; POSITION: absolute; TOP: 319px; width: 137px;" />
-                        <input type="button" id="CopyFromForSoundButton" name="CopyFromForSoundButton" value="Go!" style="Z-INDEX: 103; LEFT: 240px; POSITION: absolute; TOP: 319px"onclick="copyFrom.GetSoundSettingForCopyFrom();" />
+                        <input type="button" id="CopyFromForSoundButton" name="CopyFromForSoundButton" value="<%=GetLanguage("Go")%>" style="Z-INDEX: 103; LEFT: 240px; POSITION: absolute; TOP: 319px"onclick="copyFrom.GetSoundSettingForCopyFrom();" />
 						<label id="Label1" style="Z-INDEX: 106; LEFT: 24px; POSITION: absolute; TOP: 351px">
-							File:</label> <INPUT id="File1" style="Z-INDEX: 102; LEFT: 48px; WIDTH: 224px; POSITION: absolute; TOP: 350px; HEIGHT: 22px"
+							<%=GetLanguage("File")%></label><INPUT id="File1" style="Z-INDEX: 102; LEFT: 55px; WIDTH: 224px; POSITION: absolute; TOP: 350px; HEIGHT: 22px"
 							type="file" size="18" name="File1"> <INPUT id="btnTest" style="Z-INDEX: 103; LEFT: 280px; POSITION: absolute; TOP: 350px" onclick="OnListen()"
-							type="button" value="Test" name="Button5"> <INPUT id="btnSet" style="Z-INDEX: 103; LEFT: 320px; POSITION: absolute; TOP: 350px" onclick="OnSet()"
-							type="button" value="Set" name="Button5"> <INPUT id="btnSoundApply" style="Z-INDEX: 103; LEFT: 352px; POSITION: absolute; TOP: 350px"
-							onclick="OnSoundApply()" type="button" value="Apply" name="btnPramApply">                            
+							type="button" value="<%=GetLanguage("TestButton")%>" name="Button5"> <INPUT id="btnSet" style="Z-INDEX: 103; LEFT: 325px; POSITION: absolute; TOP: 350px" onclick="OnSet()"
+							type="button" value="<%=GetLanguage("SetButton")%>" name="Button5"> <INPUT id="btnSoundApply" style="Z-INDEX: 103; LEFT: 382px; POSITION: absolute; TOP: 350px"
+							onclick="OnSoundApply()" type="button" value="<%=GetLanguage("Apply")%>" name="btnPramApply">                            
 					</DIV>
 				</mpc:page>
-				<mpc:page id="SetValue" TABTEXT="Set Value" TABTITLE="SetValue">
+				<mpc:page id="SetValue" TABTEXT="<%=GetLanguage("SetValueTab")%>" TABTITLE="<%=GetLanguage("SetValueTab")%>">
 					<DIV style="WIDTH: 424px; POSITION: relative; HEIGHT: 385px" align="center">
 						<TABLE style="WIDTH: 383px; HEIGHT: 370px" cellSpacing="1" cellPadding="1" width="385"
 							border="0">
 							<TR>
 								<TD style="WIDTH: 1px"><FONT face="system"></FONT></TD>
-								<TD style="WIDTH: 165px">
+								<TD style="WIDTH: 175px">
 										<DIV id="lblOriginInactiveTime" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">InactiveTime</DIV>									
 								</TD>
 								<TD style="WIDTH: 51px"><FONT face="system"><INPUT onkeypress="return onKeyPressEvent(this);" onpaste="return onPasteEvent(this);"
@@ -549,7 +550,7 @@
                             <TR>
 								<TD style="WIDTH: 1px"></TD>
 								<TD style="WIDTH: 165px">
-									<DIV id="DIV7" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">AutoDQDelay</DIV>
+									<DIV id="lblAutoDQDelay" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">AutoDQDelay</DIV>
 								</TD>
 								<TD style="WIDTH: 51px"><INPUT onkeypress="return onKeyPressEvent(this);" onpaste="return onPasteEvent(this);"
 										id="txtAutoDQDelay" onblur="onBlurEvent();" ondrop="return onDropEvent(this);" style="WIDTH: 46px; HEIGHT: 26px; TEXT-ALIGN: right"
@@ -570,14 +571,14 @@
 							<TR>
 								<TD style="WIDTH: 1px"></TD>
 								<TD style="WIDTH: 165px">
-									<DIV id="DIV5" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">Reduce Net Position Accept Lmt Variation</DIV>
+									<DIV id="lblAcceptCloseLmtVariation" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">Reduce Net Position Accept Lmt Variation</DIV>
 								</TD>
 								<TD style="WIDTH: 51px"><INPUT onkeypress="return onKeyPressEvent(this);" onpaste="return onPasteEvent(this);"
 										id="textAcceptCloseLmtVariation" onblur="onBlurEvent();" ondrop="return onDropEvent(this);" style="WIDTH: 46px; HEIGHT: 26px; TEXT-ALIGN: right"
 										type="text" size="2" value="10"></TD>
                                 <TD style="WIDTH: 1px"><FONT face="system"></FONT></TD>
 								<TD style="WIDTH: 141px">
-									<DIV id="DIV6" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">Hit Price Variation For STP</DIV>
+									<DIV id="lblHitPriceVariationForSTP" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px">Hit Price Variation For STP</DIV>
 								</TD>
 								<TD style="WIDTH: 51px"><INPUT onkeypress="return onKeyPressEvent(this);" onpaste="return onPasteEvent(this);"
 										id="textHitPriceVariationForSTP" onblur="onBlurEvent();" ondrop="return onDropEvent(this);" style="WIDTH: 46px; HEIGHT: 26px; TEXT-ALIGN: right"
@@ -586,7 +587,7 @@
                             <tr>
                                  <TD style="WIDTH: 1px"></TD>
 								<TD style="WIDTH: 165px">
-									<DIV id="DIV8" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px"><b>Apply to Dealing Policy</b></DIV>
+									<DIV id="DIV8" style="DISPLAY: inline; FONT-SIZE: 10pt; WIDTH: 95%; HEIGHT: 15px"><b><%=GetLanguage("ApplyDealingPolicy")%></b></DIV>
 								</TD>
                                 <TD style="WIDTH: 51px"><INPUT type="checkbox" id="_ApplyToDealingPolicyCheckbox" name="_ApplyToDealingPolicyCheckbox" style="TEXT-ALIGN:center" /></TD>
 								<TD style="WIDTH: 1px"><FONT face="system"></FONT></TD>
@@ -594,15 +595,15 @@
 							<TR>
 								<TD style="WIDTH: 1px"></TD>
 								<TD align="center" colSpan="5"><INPUT id="btnSaveSetValue" accessKey="s" onclick="ApplySetValueForAll();" type="button"
-										value="Save">
+										value="<%=GetLanguage("SaveButton")%>" style="width:76px;">
 										<INPUT id="btnClearSetValue" accessKey="c" onclick="ClearSetValueForAll();" type="button"
-										value="Clear">
+										value="<%=GetLanguage("ClearButton")%>" style="width:76px;">
 										</TD>
 							</TR>
 						</TABLE>
 					</DIV>
 				</mpc:page>
-				<mpc:page id="Limit" TABTEXT="Limit" TABTITLE="Limit">
+				<mpc:page id="Limit" TABTEXT="<%=GetLanguage("LimitTab")%>" TABTITLE="<%=GetLanguage("LimitTab")%>">
 					<DIV style="WIDTH: 424px; POSITION: relative; HEIGHT: 382px"></FONT>&nbsp;&nbsp;&nbsp;
 						<INPUT id="txtPreviousClosePrice" style="Z-INDEX: 101; LEFT: 176px; WIDTH: 200px; POSITION: absolute; TOP: 264px; HEIGHT: 26px; TEXT-ALIGN: right"
 							readOnly type="text" maxLength="19" size="28"> <INPUT onkeypress="return onKeyPressEvent(this);" onpaste="return onPasteEvent(this);"
@@ -702,25 +703,25 @@
                         <INPUT onkeypress="return onKeyPressEvent(this);" onpaste="return onPasteEvent(this);"
 							id="txtLimit1" onblur="onBlurEvent();" ondrop="return onDropEvent(this);" style="Z-INDEX: 104; LEFT: 176px; WIDTH: 200px; POSITION: absolute; TOP: 56px; HEIGHT: 26px; TEXT-ALIGN: right"
 							type="text" maxLength="19" size="28" value="50">
-						<DIV id="lblPreviousClosePrice" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 105; LEFT: 64px; WIDTH: 96px; POSITION: absolute; TOP: 272px; HEIGHT: 18px">Close Price Ref.</DIV>
-						<DIV id="lblSpreed" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 105; LEFT: 64px; POSITION: absolute; TOP: 184px; HEIGHT: 15px">Spread</DIV>
-						<DIV id="lblLimit3" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 105; LEFT: 64px; POSITION: absolute; TOP: 144px; HEIGHT: 15px">Limit 3</DIV>
-						<DIV id="lblLimit2" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 106; LEFT: 64px; POSITION: absolute; TOP: 104px; HEIGHT: 15px">Limit 2</DIV>
-						<DIV id="lblLimit1" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 107; LEFT: 64px; POSITION: absolute; TOP: 64px; HEIGHT: 15px">Limit 1</DIV>
-						<DIV id="lblInstrument" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 108; LEFT: 64px; POSITION: absolute; TOP: 24px; HEIGHT: 15px">Instrument</DIV>
+						<DIV id="lblPreviousClosePrice" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 105; LEFT: 64px; WIDTH: 96px; POSITION: absolute; TOP: 272px; HEIGHT: 18px"><%=GetLanguage("ClosePriceRef")%>.</DIV>
+						<DIV id="lblSpreed" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 105; LEFT: 64px; POSITION: absolute; TOP: 184px; HEIGHT: 15px"><%=GetLanguage("Spread")%></DIV>
+						<DIV id="lblLimit3" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 105; LEFT: 64px; POSITION: absolute; TOP: 144px; HEIGHT: 15px"><%=GetLanguage("Limit")%> 3</DIV>
+						<DIV id="lblLimit2" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 106; LEFT: 64px; POSITION: absolute; TOP: 104px; HEIGHT: 15px"><%=GetLanguage("Limit")%> 2</DIV>
+						<DIV id="lblLimit1" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 107; LEFT: 64px; POSITION: absolute; TOP: 64px; HEIGHT: 15px"><%=GetLanguage("Limit")%> 1</DIV>
+						<DIV id="lblInstrument" style="DISPLAY: inline; FONT-SIZE: 10pt; Z-INDEX: 108; LEFT: 64px; POSITION: absolute; TOP: 24px; HEIGHT: 15px"><%=GetLanguage("Instrument")%></DIV>
 						<input id="btnSaveLimit" style="Z-INDEX: 109; LEFT: 312px; POSITION: absolute; TOP: 328px"
-							onclick="limit.btnSaveLimit_OnClick();" type="button" value="Set Limit" name="btnSaveLimit"></DIV>
+							onclick="limit.btnSaveLimit_OnClick();" type="button" value="<%=GetLanguage("SetLimitButton")%>" name="btnSaveLimit"></DIV>
 				</mpc:page>
-				<mpc:page id="Font" TABTEXT="Font" TABTITLE="Font" onclick="setting.Setting_onClick()">
+				<mpc:page id="Font" TABTEXT="<%=GetLanguage("FontTab")%>" TABTITLE="<%=GetLanguage("FontTab")%>" onclick="setting.Setting_onClick()">
 					<br>
 					<DIV style="WIDTH: 424px; POSITION: relative; HEIGHT: 365px" align="center">
 						<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="325" border="0" style="WIDTH: 325px; HEIGHT: 300px">
 							<TR>
-								<TD vAlign="top" style="WIDTH: 67px">Grid</TD>
+								<TD vAlign="top" style="WIDTH: 67px"><%=GetLanguage("Grid")%></TD>
 								<TD vAlign="top" style="WIDTH: 163px"><SELECT id="cmbDoGrid" onchange="setting.cmbDoGrid_OnChange();" name="cmbGrid" style="WIDTH: 133px">
 										<OPTION selected></OPTION>
 									</SELECT></TD>
-								<TD vAlign="top" style="WIDTH: 109px" align="right">Height</TD>
+								<TD vAlign="top" style="WIDTH: 109px" align="right"><%=GetLanguage("Height")%></TD>
 								<TD vAlign="top">
 									<SELECT id="cmbRowHeight" name="cmbRowHeight" style="WIDTH: 65px">
 										<OPTION value="100" selected>100</OPTION>
@@ -736,12 +737,12 @@
 									</SELECT></TD>
 							</TR>
 							<TR>
-								<TD vAlign="top" style="WIDTH: 67px"><FONT face="system">Font</FONT>
+								<TD vAlign="top" style="WIDTH: 67px"><FONT face="system"><%=GetLanguage("Font")%></FONT>
 								</TD>
 								<TD vAlign="top" style="WIDTH: 163px"><SELECT id="cmbFontName" name="cmbFontName" style="WIDTH: 132px">
 										<OPTION selected></OPTION>
 									</SELECT></TD>
-								<TD vAlign="top" style="WIDTH: 109px" align="right"><FONT face="system">Size</FONT>
+								<TD vAlign="top" style="WIDTH: 109px" align="right"><FONT face="system"><%=GetLanguage("Size")%></FONT>
 								</TD>
 								<TD vAlign="top"><SELECT id="cmbFontSize" name="cmbFontSize" style="WIDTH: 65px">
 										<OPTION selected></OPTION>
@@ -837,11 +838,11 @@
 											<td style="WIDTH: 286px"></td>
 											<td>
 												<P><INPUT language="javascript" id="btnUp2" style="WIDTH: 72px; HEIGHT: 24px" accessKey="u"
-														onclick="setting.GetOperateVsflex(0)" type="button" value="Move Up" name="btnUp2"></P>
+														onclick="setting.GetOperateVsflex(0)" type="button" value="<%=GetLanguage("MoveUp")%>" name="btnUp2"></P>
 												<P><INPUT language="javascript" id="btnDown2" style="WIDTH: 73px; HEIGHT: 24px" accessKey="d"
-														onclick="setting.GetOperateVsflex(1)" type="button" value="Move Down" name="btnDown2"></P>
+														onclick="setting.GetOperateVsflex(1)" type="button" value="<%=GetLanguage("MoveDown")%>" name="btnDown2"></P>
 												<P><INPUT language="javascript" id="btnGetValueFromGrid" style="WIDTH: 73px; HEIGHT: 24px"
-														accessKey="g" onclick="setting.GetCurrentValue()" type="button" value="Get Width"
+														accessKey="g" onclick="setting.GetCurrentValue()" type="button" value="<%=GetLanguage("GetWidth")%>"
 														name="btnGetValueFromGrid"></P>                                                
 											</td>
 										</tr>
@@ -850,18 +851,18 @@
 							</TR>
 							<TR>
 								<TD style="WIDTH: 264px" noWrap align="left" colSpan="4"><INPUT id="chkSaveCurrentLayout" type="checkbox" name="chkSaveCurrentLayout" CHECKED>
-									<DIV id="lblLayout" style="DISPLAY: inline; WIDTH: 201px; HEIGHT: 20px" align="left">Save Current Layout</DIV>
+									<DIV id="lblLayout" style="DISPLAY: inline; WIDTH: 201px; HEIGHT: 20px" align="left"><%=GetLanguage("Layout")%></DIV>
 								</TD>
 							</TR>
                             <tr>
                                 <TD style="WIDTH: 264px" noWrap align="left" colSpan="4">
-									Copy From:&nbsp;<select name="cmbCopyFromForGrid" id="cmbCopyFromForGrid" />
-                                    <input type="button" id="CopyFromForGridButton" name="CopyFromForGridButton" value="Go!" onclick="copyFrom.GetGridSettingForCopyFrom();" />
+									<%=GetLanguage("CopyFrom")%>:&nbsp;<select name="cmbCopyFromForGrid" id="cmbCopyFromForGrid" />
+                                    <input type="button" id="CopyFromForGridButton" name="CopyFromForGridButton" value="<%=GetLanguage("Go")%>" onclick="copyFrom.GetGridSettingForCopyFrom();" />
 								</TD>
                             </tr>
 						</TABLE>                        
 						<INPUT id="btnOK" style="Z-INDEX: 102; LEFT: 304px; WIDTH: 88px; POSITION: absolute; TOP: 312px; HEIGHT: 24px"
-							accessKey="o" onclick="setting.OK_OnClick();SetLayout();" type="button" value="OK"
+							accessKey="o" onclick="setting.OK_OnClick();SetLayout();" type="button" value="<%=GetLanguage("Ok")%>"
 							name="btnOK">
 					</DIV>
 				</mpc:page>

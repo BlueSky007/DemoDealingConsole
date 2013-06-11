@@ -189,13 +189,14 @@ function UpdateOrderToExecuteGrid(quotationFrm, updatedOrder, line) {
     var account = updatedOrder.GetAccount();
     var accountGroupId = window._AccountGroupSelect.value;
     var currentAccountGroupId = account.groupID;
+    var commonLanguage = quotationFrm.commonLanguage;
 
     with (vsflexExecuteOrders) {
         RowData(line) = updatedOrder;
         TextMatrix(line, ColIndex("OrderID")) = updatedOrder.id;
         TextMatrix(line, ColIndex("Item")) = intrument ? intrument.code : updatedOrder.tran.instrumentID;
-        TextMatrix(line, ColIndex("IsBuy")) = updatedOrder.isBuy ? "B" : "S";
-        TextMatrix(line, ColIndex("OpenClose")) = updatedOrder.isOpen ? "O" : "C";
+        TextMatrix(line, ColIndex("IsBuy")) = updatedOrder.isBuy ? commonLanguage["Buy"] : commonLanguage["Sell"];
+        TextMatrix(line, ColIndex("OpenClose")) = updatedOrder.isOpen ? commonLanguage["Open"] : commonLanguage["Close"];
         TextMatrix(line, ColIndex("Lot")) = updatedOrder.GetFormatLot2(updatedOrder.lot);
         TextMatrix(line, ColIndex("OrderCode")) = updatedOrder.code;
         TextMatrix(line, ColIndex("Account")) = account ? account.code : updatedOrder.tran.accountID;

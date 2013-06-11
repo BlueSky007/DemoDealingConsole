@@ -232,7 +232,7 @@ namespace iExchange.DealingConsole
                 this.GetLanguage("LotBalance"),
                 this.GetLanguage("SetPrice"),
                 this.GetLanguage("ContractSize"),
-                this.GetLanguage("OrderTypeID"),
+                this.GetLanguage("OrderType"),
                 this.GetLanguage("OpenPosition")
                 };
 
@@ -302,7 +302,7 @@ namespace iExchange.DealingConsole
                 this.GetLanguage("Lot"),
                 this.GetLanguage("ExecutePrice"),
                 this.GetLanguage("ContractSize"),
-                this.GetLanguage("OrderTypeID"),
+                this.GetLanguage("OrderType"),
                 this.GetLanguage("Commission"),
                 this.GetLanguage("Levy"),
                 this.GetLanguage("TradePL"),
@@ -858,6 +858,17 @@ namespace iExchange.DealingConsole
             return String.Format("{0:###,###,###,##0.00}", o);
         }
 
+        public string GetLanguageString(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
         //private string GetMoney(string str)
         //{
         //    int i = str.IndexOf(".");

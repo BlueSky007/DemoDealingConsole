@@ -1,6 +1,9 @@
 function MooMocInit()
-{	
-	var titleHeight = parseInt(window.dialogHeight) - oBodyMooMoc.clientHeight;
+{
+    var titleHeight = parseInt(window.dialogHeight) - oBodyMooMoc.clientHeight;
+    this.owner = dialogArguments[1];
+    var limitProcessGridLanguage = this.owner.parent.quotationFrm.limitProcessGridLanguage;
+    var commonLanguage = this.owner.parent.quotationFrm.commonLanguage;
 	window.dialogHeight = window.Table1.clientHeight+titleHeight+"px";
 	window.dialogWidth = window.Table1.clientWidth+"px";
 	window.dialogTop = (parseInt(window.screen.height) - window.Table1.clientHeight)/2 + "px"; 
@@ -14,51 +17,51 @@ function MooMocInit()
 		FixedRows = 1;
 		FixedCols = 0;
 		Cols = 17;
-	    
-		TextMatrix(0, lColIndex) = "Unconfirm";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["Unconfirm"];
 		ColKey(lColIndex) = "Unconfirm";
 		ColWidth(lColIndex) = 800;
         ColDataType(lColIndex) = flexDTBoolean;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "A/C";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["Account"];
 		ColKey(lColIndex) = "Account";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Order Date";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["OrderDate"];
 		ColKey(lColIndex) = "OrderDate";
 		ColWidth(lColIndex) = 2400;
 		ColDataType(lColIndex) = flexDTDate;
         ColFormat(lColIndex) = "yyyy-MM-dd HH:mm:ss";
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "O/C";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["OpenClose"];
 		ColKey(lColIndex) = "OpenClose";
 		ColWidth(lColIndex) = 600;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Buy Lot";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["BuyLot"];
 		ColKey(lColIndex) = "BuyLot";
 		ColWidth(lColIndex) = 900;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Sell Lot";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["SellLot"];
 		ColKey(lColIndex) = "SellLot";
 		ColWidth(lColIndex) = 900;
 		lColIndex ++;
-	    
-	    TextMatrix(0, lColIndex) = "Quote Policy";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["QuotePolicyCode"];
 		ColKey(lColIndex) = "QuotePolicyCode";
 		ColWidth(lColIndex) = 1410;
 		lColIndex ++;
-		
-		TextMatrix(0, lColIndex) = "Price";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["Price"];
 		ColKey(lColIndex) = "Price";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Message";
+
+		TextMatrix(0, lColIndex) = limitProcessGridLanguage["Message"];
 		ColKey(lColIndex) = "Message";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
@@ -83,7 +86,7 @@ function MooMocInit()
 		vsflexMooMoc.AddItem("");
 		vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("Account")) = account ? account.code : orders[index].accountID;
 		vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("OrderDate")) = GetDateTimeString(orders[index].tran.submitTime, "DateTime"); //.getVarDate();
-		vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("OpenClose")) = orders[index].isOpen ? "O" : "C";
+		vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("OpenClose")) = orders[index].isOpen ? commonLanguage["Open"] : commonLanguage["Close"];
 		if(orders[index].isBuy == true)
 			vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("BuyLot")) = orders[index].GetFormatLot2(orders[index].lot);
 		else
@@ -97,7 +100,7 @@ function MooMocInit()
 			else
 				vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("Price")) = instrument.lastQuotation.bid.ToString();
 		}
-		vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("Message")) = OrderStatus.GetOrderStatusString( orders[index].status );
+vsflexMooMoc.TextMatrix(line, vsflexMooMoc.ColIndex("Message")) = OrderStatus.GetOrderStatusString(orders[index].status, commonLanguage);
 		vsflexMooMoc.RowData(line) = orders[index];
 		
 		SetRowForeColor(vsflexMooMoc, line, orders[index].isBuy ? color_blue : color_red);
@@ -111,11 +114,10 @@ function MooMocInit()
 		window.textAsk.value = instrument.lastQuotation.ask.ToString();
 	}
 	window.document.all.labelItem.innerText = instrument.code;
-	window.labelSell.innerText = "Tatol sell: " + GetTotalLot(orders, true);
-	window.labelBuy.innerText = "Tatol buy: " + GetTotalLot(orders, false);
+	window.labelSell.innerText = commonLanguage["TotalSell"] + ":" + GetTotalLot(orders, true);
+	window.labelBuy.innerText = commonLanguage["TotalBuy"] + ":" + GetTotalLot(orders, false);
 	
 	this.orderType = orders[0].tran.orderType;
-	this.owner = dialogArguments[1];
 	dialogArguments[1].mooMocDialog = this;
 	this.btnApply.disabled = !this.isActive;
 	this.btnExecute.disabled = !this.isActive;
@@ -349,7 +351,7 @@ function AddOrderToMooMocGrid(order, orders)
 		vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("BuyLot")) = order.GetFormatLot2(order.lot);
 	else
 		vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("SellLot")) = order.GetFormatLot2(order.lot);
-	vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString( order.status );
+	vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString(order.status, this.owner.parent.quotationFrm.commonLanguage);
 	vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("QuotePolicyCode")) = order.GetQuotePolicyCode();
 	var instrument = order.GetInstrument();	
 	if(instrument.lastQuotation)
@@ -412,6 +414,6 @@ function ChangeStatusOfMooMocGrid(order, isActive)
 	//we conside all the orders is same status for MOO & MOC
 	for(var line=vsflexGrid.FixedRows; line<vsflexGrid.Rows; line++)
 	{
-		vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString( order.status );
+	    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString(order.status, this.owner.parent.quotationFrm.commonLanguage);
 	}
 }

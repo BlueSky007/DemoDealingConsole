@@ -40,7 +40,7 @@
             bgColor="buttonface" border="0">
 			<TR>
 				<TD noWrap align="middle" width="150" colSpan="1" height="26" rowSpan="1">
-					<DIV id="LabelItem" style="DISPLAY: inline; FONT-WEIGHT: bold; WIDTH: 70px; HEIGHT: 15px">instrument</DIV>
+					<DIV id="LabelItem" style="DISPLAY: inline; FONT-WEIGHT: bold; WIDTH: 70px; HEIGHT: 15px"><%=GetLanguage("Instrument") %></DIV>
 				</TD>
 				<TD vAlign="baseline" align="right" width="100%" rowSpan="13">
 					<OBJECT id="vsflexEnquiry" codeBase="./Cab/vsflex7.CAB#Version=7,0,1,160" classid="clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949">
@@ -133,7 +133,7 @@
 				<TD noWrap width="150" colSpan="1" height="16" rowSpan="1">
                     <table style="width:100%;">
                         <tr>
-                            <td align="left" class="style2"><span class="style3">Adjust</span>:</td>
+                            <td align="left" class="style2"><span class="style3"><%=GetLanguage("Adjust")%></span>:</td>
                             <td noWrap align="right" style="width:100%">
                                 <INPUT id="TextAdjust" type="text" onchange="OnEnquiryAdjust()" size="6" name="Text2">
                                 <input id="_IncreaseNumeratorUnitPointText" type="button" 
@@ -154,7 +154,7 @@
 				<TD noWrap width="150" colSpan="1" height="16" rowSpan="1" align="left">				
 				    <table style="width:100%;">
                         <tr>
-                            <td align="left" class="style3">Lot:</td>
+                            <td align="left" class="style3"><%=GetLanguage("Lot")%>:</td>
                             <td align="right"><INPUT id="LotText" type="text" onchange="OnLotAdjust()" size="12" name="Text3"></td>
                         </tr>
                     </table>
@@ -164,43 +164,43 @@
 			<TR>
 				<TD vAlign="baseline" noWrap align="left" width="150" colSpan="1" height="5" rowSpan="1">
 				    <INPUT id="RadioAbove" type="radio" value="Radio1" name="RadioGroup">
-					<span class="style3">Above
+					<span class="style3"><%=GetLanguage("Above")%>
 					</span>
 					<INPUT id="RadioBelow" type="radio" CHECKED value="Radio1" name="RadioGroup">
-					<span class="style3">Below</span>
+					<span class="style3"><%=GetLanguage("Below")%></span>
 				</TD>
 				<TD height="5"></TD>
 			</TR>
 			<TR>
-				<TD width="150"><INPUT id="TextLot" type="text" size="12" name="Text1">units</TD>
+				<TD width="150"><INPUT id="TextLot" type="text" size="12" name="Text1"><%=GetLanguage("Units")%></TD>
 				<TD></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150" colSpan="1" height="12" rowSpan="1"><INPUT id="btnUpdate" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquiryUpdate()" accesskey="U" type="button" value="Update" name="Button1"></TD>
+				<TD align="middle" width="150" colSpan="1" height="12" rowSpan="1"><INPUT id="btnUpdate" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquiryUpdate()" accesskey="U" type="button" value="<%=GetLanguage("Update") %>" name="Button1"></TD>
 				<TD height="12"></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150"><INPUT id="btnSelectAll" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquirySelectAll()" accesskey="A" type="button" value="select All" name="Button1"></TD>
+				<TD align="middle" width="150"><INPUT id="btnSelectAll" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquirySelectAll()" accesskey="A" type="button" value="<%=GetLanguage("SelectAll") %>" name="Button1"></TD>
 				<TD></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnSimiliar" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquirySimiliar()" accesskey="M" type="button" value="siMiliar" name="Button1"></TD>
+				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnSimiliar" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquirySimiliar()" accesskey="M" type="button" value="<%=GetLanguage("siMiliar") %>" name="Button1"></TD>
 				<TD></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnQuantity" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquiryQuantity()" accesskey="Q" type="button" value="Quantity" name="Button1"></TD>
+				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnQuantity" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquiryQuantity()" accesskey="Q" type="button" value="<%=GetLanguage("Quantity") %>" name="Button1"></TD>
 				<TD></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnClearAll" style="WIDTH: 92px; HEIGHT: 24px" accessKey="C" onclick="OnEnquiryClearAll()" type="button" value="Clear all" name="Button1"></TD>
+				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnClearAll" style="WIDTH: 92px; HEIGHT: 24px" accessKey="C" onclick="OnEnquiryClearAll()" type="button" value="<%=GetLanguage("ClearAll") %>" name="Button1"></TD>
 				<TD></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150" class="style1"><INPUT id="btnSend" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquirySend()" accessKey="S" type= "submit" value="Send" name="Button1"></TD>
+				<TD align="middle" width="150" class="style1"><INPUT id="btnSend" style="WIDTH: 92px; HEIGHT: 24px" onclick="OnEnquirySend()" accessKey="S" type= "submit" value="<%=GetLanguage("Send") %>" name="Button1"></TD>
 				<TD class="style1"></TD>
 			</TR>
 			<TR>
-				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnCancel" style="WIDTH: 92px; HEIGHT: 24px" accessKey="X" onclick="OnEnquiryCancel()" type="button" value="eXit" name="Button1"></TD>
+				<TD align="middle" width="150" colSpan="1" rowSpan="1"><INPUT id="btnCancel" style="WIDTH: 92px; HEIGHT: 24px" accessKey="X" onclick="OnEnquiryCancel()" type="button" value="<%=GetLanguage("eXitButton") %>" name="Button1"></TD>
 				<TD></TD>
 			</TR>
 		</TABLE>

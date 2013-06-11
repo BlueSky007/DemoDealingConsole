@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>
-		<title></title>
+		<title><%=GetLanguage("ChangePriceForFPLCalcPage")%></title>
 		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
 		<meta content="C#" name="CODE_LANGUAGE">
 		<meta content="JavaScript" name="vs_defaultClientScript">
@@ -14,7 +14,7 @@
 				cellSpacing="1" cellPadding="1" width="366" border="0">
 				<TR>
 					<TD>
-						<asp:Label id="Label1" runat="server" Height="16px" Width="360px" Font-Size="Small" Font-Bold="True">Prices for Floating P/L Calculation</asp:Label></TD>
+						<asp:Label id="_ChangePriceTitle" runat="server" Height="16px" Width="360px" Font-Size="Small" Font-Bold="True">Prices for Floating P/L Calculation</asp:Label></TD>
 				</TR>
 				<TR>
 					<TD style="HEIGHT: 235px"><FONT><asp:datagrid id="grid" runat="server" GridLines="None" AutoGenerateColumns="False" AllowSorting="True"
@@ -58,17 +58,17 @@
 			<TABLE id="Table2" style="Z-INDEX: 106; LEFT: 376px; WIDTH: 160px; POSITION: absolute; TOP: 24px; HEIGHT: 115px"
 				cellSpacing="1" cellPadding="1" width="160" border="0">
 				<TR>
-					<TD><FONT face="system">Item</FONT></TD>
+					<TD><FONT face="system"><%=GetLanguage("Instrument")%></FONT></TD>
 					<TD>
 						<asp:TextBox id="CodeTextBox" runat="server" Height="24px" Width="104px" Enabled="False"></asp:TextBox></TD>
 				</TR>
 				<TR>
-					<TD><FONT face="system">Bid</FONT></TD>
+					<TD><FONT face="system"><%=GetLanguage("Bid")%></FONT></TD>
 					<TD>
 						<asp:TextBox id="BidTextBox" runat="server" Height="24px" Width="104px"></asp:TextBox></TD>
 				</TR>
 				<TR>
-					<TD><FONT face="system">Spread</FONT></TD>
+					<TD><FONT face="system"><%=GetLanguage("Spread")%></FONT></TD>
 					<TD><FONT face="system">
 							<asp:TextBox id="SpreadPointsTextBox" runat="server" Height="24px" Width="104px"></asp:TextBox></FONT></TD>
 				</TR>

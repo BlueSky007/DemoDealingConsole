@@ -32,6 +32,18 @@ namespace iExchange.DealingConsole
             return needSendQuotationChangeAPSP ? "True" : "False";
         }
 
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
+
 		#region Web Form Designer generated code
 		override protected void OnInit(EventArgs e)
 		{

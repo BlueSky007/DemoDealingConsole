@@ -128,21 +128,22 @@ function DealingPolicyDetailGridInit() {
         var dealingPolicyDetailGridLanguage = quotationFrm.dealingPolicyDetailGridLanguage;
 
         var parameter = quotationFrm.oDealingConsole.InitGrid(grid, quotationFrm.optionGrid.DealingPolicyDetailGrid, dealingPolicyDetailGridLanguage);
+        var comboListLanguage = quotationFrm.comboListLanguage;
         if (parameter == "") GridColumnsDefaultFormatForDealingPolicyDetail(grid,dealingPolicyDetailGridColKey);
 
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.MaxDQLot)) = "#######.0";
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.MaxOtherLot)) = "#######.0";
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.DQQuoteMinLot)) = "#######.0";
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoDQMaxLot)) = "#######.0";
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoLmtMktMaxLot)) = "#######.0";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.MaxDQLot)) = "#######.0";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.MaxOtherLot)) = "#######.0";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.DQQuoteMinLot)) = "#######.0";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoDQMaxLot)) = "#######.0";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoLmtMktMaxLot)) = "#######.0";
         ColFormat(ColIndex(dealingPolicyDetailGridColKey.AcceptDQVariation)) = "#######";
         ColFormat(ColIndex(dealingPolicyDetailGridColKey.AcceptLmtVariation)) = "#######";
         ColFormat(ColIndex(dealingPolicyDetailGridColKey.AcceptCloseLmtVariation)) = "#######";
         ColFormat(ColIndex(dealingPolicyDetailGridColKey.CancelLmtVariation)) = "#######";
         ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoDQDelay)) = "#######";
-        ColComboList(ColIndex(dealingPolicyDetailGridColKey.AllowedNewTradeSides)) = "Disallow add New|Allow add new Buy only|Allow add new Sell only|Allow add new";
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoAcceptMaxLot)) = "#######.00";
-        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoCancelMaxLot)) = "#######.00";
+        ColComboList(ColIndex(dealingPolicyDetailGridColKey.AllowedNewTradeSides)) = comboListLanguage["AllowedNewTradeSidesTypeComboList"]; //"Disallow add New|Allow add new Buy only|Allow add new Sell only|Allow add new";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoAcceptMaxLot)) = "#######.00";
+//        ColFormat(ColIndex(dealingPolicyDetailGridColKey.AutoCancelMaxLot)) = "#######.00";
         ColFormat(ColIndex(dealingPolicyDetailGridColKey.HitPriceVariationForSTP)) = "#######";
         //Editable = flexEDKbdMouse;
 
@@ -352,6 +353,7 @@ function DealingPolicyDetail_Save(grid) {
 
 function AfterSavedProcess(isSucceed) {
     window._SaveButton.disabled = false;
+    var messageLanguage = quotationFrm.messageLanguage;
     if (timeOutId) { window.clearTimeout(timeOutId); }
     if (isSucceed) {
         var dealingPolicyDetails = (new VBArray(_DealingPolicyDetails.Items())).toArray();
@@ -361,10 +363,10 @@ function AfterSavedProcess(isSucceed) {
                 dealingPolicyDetail.AfterSavedProcess();
             }
         }
-        alert("Succeed to Update Dealing Policy Detail!");
+        alert(messageLanguage["UpdateDealingPolicyDetailMsg"]);
     }
     else {
-        alert("Failed to Update Dealing Policy Detail!");
+        alert(messageLanguage["UpdateDealingPolicyDetailAlert"]);
     }
 }
 
@@ -618,7 +620,7 @@ function OnDealingPolicyDetailGridValidateEdit(row, col, cancel) {
         case dealingPolicyDetailGridColKey.DQQuoteMinLot:
         case dealingPolicyDetailGridColKey.AutoDQMaxLot:
         case dealingPolicyDetailGridColKey.AutoLmtMktMaxLot:
-            var regexExpression = "(\\d+((\\.\\d{1})|))"; //"(\\d+\\.{0,1})";
+            var regexExpression = "(\\d+((\\.\\d{4})|))"; //"(\\d+\\.{0,1})";
             var regex = new RegExp(regexExpression, "i");
             if (regex.exec(newValue) != null)
                 grid.EditText = RegExp.$1;

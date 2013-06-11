@@ -16,7 +16,7 @@ function QuotationTaskInit()
 		var quotationFrm = window.parent.quotationFrm;
 		var quotationTaskGridColKey = quotationFrm.quotationTaskGridColKey;
 		var quotationTaskGridLanguage = quotationFrm.quotationTaskGridLanguage;
-		      
+		   
 		var parameter = quotationFrm.oDealingConsole.InitGrid(window.vsflexQuotationTask,quotationFrm.optionGrid.QuotationTaskGrid,quotationTaskGridLanguage);
 		if (parameter == "") GridColumnsDefaultFormatForQuotationTask(window.vsflexQuotationTask,quotationTaskGridColKey);
 		
@@ -363,9 +363,9 @@ function OnSend(line)
 				    priceOrigin = quotationFrm.ObjectPool.GetCorrectPriceHelper(priceSource, instrument.numeratorUnit, instrument.denominator);
 					
 					var isProblematic = instrument.IsProblematic(priceOrigin);
-					if(isProblematic)
-					{
-						var args = new Array("Out of Range, accept the price?", "Accept", "Reject");
+					if(isProblematic) {
+					    var messageLanguage = window.parent.quotationFrm.messageLanguage;
+					    var args = new Array(messageLanguage["LMTProcessAlert"], messageLanguage["AlertAcceptButton"], messageLanguage["AlertRejectButton"]);
 						isProblematic = !window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 					}
 					if(isProblematic)
@@ -464,6 +464,7 @@ function AddTaskOutOfRange(instrument) {
 	instrument.isOutOfRange = true;
 	var vsflexGrid = vsflexQuotationTask;
 	var quotationFrm = window.parent.quotationFrm;
+	var commonLanguage = quotationFrm.commonLanguage;
 	with (vsflexGrid) {
 	    Redraw = false;
 		var line = FindRow(QuoteTaskType.OutOfRange + instrument.id, FixedRows, _QuotationTaskGridColIndexs.Key, true, true);
@@ -472,7 +473,7 @@ function AddTaskOutOfRange(instrument) {
 			AddItem("");
 			RowHeight(line) = quotationFrm.oDealingConsole.GetRowHeight(quotationFrm.optionGrid.QuotationTaskGrid);
 		}        TextMatrix(line, _QuotationTaskGridColIndexs.Key) = QuoteTaskType.OutOfRange + instrument.id;
-		TextMatrix(line, _QuotationTaskGridColIndexs.Quotation) = QuoteTaskType.OutOfRange;
+        TextMatrix(line, _QuotationTaskGridColIndexs.Quotation) = commonLanguage["OutOfRange"]; //QuoteTaskType.OutOfRange;
 		TextMatrix(line, _QuotationTaskGridColIndexs.Item) = instrument.code;
 		TextMatrix(line, _QuotationTaskGridColIndexs.Time) = GetDateTimeString(quotationFrm.oSystemTime, "DateTime"); //.getVarDate();
 		TextMatrix(line, _QuotationTaskGridColIndexs.Count) = instrument.alertWaitTime;//parent.quotationFrm.oOutOfRangeWaitTime.toString();
@@ -499,6 +500,7 @@ function AddTaskOutOfRange(instrument) {
 function AddTaskEnquiry(enquiry) {
 	var vsflexGrid = vsflexQuotationTask;
 	var quotationFrm = window.parent.quotationFrm;
+	var commonLanguage = quotationFrm.commonLanguage;
 	var lotDecimal = quotationFrm.oDealingConsole.LotDecimal;
 	var line = vsflexGrid.FindRow(QuoteTaskType.Enquiry + enquiry.instrumentID, vsflexGrid.FixedRows, _QuotationTaskGridColIndexs.Key, true, true);
 	if (line > 0) {
@@ -534,7 +536,7 @@ function AddTaskEnquiry(enquiry) {
 	    vsflexGrid.RowHeight(line) = quotationFrm.oDealingConsole.GetRowHeight(quotationFrm.optionGrid.QuotationTaskGrid);
 
 	    vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Key) = QuoteTaskType.Enquiry + enquiry.instrument.id;
-	    vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Quotation) = QuoteTaskType.Enquiry;
+	    vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Quotation) = commonLanguage["Enquiry"]; //QuoteTaskType.Enquiry;
 	    vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Item) = enquiry.instrument.code;
 	    vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Time) = GetDateTimeString(quotationFrm.oSystemTime, "DateTime"); //.getVarDate();
 	    vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Count) = quotationFrm.oEnquiryWaitTime.toString();
@@ -732,7 +734,8 @@ function AddTaskEnquiry2(instrumentEnquiryUnit, quotePolicyDetailEnquiry, enquir
     else
     {
         var vsflexGrid = vsflexQuotationTask;
-	    var quotationFrm = window.parent.quotationFrm;
+        var quotationFrm = window.parent.quotationFrm;
+        var commonLanguage = quotationFrm.commonLanguage;
 	    var lotDecimal = quotationFrm.oDealingConsole.LotDecimal;
 	    var line = vsflexGrid.FindRow(QuoteTaskType.Enquiry2 + instrumentEnquiryUnit.instrument.id, vsflexGrid.FixedRows, _QuotationTaskGridColIndexs.Key, true, true);
 	    if (line > 0)	//alerting dealer now
@@ -755,7 +758,7 @@ function AddTaskEnquiry2(instrumentEnquiryUnit, quotePolicyDetailEnquiry, enquir
 	        vsflexGrid.RowHeight(line) = quotationFrm.oDealingConsole.GetRowHeight(quotationFrm.optionGrid.QuotationTaskGrid);
 
 	        vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Key) = QuoteTaskType.Enquiry2 + enquiry.instrument.id;
-	        vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Quotation) = QuoteTaskType.Enquiry2;
+	        vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Quotation) = commonLanguage["Enquiry2"];//  QuoteTaskType.Enquiry2;
 	        vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Item) = enquiry.instrument.code;
 	        vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Time) = GetDateTimeString(quotationFrm.oSystemTime, "DateTime"); //.getVarDate();
 	        vsflexGrid.TextMatrix(line, _QuotationTaskGridColIndexs.Count) = instrumentEnquiryUnit.Get_Tick().toString();   //quotationFrm.oEnquiryWaitTime.toString();

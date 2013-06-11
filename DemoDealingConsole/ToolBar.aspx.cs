@@ -22,7 +22,21 @@ namespace iExchange.DealingConsole
 			// Put user code to initialize the page here
 			if(Page.IsPostBack) return;
 			this.Context.Session["LMTProcessDisplay"] = ((string)(System.Configuration.ConfigurationSettings.AppSettings["LMTProcessDisplay"]) == "true")?"inline":"none";
+            
+
 		}
+
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["TooBarPage"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["TooBarPage"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
 
 		#region Web Form Designer generated code
 		override protected void OnInit(EventArgs e)

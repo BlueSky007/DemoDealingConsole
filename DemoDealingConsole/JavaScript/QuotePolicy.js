@@ -7,6 +7,15 @@ function QuotePolicyPageOnLoad() {
     quotePolicyPageLoaded = true;
 }
 
+function SettingLanguage() {
+    var quotationFrm = window.parent.quotationFrm;
+    var commonLanguage = quotationFrm.commonLanguage;
+    document.getElementById("btnCancel").value = commonLanguage["Undo"];
+    document.getElementById("btnOk").value = commonLanguage["Ok"];
+    document.getElementById("_SpreadReplaceButton").value = commonLanguage["SpreadReplace"];
+    document.getElementById("_AutoPointsReplaceButton").value = commonLanguage["SpreadReplace"];
+}
+
 function Undo()
 {
     QuotePolicyInit();

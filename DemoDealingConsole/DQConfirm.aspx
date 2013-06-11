@@ -12,13 +12,13 @@
 	<BODY id="oBodyConfirm" onload="OnConfirmLoad()">
 		<TABLE id="Table1" height="128" cellSpacing="4" cellPadding="2" width="216" border="0" bgColor="buttonface">
 		    <TR id="trSetPrice">
-				<TD id="TD22" vAlign="center" align="right">Set Price:</TD>
+				<TD id="TD22" vAlign="center" align="right"><%=GetLanguage("SetPrice")%>:</TD>
 				<TD id="tdSetPrice" vAlign="center" align="right">&nbsp;</TD>
 				<TD id="TD5" width="10">&nbsp;</TD>
 			</TR>
 		    <TR id="trDQMaxMovePrice">
 		        <td vAlign="center" align="right">
-		            Execute Price: 
+		            <%=GetLanguage("ExecutePrice")%>: 
 		        </td>
 				<TD id="TD1" vAlign="center" align="middle" colSpan="1" rowSpan="1" style="height: 30px; text-align: right">
 				    <input onfocus="textDQMaxMovePrice_Onfocus();" onblur="textDQMaxMovePrice_Onblur();" id="textDQMaxMovePrice" name="textDQMaxMovePrice" onblur="CheckDQMaxMovePrice();" value="" maxlength="10" size="6" />
@@ -36,8 +36,8 @@
 			<TR>
 				<TD colspan="2" align="middle" style="height: 31px; text-align: center">
 				    <FONT face="system"> 
-				        <INPUT id="Button1" type="submit" value="   Yes   " name="Button1" onclick="Submit();">&nbsp;
-						<INPUT id="Button2" type="button" value="   No   " name="Button2" onclick="window.close();">
+				        <INPUT id="Button1" type="submit" value="<%=GetLanguage("YesButton")%>" name="Button1" onclick="Submit();">&nbsp;
+						<INPUT id="Button2" type="button" value="<%=GetLanguage("NoButton")%>" name="Button2" onclick="window.close();">
 					</FONT>
 				</TD>
 				<TD id="TD30" width="10">&nbsp;</TD>

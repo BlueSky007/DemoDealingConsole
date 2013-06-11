@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>
-		<title>Limit Process</title>
+		<title><%=GetLanguage("LimitProcessPage")%></title>
 		<meta name="GENERATOR" Content="Microsoft Visual Studio 7.0">
 		<meta name="CODE_LANGUAGE" Content="C#">
 		<meta name="vs_defaultClientScript" content="JavaScript">
@@ -29,28 +29,27 @@
 					<SELECT id="SelectLMTProcess" style="WIDTH: 72px; POSITION: relative; TOP: -5px" onchange="LMTProcess_click();">
 					</SELECT>
 				</TD>
-				<TD id="labelSell" width="128" height="7">Tatol sell: 0</TD>
-				<TD id="labelBuy" width="132" height="7">Tatol buy: 0</TD>
-				<TD align="center" height="7"><INPUT id="btnApply" onclick="OnLMTApply()" type="button" value="Apply" name="btnApply"
+				<TD id="labelSell" width="128" height="7"><%=GetLanguage("TotalSell")%>: 0</TD>
+				<TD id="labelBuy" width="132" height="7"><%=GetLanguage("TotalBuy")%>: 0</TD>
+				<TD align="center" height="7"><INPUT id="btnApply" onclick="OnLMTApply()" type="button" value="<%=GetLanguage("Apply")%>" name="btnApply"
 						ACCESSKEY="A" style="WIDTH: 73px; HEIGHT: 24px"></TD>
 			</TR>
 			<TR>
-				<TD vAlign="middle" noWrap align="right" width="111" height="7" style="HEIGHT: 7px">Source 
-					Price:</TD>
+				<TD vAlign="middle" noWrap align="right" width="111" height="7" style="HEIGHT: 7px"><%=GetLanguage("SourcePrice")%></TD>
 				<TD id="labelSource" width="128" height="7" style="HEIGHT: 7px"><FONT face="system"></FONT></TD>
 				<TD width="132" height="7" style="HEIGHT: 7px"></TD>
-				<TD align="center" colSpan="1" height="7" rowSpan="1" style="HEIGHT: 7px"><INPUT id="btnExecute" onclick="OnLMTExecute()" type="button" value="Execute" name="btnExec"
+				<TD align="center" colSpan="1" height="7" rowSpan="1" style="HEIGHT: 7px"><INPUT id="btnExecute" onclick="OnLMTExecute()" type="button" value="<%=GetLanguage("Execute")%>" name="btnExec"
 						ACCESSKEY="E" style="WIDTH: 73px"></TD>
 			</TR>
 			<TR>
 				<TD vAlign="middle" noWrap align="right" width="111" colSpan="1" height="2" rowSpan="1"
-					style="HEIGHT: 2px">Market Price:</TD>
+					style="HEIGHT: 2px"><%=GetLanguage("MarketPrice")%></TD>
 				<TD width="128" height="2" style="HEIGHT: 2px">
-					<P>Bid: <INPUT id="textBid" type="text" size="6" name="Text1" style="COLOR: blue"></P>
+					<P><%=GetLanguage("Bid")%>: <INPUT id="textBid" type="text" size="6" name="Text1" style="COLOR: blue"></P>
 				</TD>
-				<TD width="132" height="2" style="HEIGHT: 2px">Ask: <INPUT id="textAsk" type="text" size="6" name="Text2" style="COLOR: red">
+				<TD width="132" height="2" style="HEIGHT: 2px"><%=GetLanguage("Ask")%>: <INPUT id="textAsk" type="text" size="6" name="Text2" style="COLOR: red">
 				</TD>
-				<TD vAlign="baseline" noWrap align="center" colSpan="1" height="2" rowSpan="1" style="HEIGHT: 2px"><INPUT id="btnExit" onclick="self.close();" type="button" value="Exit" name="btnExit" ACCESSKEY="X"
+				<TD vAlign="baseline" noWrap align="center" colSpan="1" height="2" rowSpan="1" style="HEIGHT: 2px"><INPUT id="btnExit" onclick="self.close();" type="button" value="<%=GetLanguage("Exit")%>" name="btnExit" ACCESSKEY="X"
 						style="WIDTH: 73px; HEIGHT: 24px"></TD>
 			</TR>
 			<TR>

@@ -18,7 +18,7 @@
 	<body topmargin="0" leftmargin="0">
 		<table border="0" cellspacing="0" cellpadding="0" width="100%">
 			<tr>
-				<td align="right"><input type="button" value="<%=this.GetLanguage("Print")%>" id="btnPrint" onclick="Print();"></td>
+				<td align="right"><input type="button" value="<%=this.GetLanguageString("PrintButton")%>" id="btnPrint" onclick="Print();"></td>
 			</tr>
 		</table>
 		<table id="Table1" cellSpacing="2" cellPadding="0" width="100%" border="0">
@@ -32,15 +32,15 @@
                 <td valign="top">
                     <%--<input type="button" id="_OpenListButton" name="_OpenListButton" onclick="ShowOpenList();" value="<%=this.GetLanguage("OpenList")%>" />
                     <input type="button" id="_CurrentTradeDayOrderListButton" name="_CurrentTradeDayOrderListButton" onclick="ShowCurrentTradeDayOrderList();" value="<%=this.GetLanguage("CurrentTradeDayOrderList")%>" />--%>
-                    <div style="border:1;margin-left:5px;font-family: Arial; font-size: 15px; font-weight: bold; color: #008080; background-color: #E4E4E4;">Open Position:</div>
+                    <div style="border:1;margin-left:5px;font-family: Arial; font-size: 15px; font-weight: bold; color: #008080; background-color: #E4E4E4;"><%=this.GetLanguage("OrderList")%></div>
                 </td>
             </tr>
 			<tr>
 				<td valign="top">
                     <div id="OpenListDiv" runat="server" style="margin-top:5px;"></div>
-                    <div style="border:1;margin-left:5px;font-family: Arial; font-size: 15px; font-weight: bold; color: #008080; background-color: #E4E4E4;">Current TradeDay Order List:</div>
+                    <div style="border:1;margin-left:5px;font-family: Arial; font-size: 15px; font-weight: bold; color: #008080; background-color: #E4E4E4;"><%=this.GetLanguage("CurrentTradeDayOrderList")%></div>
                     <div id="_CurrentTradeDayOrderListDiv" runat="server"></div> 
-                    <div style="border:1;margin-left:5px;font-family: Arial; font-size: 15px; font-weight: bold; color: #008080; background-color: #E4E4E4;">LMT Order:</div>
+                    <div style="border:1;margin-left:5px;font-family: Arial; font-size: 15px; font-weight: bold; color: #008080; background-color: #E4E4E4;"><%=this.GetLanguage("LMTOrder")%></div>
                     <div id="_UnExcuteOrderListDiv" runat="server"></div>                           
 				</td>
 			</tr>

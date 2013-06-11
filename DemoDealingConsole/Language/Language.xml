@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <!--注意Key不能重复-->
+  <Login>
+    <Item key="Ok" value="Ok"/>
+    <Item key="Cancel" value="Cancel" />
+    <Item key="UserName" value="User Name"/>
+    <Item key="Password" value="Password" />
+    <Item key="LoginFailedMsg" value="Authenication failed, please try again!" />
+    <Item key="MaxLoginTimes" value="Max try times,Login Locked.Please contact administrator." />
+    <Item key="LoginNameEmptyMsg" value="Login name must not be empty!" />
+    <Item key="ChangePasswodTitle" value="Change Passwod" />
+    <Item key="ChangePasswod" value="User Password Change" />
+    <Item key="OldPassword" value="Current Password" />
+    <Item key="NewPassword" value="New Password" />
+    <Item key="ConfirmPassword" value="Confirm Password" />
+    <Item key="PasswodMsg" value="The new passwords should contains 8-16 combination of digits and letters." />
+    <Item key="SuccedChangePassword" value="Succed to change password!" />
+    <Item key="FailedChangePassword" value="Failed to change password!" />
+    <Item key="InvalidPassword" value="Error,please enter your new/comfirm password again!" />
+    <Item key="IsValidPasswordInputMsg" value="Failed to enter your Password(8-16)!" />
+    <Item key ="InitDataEmpty" value="Init Data is empty!"/>
+    <Item key ="ProcessError" value="You have been signed out of the system, because:\n -  you may sign in at other location; or \n -  the server is refreshing its connection with you!"/>
+  </Login>
+  <TooBarPage>
+    <Item key="QutoPolicy" value="QutoPolicy"/>
+    <Item key="Source" value="Source:"/>
+    <Item key="Parameter" value="Parameter"/>
+    <Item key="GoButton" value="Go"/>
+    <Item key="ReferencePrice" value="Reference Price"/>
+    <Item key="ChangePassword" value="Change Password"/>
+    <Item key="SearchOrder" value="Search Order"/>
+    <Item key="OpenInterest" value="Open Interest"/>
+    <Item key="ExecuteOrder" value="Executed Order"/>
+    <Item key="LMTProcess" value="LMT Process"/>
+    <Item key="Option" value="Option"/>
+    <Item key="ChangeAutoToMenual" value="Change Auto To Menual"/>
+    <Item key="ResetParameter" value="Reset To Set Value"/>
+    <Item key="ModifyHistory" value="Modify HistoryPrice"/>
+    <Item key="DealingPolicy" value="Dealing Policy"/>
+    <Item key="Resume" value="Resume"/>
+    <Item key="Suspend" value="Suspend"/>
+    <Item key="AllowLMT" value="Allow Limit"/>
+    <Item key ="DisAllowLMT" value="Disallow Limit"/>
+    <Item key="LogoutButton" value="Logout"/>
+  </TooBarPage>
+  <Common>
+    <Item key="Ok" value="Ok"/>
+    <Item key="Cancel" value="Cancel" />
+    <Item key ="Go" value="Go"/>
+    <!--Mian Page-->
+    <Item key ="History" value="History"/>
+    <Item key ="Properties" value="Properties"/>
+    <Item key ="InstantOrder" value="InstantOrder"/>
+    <Item key ="Undo" value="Undo"/>
+    <Item key ="AP" value="AP"/>
+    <Item key ="SP" value="SP"/>
+    <Item key ="SpreadReplace" value="Rep"/>
+    <Item key ="OpenPriceButton" value="Positon"/>
+    <!--Order Search Page-->
+    <Item key="OrderSearchPage" value="Order Search" />
+    <Item key="Query" value="Query" />
+    <Item key="QueryType" value="Query Type:" />
+    <Item key="Instrument" value="Instrument:" />
+    <Item key="Executed" value="Executed" />
+    <Item key="Cancelled" value="Cancelled" />
+    <Item key="TradeTime" value="Trade Time:" />
+    <Item key="AccountGroup" value="Account Group:" />
+    <Item key="OrderType" value="Order Type:" />
+    <Item key="PrintButton" value="Print" />
+    <Item key="To" value="To:" />
+    <!--Open Interest Page-->
+    <Item key="OpenInterestPage" value="OpenInterest" />
+    <Item key="GroupNetPosition" value="GroupNetPosition" />
+    <Item key="Summary" value="Summary" />
+    <Item key="ShowActualQuantity" value="Show Actual Quantity" />
+    <Item key="AccountStatus" value="Account Status" />
+    <Item key="Group" value="Group" />
+    <Item key="Account" value="Account" />
+    <Item key="Order" value="Order" />
+    <Item key="Code" value="Code" />
+    <Item key="OriginCode" value="OriginCode" />
+    <Item key="BlotterSelection" value="Blotter Selection" />
+    <Item key="SortingOn" value="Sorting On:" />
+    <!--Executed Orders Page-->
+    <Item key="ExecutedOrdersPage" value="Executed Orders" />
+    <Item key="List" value="List" />
+    <Item key="TimeRange" value="Time Range:" />
+    <Item key="PriceRange" value="Price Range" />
+    <Item key="Minutes" value="Minutes" />
+    <Item key="Pips" value="Pips" />
+    <!--Limit Process Page-->
+    <Item key="LimitProcessPage" value="Limit Process" />
+    <Item key="SourcePrice" value="Source Price" />
+    <Item key="MarketPrice" value="Market Price" />
+    <Item key="Bid" value="Bid" />
+    <Item key="Ask" value="Ask" />
+    <Item key="Exit" value="Exit" />
+    <Item key="Apply" value="Apply" />
+    <Item key="Execute" value="Execute" />
+    <!--Options Page-->
+    <Item key="OptionsPage" value="Options" />
+    <Item key="InstrumentsTab" value="Instruments" />
+    <Item key="ParametersTab" value="Parameters" />
+    <Item key="SoundTab" value="Sound" />
+    <Item key="SetValueTab" value="SetValue" />
+    <Item key="LimitTab" value="Limit" />
+    <Item key="FontTab" value="Font" />
+    <Item key="SelectedInstruments" value="SelectedInstruments" />
+    <Item key="InstrumentSource" value="Source" />
+    <Item key="Syn" value="Syn" />
+    <Item key="MoveUp" value="Up" />
+    <Item key="MoveDown" value="Down" />
+    <Item key="GetWidth" value="GetWidth" />
+    <Item key="Layout" value="Save Current Layout" />
+    <Item key="EnquiryTimeOut" value="Enquiry TimeOut" />
+    <Item key="ApplyAutoPts" value="Apply AutoPts" />
+    <Item key="InactiveTimeOut" value="Inactive TimeOut" />
+    <Item key="PrintExecutedOrder" value="Print Executed Order" />
+    <Item key="PrintOrderCombo1" value="No show upon execution" />
+    <Item key="PrintOrderCombo2" value="Show order upon execution" />
+    <Item key="PrintOrderCombo3" value="Send order to printer" />
+    <Item key="DisablePopup" value="Disable Popup" />
+    <Item key="NoDisableCombo" value="False" />
+    <Item key="DisableCombo" value="True" />
+    <Item key="DisableOrderReconfirmDialog" value="Disable Order Reconfirm Dialog" />
+    <Item key="CopyFrom" value="Copy From" />
+    <Item key="File" value="File" />
+    <Item key ="TestButton" value="Test" />
+    <Item key ="SetButton" value="Set" />
+    <Item key ="SaveButton" value="Save" />
+    <Item key ="ClearButton" value="Clear" />
+    <Item key ="Spread" value="Spread" />
+    <Item key ="Limit" value="Limit" />
+    <Item key ="ClosePriceRef" value="ClosePrice Ref" />
+    <Item key ="SetLimitButton" value="Set Limit" />
+    <Item key ="Grid" value="Grid" />
+    <Item key ="Height" value="Height" />
+    <Item key ="Font" value="Font" />
+    <Item key ="Size" value="Size" />
+    <Item key ="ApplyDealingPolicy" value="ApplyDealingPolicy"/>
+    <!--UpdateHistoryQuotation.aspx-->
+    <Item key="UpdateHistoryQuotation" value="Update HistoryQuotation" />
+    <Item key="AskBid" value="Ask/Bid" />
+    <Item key="BeginTime" value="Begin Time" />
+    <Item key="Origin" value="Origin" />
+    <Item key="Refresh" value="Refresh" />
+    <Item key="Add" value="Add" />
+    <Item key="Delete" value="Delete" />
+    <Item key="RestoreBefore" value="RestoreBefore" />
+    <Item key="TradeDay" value="TradeDay" />
+    <Item key="Confirm" value="Confirm" />
+    <Item key ="Restore" value="Restore"/>
+    <!--ManagementFrame.aspx-->
+    <Item key="ManagementPage" value="Management"/>
+    <Item key ="DealingPolicy" value="DealingPolicy"/>
+    <Item key ="CustomerManagementButton" value="CustomerManagement"/>
+    <!--Dealing Policy Page-->
+    <Item key="DealingPolicyPage" value="DealingPolicy"/>
+    <Item key="ByDealingPolicy" value="By DealingPolicy"/>
+    <Item key="ByInstrument" value="By Instrument"/>
+    <Item key="BatchProcess" value="Batch Process"/>
+    <Item key="Replace" value="Replace"/>
+    <Item key="MaxDQLot" value="MaxDQLot"/>
+    <Item key="MaxOtherLot" value="MaxOtherLot"/>
+    <Item key="DQQuoteMinLot" value="DQQuoteMinLot"/>
+    <Item key="AutoDQMaxLot" value="AutoDQMaxLot"/>
+    <Item key="AutoLmtMktMaxLot" value="AutoLmtMktMaxLot"/>
+    <Item key="AcceptDQVariation" value="AcceptDQVariation"/>
+    <Item key="AcceptLmtVariation" value="AcceptLmtVariation"/>
+    <Item key="AcceptCloseLmtVariation" value="AcceptCloseLmtVariation"/>
+    <Item key="CancelLmtVariation" value="CancelLmtVariation"/>
+    <Item key="AutoAcceptMaxLot" value="AutoAcceptMaxLot"/>
+    <Item key="AutoCancelMaxLot" value="AutoCancelMaxLot"/>
+    <Item key="AllowedNewTradeSides" value="AllowedNewTradeSides"/>
+    <Item key="AutoDQDelay" value="AutoDQDelay"/>
+    <Item key="HitPriceVariationForSTP" value="HitPriceVariationForSTP"/>
+    <Item key="AllowedNewTradeSidesCombo1" value="Disallow add New"/>
+    <Item key="AllowedNewTradeSidesCombo2" value="Allow add new Buy only"/>
+    <Item key="AllowedNewTradeSidesCombo3" value="Allow add new Sell only"/>
+    <Item key="AllowedNewTradeSidesCombo4" value="Allow add new"/>
+    <!--Policy Management Page-->
+    <Item key="PolicyManagementPage" value="PolicyManagementPage"/>
+    <Item key="BlackListOnly" value="BlackListOnly"/>
+    <Item key="GoSelectedButton" value="GoSelected"/>
+    <Item key="ApplyEmployee" value="ApplyEmployee"/>
+    <Item key="QutoPolicy" value="QutoPolicy"/>
+    <Item key="ReplaceWith" value="Replace With"/>
+    <Item key="SortingOnCombo1" value="Group"/>
+    <Item key="SortingOnCombo2" value="Detail"/>
+    <!--Add HistoryQuotatoin Page-->
+    <Item key="AddHistoryQuotatoinPage" value="AddHistoryQuotatoin"/>
+    <Item key ="Timestamp" value="Timestamp"/>
+    <Item key ="ValueLessThan" value="Value Less Than"/>
+    <!--ChangePriceForFPLCalc.aspx-->
+    <Item key ="ChangePriceForFPLCalcPage" value="Change Price ForFPLCalc"/>
+    <Item key ="ChangePriceTitle" value="Change Price"/>
+    <Item key="SpreadPoints" value="SpreadPoints"/>
+    <Item key ="Operation" value="Operation"/>
+    <Item key="Modify" value="Modify"/>
+
+    <!--Account Status Query Page-->
+    <Item key ="AccountStatusQueryPage" value="Account Status Query"/>
+    <Item key ="RealtimeCalculate" value="Realtime Calculate"/>
+    <Item key ="UnitMsg" value="(Unit：Second)"/>
+    <Item key ="Interval" value="Interval"/>
+    <Item key ="ChangePrice" value="ChangePrice"/>
+    <Item key ="UseMarketPrice" value="UseMarketPrice"/>
+    <Item key ="UserPrice" value="UserPrice"/>
+
+    <!--DQ Confirm-->
+    <Item key ="SetPrice" value="Set Price"/>
+    <Item key ="ExecutePrice" value="Execute Price"/>
+    <Item key ="YesButton" value=" Yes "/>
+    <Item key ="NoButton" value=" No "/>
+    <Item key="Prompt" value="Prompt"/>
+    <!--DealerCanViewAccountInfoConfirm.aspx-->
+    <Item key ="BL" value="BL"/>
+    <Item key ="Balance" value="Balance"/>
+    <Item key ="Equity" value="Equity"/>
+    <Item key ="Necessary" value="Necessary"/>
+    <Item key ="Usable" value="Usable"/>
+    <Item key ="TotalBuy" value="TotalBuy"/>
+    <Item key ="TotalSell" value="TotalSell"/>
+    <Item key ="Net" value="Net"/>
+    <Item key ="Lot" value="Lot"/>
+    <!--Enquiry.aspx-->
+    <Item key="Adjust" value="Adjust"/>
+    <Item key="Above" value="Above"/>
+    <Item key="Below" value="Below"/>
+    <Item key="Units" value="Units"/>
+    <Item key="Update" value ="Update"/>
+    <Item key="SelectAll" value ="Select All"/>
+    <Item key="siMiliar" value ="siMiliar"/>
+    <Item key="Quantity" value ="Quantity"/>
+    <Item key="ClearAll" value ="Clear all"/>
+    <Item key="Send" value ="Send"/>
+    <Item key="eXitButton" value ="eXit"/>
+    <!--Blotter Selection-->
+    <Item key="BlotterSelectionPage" value="Blotter Selection"/>
+    <!--MooMoc Process-->
+    <Item key="MooMocProcessPage" value="MooMoc Process"/>
+    <Item key="Reject" value="Reject"/>
+    <Item key="Accept" value="Accept"/>
+  </Common>
+
+  <AccountStatus>
+    <ReportPageTypeQuery>Report Order Enquire Query</ReportPageTypeQuery>
+    <SelectAccount>Please select an account.</SelectAccount>
+    <PrinterError>Printer''s I/O was error! please check your printer.</PrinterError>
+    <QueryType>Report Account Status Query</QueryType>
+    <ChangePrice>Change Price</ChangePrice>
+    <Query>Query</Query>
+    <UseMarketPrice>Use Market price</UseMarketPrice>
+    <UserPrice>User price</UserPrice>
+    <Print>Print</Print>
+    <AccountCode>A/C Code</AccountCode>
+    <TradeDay>Trade Day</TradeDay>
+    <Currency>Currency</Currency>
+    <IsMultiCur>Is Multi Cur</IsMultiCur>
+    <AccountName>A/C Name</AccountName>
+    <Employee>A/E Code</Employee>
+    <AccountGroup>Account Group</AccountGroup>
+    <Organization>Organization</Organization>
+    <CrLot>Cr Lot</CrLot>
+    <StartDate>Start Date</StartDate>
+    <SMAmount>SM Amount SM</SMAmount>
+    <Credit>Credit</Credit>
+    <Uncleared>Uncleared</Uncleared>
+    <AccountDescription>Telephone Pin</AccountDescription>
+    <Call>Call</Call>
+    <NotValue>Not Valued Bal</NotValue>
+    <Balance>Balance</Balance>
+    <Equity>Equity</Equity>
+    <Necessary>Necessary</Necessary>
+    <Usable>Usable</Usable>
+    <Floating>Floating</Floating>
+    <Ratio>Ratio</Ratio>
+    <ONNecessary>ON Necessary</ONNecessary>
+    <ONUsable>ON Usable</ONUsable>
+    <Deposit>Deposit</Deposit>
+    <Adjustment>Adjustment</Adjustment>
+    <Level>Level</Level>
+    <NoOpenPosition>No Open Position</NoOpenPosition>
+    <FullyHedge>Fully Hedge</FullyHedge>
+    <CallPrice>Call Price</CallPrice>
+    <CutPrice>Cut Price</CutPrice>
+    <LevelInstrument>Instrument</LevelInstrument>
+    <LevelPL>P/L</LevelPL>
+    <LevelNetLot>Net Lot</LevelNetLot>
+    <LevelBuy>BUY</LevelBuy>
+    <LevelSell>SELL</LevelSell>
+    <LevelRateIn>RateIn</LevelRateIn>
+    <LevelRateOut>RateOut</LevelRateOut>
+    <LevelLot>Lot</LevelLot>
+    <LevelAverage>Average</LevelAverage>
+    <OpenList>Open List</OpenList>
+    <Date>Date</Date>
+    <OrderCode>Order Code</OrderCode>
+    <Item>Item</Item>
+    <BuySell>B/S</BuySell>
+    <Lot>Lot</Lot>
+    <Price>Price</Price>
+    <RefPrice>Ref</RefPrice>
+    <Commission>Comm.</Commission>
+    <Levy>Levy</Levy>
+    <Interest>Interest</Interest>
+    <Storage>Storage</Storage>
+    <TradePL>Trade P/L</TradePL>
+    <RateIn>In</RateIn>
+    <RateOut>Out</RateOut>
+    <SubmitTime>Submit Time</SubmitTime>
+    <IsOpen>N/C</IsOpen>
+    <Item>Item</Item>
+    <LotBalance>LotBalance</LotBalance>
+    <SetPrice>Set Price</SetPrice>
+    <ContractSize>ContractSize</ContractSize>
+    <OrderType>Order Type</OrderType>
+    <OpenPosition>Open Position</OpenPosition>
+    <Dealer>Dealer</Dealer>
+    <ExecutePrice>Execute Price</ExecutePrice>
+    <ExecuteTime>Execute Time</ExecuteTime>
+    <OrderList>Open Position:</OrderList>
+    <CurrentTradeDayOrderList>Current TradeDay Order List:</CurrentTradeDayOrderList>
+    <LMTOrder>LMT Order:</LMTOrder>
+    <EndTime>End Time</EndTime>
+  </AccountStatus>
+</Languages>

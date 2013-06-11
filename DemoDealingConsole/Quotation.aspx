@@ -14,6 +14,16 @@
     <meta name="CODE_LANGUAGE" content="C#" />
     <meta name="vs_defaultClientScript" content="JavaScript" />
     <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+      <%
+        Response.Write( "<script>\r\n" );
+        Response.Write("var ProcessErrorStr = \"");
+        Response.Write(GetLanguage("ProcessError"));
+        Response.Write("\";");
+        Response.Write("var InitDataEmptyStr = \"");
+        Response.Write(GetLanguage("InitDataEmpty"));
+        Response.Write("\";");
+        Response.Write( "</script>\r\n" );
+        %>
     <script language="jscript" src="JavaScript/flexConst.js"></script>
     <script language="jscript" src="JavaScript/colorConst.js"></script>
     <script language="jscript" src="JavaScript/EnumDefine.js"></script>
@@ -185,17 +195,17 @@
     <!--OBJECT id="WebService" codeBase="./Cab/WebService.CAB" classid="clsid:71D67847-AD9F-4D54-99DD-B77ADFC60964" VIEWASTEXT>
 		</OBJECT-->
     <bgsound id="Sound" src="" loop="1">
-<OBJECT id=iGuid codeBase=./Cab/WebTools.CAB 
-classid=clsid:13B340F2-4172-49DD-A9DA-F4B579E6FB02>
+<OBJECT id="iGuid" codeBase="./Cab/WebTools.CAB" 
+classid="clsid:13B340F2-4172-49DD-A9DA-F4B579E6FB02">
 	</OBJECT>
 	
-<OBJECT id=iDataSet codeBase=./CAB/Data.CAB 
-classid=clsid:450006A1-4FFB-48DC-8C2C-FD8C86BF3A00>
+<OBJECT id="iDataSet" codeBase="./CAB/Data.CAB" 
+classid="clsid:450006A1-4FFB-48DC-8C2C-FD8C86BF3A00">
 	</OBJECT>
 	
-<OBJECT id=vsflexOrderPrint style="DISPLAY: none" 
-codeBase=./Cab/vsflex7.CAB#Version=7,0,1,160 height="100%" width="100%" 
-classid=clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949>
+<OBJECT id="vsflexOrderPrint" style="DISPLAY: none" 
+codeBase="./Cab/vsflex7.CAB#Version=7,0,1,160" height="100%" width="100%" 
+classid="clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949">
 	<PARAM NAME="_cx" VALUE="18759">
 	<PARAM NAME="_cy" VALUE="9684">
 	<PARAM NAME="_ConvInfo" VALUE="1">

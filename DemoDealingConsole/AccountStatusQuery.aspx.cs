@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 
 namespace iExchange.DealingConsole
 {
@@ -21,5 +22,16 @@ namespace iExchange.DealingConsole
         //    Page.Response.Write(accountComboList);
         //    Page.Response.Write("</SELECT>");
         //}
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
     }
 }

@@ -139,7 +139,8 @@ function AddOrderToOpenInterestListGrid(quotationFrm, order) {
     }
     if (!InStringArray(order.blotterCode, blotterCodeSelectedsForList)) return;
 
-	var interestGridColKey = quotationFrm.interestGridColKey;
+    var interestGridColKey = quotationFrm.interestGridColKey;
+    var commonLanguage = quotationFrm.commonLanguage; 
 	var vsflexGrid = vsflexOpenInterest;
 
 	vsflexGrid.Redraw = false;
@@ -147,7 +148,7 @@ function AddOrderToOpenInterestListGrid(quotationFrm, order) {
 	    var line = vsflexGrid.Rows;
 	    vsflexGrid.AddItem(line.toString());
 	    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(interestGridColKey.ContractSize)) = order.tran.contractSize;
-	    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(interestGridColKey.BS)) = order.isBuy ? "B" : "S";
+	    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(interestGridColKey.BS)) = order.isBuy ? commonLanguage["Buy"] : commonLanguage["Sell"];
 	    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(interestGridColKey.LotBalance)) = order.GetFormatLot2(order.lotBalance);
 	    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(interestGridColKey.Code)) = order.code;
 	    var account = order.GetAccount();
@@ -216,6 +217,7 @@ function FormatSummary() {
     sellSum = 0;
 
     var quotationFrm = GetQuotationFrm();
+    var commonLanguage = quotationFrm.commonLanguage;
     var lotDecimal = quotationFrm.oDealingConsole.LotDecimal;
     var interestGridColKey = quotationFrm.interestGridColKey;
     with (vsflexOpenInterest) {
@@ -224,7 +226,7 @@ function FormatSummary() {
             var lotBalance = TextMatrix(line, ColIndex(interestGridColKey.LotBalance));
             var executePrice = TextMatrix(line, ColIndex(interestGridColKey.ExecutePrice));
 
-            if (bs == "B") {
+            if (bs == commonLanguage["Buy"]) {
                 buyLot += parseFloat(lotBalance);
                 if (lotBalance != 0)
                     buySum += (parseFloat(lotBalance) * parseFloat(executePrice));

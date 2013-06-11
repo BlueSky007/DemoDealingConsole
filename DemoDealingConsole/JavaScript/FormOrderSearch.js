@@ -1,13 +1,16 @@
 ﻿var startDate;
 var endDate;
-var items = new Array("<All>", "DQ", "LMT", "MKT", "MOO", "MOC", "SYS");
+var items; //= new Array("<All>", "DQ", "LMT", "MKT", "MOO", "MOC", "SYS");
+var orderTypeComboList;
 
 function onLoad() {
     flexOrderSearchInit(window.QueryTypeSelect.value);
 
     //var quoteFrm = window.opener.parent.quotationFrm;oAccountGroups
     var quoteFrm = window.dialogArguments.parent.quotationFrm;
-
+    var comboListLanguage = quoteFrm.comboListLanguage;
+    orderTypeComboList = comboListLanguage["OrderTypeComboList"];
+    items = orderTypeComboList.split('|');
     
 
     var oOption = document.createElement("OPTION");
@@ -36,7 +39,8 @@ function onLoad() {
 
     for (var index = 0, count = items.length; index < count; index++) {
         var oOption = document.createElement("OPTION");
-        oOption.text = items[index];
+        var orderTypeItem = items[index].split(';');
+        oOption.text = orderTypeItem[1];
         oOption.value = index;
         oOption.selected = (index == "0");
         Select2.add(oOption);
@@ -80,7 +84,9 @@ function Query() {
 
     if (window.Select1.value == "" ||
 				window.Select2.value == "") {
-        alert("Please select a item.");
+        var quoteFrm = window.dialogArguments.parent.quotationFrm;
+        var messageLanguage = quoteFrm.messageLanguage;
+        alert(messageLanguage["SelectInstrumentAlert"]);
     }
     else {
         //var quoteFrm = window.opener.parent.quotationFrm;
@@ -138,6 +144,7 @@ function GetExecutedOrderByInstrumentResult(dataSet) {
     if (!table) return;
     vsflexGrid.Redraw = false;
     var rowHeightValue = quotationFrm.oDealingConsole.GetRowHeight(quotationFrm.optionGrid.SearchGrid);
+    var commonLanguage = quotationFrm.commonLanguage;
     var line = vsflexGrid.FixedRows;
     var iCount = table.Rows.Count;
     vsflexGrid.Rows = line + ((iCount > 0) ? iCount : 0);
@@ -147,13 +154,13 @@ function GetExecutedOrderByInstrumentResult(dataSet) {
             RowHeight(line) = rowHeightValue;
 
             TextMatrix(line, ColIndex(searchGridColKey.Item)) = dateSetRow("InstrumentCode");
-            TextMatrix(line, ColIndex(searchGridColKey.IsBuy)) = (dateSetRow("IsBuy") == true) ? "B" : "S";
-            TextMatrix(line, ColIndex(searchGridColKey.OpenClose)) = dateSetRow("OpenClose");
+            TextMatrix(line, ColIndex(searchGridColKey.IsBuy)) = (dateSetRow("IsBuy") == true) ? commonLanguage["Buy"] : commonLanguage["Sell"];
+            TextMatrix(line, ColIndex(searchGridColKey.OpenClose)) = dateSetRow("OpenClose") == "O" ? commonLanguage["Open"] : commonLanguage["Close"];
             TextMatrix(line, ColIndex(searchGridColKey.Lot)) = GetFormatLot2(dateSetRow("Lot").toString(), true, lotDecimal);
             TextMatrix(line, ColIndex(searchGridColKey.OrderCode)) = dateSetRow("OrderCode");
             TextMatrix(line, ColIndex(searchGridColKey.Account)) = dateSetRow("AccountCode");
             TextMatrix(line, ColIndex(searchGridColKey.Price)) = dateSetRow("ExecutePrice");
-            TextMatrix(line, ColIndex(searchGridColKey.Type)) = dateSetRow("OrderType");
+            TextMatrix(line, ColIndex(searchGridColKey.Type)) = GetOrderTypeCaption(orderTypeComboList, dateSetRow("OrderType").toString());
             TextMatrix(line, ColIndex(searchGridColKey.ExecuteTime)) = dateSetRow("ExecuteTime");
             TextMatrix(line, ColIndex(searchGridColKey.Relation)) = dateSetRow("Relation");
             TextMatrix(line, ColIndex(searchGridColKey.Dealer)) = (dateSetRow("approverID") == quotationFrm.oUserID ? "me" : "other");
@@ -185,6 +192,7 @@ function GetCancelledOrderByInstrumentResult(dataSet) {
     if (!table) return;
     vsflexGrid.Redraw = false;
     var rowHeightValue = quotationFrm.oDealingConsole.GetRowHeight(quotationFrm.optionGrid.SearchGridForCancelledOrder);
+    var commonLanguage = quotationFrm.commonLanguage; 
     var line = vsflexGrid.FixedRows;
     var iCount = table.Rows.Count;
     vsflexGrid.Rows = line + ((iCount > 0) ? iCount : 0);
@@ -194,13 +202,13 @@ function GetCancelledOrderByInstrumentResult(dataSet) {
             RowHeight(line) = rowHeightValue;
 
             TextMatrix(line, ColIndex(searchGridColKey.Item)) = dateSetRow("InstrumentCode");
-            TextMatrix(line, ColIndex(searchGridColKey.IsBuy)) = (dateSetRow("IsBuy") == true) ? "B" : "S";
-            TextMatrix(line, ColIndex(searchGridColKey.OpenClose)) = dateSetRow("OpenClose");
+            TextMatrix(line, ColIndex(searchGridColKey.IsBuy)) = (dateSetRow("IsBuy") == true) ? commonLanguage["Buy"] : commonLanguage["Sell"];
+            TextMatrix(line, ColIndex(searchGridColKey.OpenClose)) = dateSetRow("OpenClose") == "O" ? commonLanguage["Open"] : commonLanguage["Close"];
             TextMatrix(line, ColIndex(searchGridColKey.Lot)) = GetFormatLot2(dateSetRow("Lot").toString(), true, lotDecimal);
             TextMatrix(line, ColIndex(searchGridColKey.OrderCode)) = (dateSetRow("OrderCode") == null) ? "" : dateSetRow("OrderCode");
             TextMatrix(line, ColIndex(searchGridColKey.Account)) = dateSetRow("AccountCode");
             TextMatrix(line, ColIndex(searchGridColKey.Price)) = (dateSetRow("SetPrice") == null) ? "" : dateSetRow("SetPrice");
-            TextMatrix(line, ColIndex(searchGridColKey.Type)) = dateSetRow("OrderType");
+            TextMatrix(line, ColIndex(searchGridColKey.Type)) = GetOrderTypeCaption(orderTypeComboList, dateSetRow("OrderType").toString());
             TextMatrix(line, ColIndex(searchGridColKey.Relation)) = dateSetRow("Relation");
             TextMatrix(line, ColIndex(searchGridColKey.Reason)) = dateSetRow("Reason");
 

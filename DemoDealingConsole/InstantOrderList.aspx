@@ -144,7 +144,8 @@
                 </div>
             </td>
             <td id="_VariationTextTd" nowrap align="left">
-                Variation:
+               <%-- Variation:--%>
+                <asp:Label ID="VariationLable" runat="server"/>
                 <input id="_VariationText" onblur="onBlurEvent();" maxlength="19" style="width: 38px;
                     text-align: right" type="text" value="0" />
                 <input type="button" id="_IncreaseAutoPointsButton" name="_IncreaseAutoPointsButton"

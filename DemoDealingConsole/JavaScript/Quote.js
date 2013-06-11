@@ -463,9 +463,9 @@ function OnEnquiryAdjust()
 		TextAdjust.value = (priceTemp == null)?"":priceTemp.ToString();
 		if (!window.isProblematic) window.isProblematic = instrument.IsProblematic(priceTemp);
 		
-		if(window.isProblematic)
-		{
-			var args = new Array("Out of Range, accept the price?", "Accept", "Reject");
+		if(window.isProblematic) {
+		    var messageLanguage = quotationFrm.messageLanguage;
+		    var args = new Array(messageLanguage["LMTProcessAlert"], messageLanguage["AlertAcceptButton"], messageLanguage["AlertRejectButton"]);
 			window.isProblematic = !window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 		}
 		if(!window.isProblematic)

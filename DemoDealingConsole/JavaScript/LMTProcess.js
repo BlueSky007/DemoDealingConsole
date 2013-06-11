@@ -1,5 +1,8 @@
 
 function LMTInit() {
+    this.quotationFrm = dialogArguments[2];
+    var limitProcessGridLanguage = quotationFrm.limitProcessGridLanguage;
+
     var titleHeight = parseInt(window.dialogHeight) - oBodyLMT.clientHeight;
     window.dialogHeight = window.Table1.clientHeight + titleHeight + "px";
     window.dialogWidth = window.Table1.clientWidth + "px";
@@ -14,50 +17,50 @@ function LMTInit() {
         FixedCols = 0;
         Cols = 17;
 
-        TextMatrix(0, lColIndex) = "Unconfirm";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["Unconfirm"];
         ColKey(lColIndex) = "Unconfirm";
         ColWidth(lColIndex) = 800;
         ColDataType(lColIndex) = flexDTBoolean;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "A/C";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["Account"];
         ColKey(lColIndex) = "Account";
         ColWidth(lColIndex) = 1000;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "Order Date";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["OrderDate"];
         ColKey(lColIndex) = "OrderDate";
         ColWidth(lColIndex) = 1000;
         ColDataType(lColIndex) = flexDTDate;
         ColFormat(lColIndex) = "yyyy-MM-dd HH:mm:ss";
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "O/C";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["OpenClose"];
         ColKey(lColIndex) = "OpenClose";
         ColWidth(lColIndex) = 1000;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "Buy Lot";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["BuyLot"];
         ColKey(lColIndex) = "BuyLot";
         ColWidth(lColIndex) = 1000;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "Sell Lot";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["SellLot"];
         ColKey(lColIndex) = "SellLot";
         ColWidth(lColIndex) = 1000;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "Quote Policy";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["QuotePolicyCode"];
         ColKey(lColIndex) = "QuotePolicyCode";
         ColWidth(lColIndex) = 1410;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "Price";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["Price"];
         ColKey(lColIndex) = "Price";
         ColWidth(lColIndex) = 1000;
         lColIndex++;
 
-        TextMatrix(0, lColIndex) = "Message";
+        TextMatrix(0, lColIndex) = limitProcessGridLanguage["Message"];
         ColKey(lColIndex) = "Message";
         ColWidth(lColIndex) = 1000;
         ColHidden(lColIndex) = true;
@@ -74,7 +77,7 @@ function LMTInit() {
     }
     this.toolBarFrm = dialogArguments[0];
     this.orderTaskFrm = dialogArguments[1];
-    this.quotationFrm = dialogArguments[2];
+    
     this.oDealingConsole = dialogArguments[3];
 
     FillSelectInstrument();
@@ -101,7 +104,8 @@ function FillSelectInstrument() {
         while (control.options.length != 0) {
             control.options.remove(0);
         }
-        FillSelect(control, "Please select an item!", "");
+        var messageLanguage = this.quotationFrm.messageLanguage;
+        FillSelect(control, messageLanguage["SelectInstrumentAlert"], "");
         if (oInstruments != null) {
             var instruments = (new VBArray(oInstruments.Items())).toArray();
             for (var index = 0, count = instruments.length; index < count; index++) {
@@ -134,6 +138,7 @@ function InitControlStatus() {
 function Fill(orders) {
     GetInstrument();
     if (!window.instrument) return;
+    var commonLanguage = this.quotationFrm.commonLanguage;
     for (var index in orders) {
         var account = orders[index].GetAccount();
 
@@ -141,7 +146,7 @@ function Fill(orders) {
         vsflexLMT.AddItem("");
         vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("Account")) = account ? account.code : orders[index].accountID;
         vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("OrderDate")) = GetDateTimeString(orders[index].tran.submitTime, "DateTime"); //.getVarDate();
-        vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("OpenClose")) = orders[index].isOpen ? "O" : "C";
+        vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("OpenClose")) = orders[index].isOpen ? commonLanguage["Open"] : commonLanguage["Close"];
         if (orders[index].isBuy == true)
             vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("BuyLot")) = orders[index].GetFormatLot2(orders[index].lot);
         else
@@ -168,7 +173,7 @@ function Fill(orders) {
             }
         }
 
-        vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("Message")) = OrderStatus.GetOrderStatusString(orders[index].status);
+        vsflexLMT.TextMatrix(line, vsflexLMT.ColIndex("Message")) = OrderStatus.GetOrderStatusString(orders[index].status, this.quotationFrm.commonLanguage);
         vsflexLMT.RowData(line) = orders[index];
 
         SetRowForeColor(vsflexLMT, line, orders[index].isBuy ? color_blue : color_red);
@@ -194,8 +199,8 @@ function Fill(orders) {
             window.textAsk.value = window.instrument.overrideQuotation.ask.ToString();
     }
 
-    window.labelSell.innerText = "Tatol sell: " + GetTotalLot(orders, true);
-    window.labelBuy.innerText = "Tatol buy: " + GetTotalLot(orders, false);
+    window.labelSell.innerText = commonLanguage["TotalSell"] + ":" + GetTotalLot(orders, true);
+    window.labelBuy.innerText = commonLanguage["TotalBuy"] + ":" + GetTotalLot(orders, false);
 
     //this.orderType = orders[0].tran.orderType;
     //this.owner = dialogArguments[1];
@@ -338,7 +343,9 @@ function OnLMTApply() {
         }
     }
     if (isProblematic) {
-        var args = new Array("Out of Range, accept the price?", "Accept", "Reject");
+        var quotationFrm = dialogArguments[2];
+        var messageLanguage = quotationFrm.messageLanguage;
+        var args = new Array(messageLanguage["LMTProcessAlert"], messageLanguage["AlertAcceptButton"], messageLanguage["AlertRejectButton"]);
         isProblematic = !window.showModalDialog("Confirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
     }
     if (!isProblematic) {
@@ -376,7 +383,8 @@ function OnLMTExecute() {
         }
     }
     if (isProblematic) {
-        var args = new Array("Out of Range, accept the price?", "Accept", "Reject");
+        var messageLanguage = quotationFrm.messageLanguage;
+        var args = new Array(messageLanguage["LMTProcessAlert"], messageLanguage["AlertAcceptButton"], messageLanguage["AlertRejectButton"]);
         isProblematic = !window.showModalDialog("Confirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
     }
     if (!isProblematic) {
@@ -420,7 +428,7 @@ if(order.isBuy == true)
 vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("BuyLot")) = order.lot;
 else
 vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("SellLot")) = order.lot;
-vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString( order.status );
+vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString( order.status, this.quotationFrm.commonLanguage );
 var window.instrument = order.GetInstrument();
 if(window.instrument.lastQuotation)
 {
@@ -485,7 +493,7 @@ window.textAsk.disabled = !isActive;
 //we conside all the orders is same status for LMT
 for(var line=vsflexGrid.FixedRows; line<vsflexGrid.Rows; line++)
 {
-vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString( order.status );
+vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex("Message")) = OrderStatus.GetOrderStatusString( order.status, this.quotationFrm.commonLanguage );
 }
 }
 */

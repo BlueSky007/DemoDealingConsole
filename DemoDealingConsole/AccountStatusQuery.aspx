@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
 <head>
-    <title>Account Status Query</title>
+    <title><%=GetLanguage("AccountStatusQueryPage")%></title>
     <meta name="GENERATOR" content="Microsoft Visual Studio 7.0">
     <meta name="vs_defaultClientScript" content="JavaScript">
     <meta name="CODE_LANGUAGE" content="C#">
@@ -26,7 +26,7 @@
     <table border="0" cellsapcing="0" cellpadding="0" width="80%" align="center">
         <tr>
             <td class="Desc" align="middle" width="100%" height="15px">
-                <b>&nbsp;&nbsp;&nbsp;Account Status Query</b>
+                <b>&nbsp;&nbsp;&nbsp;<%=GetLanguage("AccountStatusQueryPage")%></b>
             </td>
         </tr>
     </table>
@@ -35,7 +35,7 @@
     <table border="0" cellsapcing="0" cellpadding="0" width="100%" align="center">
         <tr>
             <td style="width: 67px; height: 28px; " align="right">
-                Account
+                <%=GetLanguage("Account")%>
             </td>
             <td style="width: 120px; height: 28px" valign="middle" align="left">
                 <object id="AccountSelectGrid" style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px;
@@ -215,17 +215,17 @@
                     <option value='0'>Please select Account to query.</option>
                 </select>--%>
                 <input type="checkbox" id="_RealtimeCalculateCheckbox" name="_RealtimeCalculateCheckbox"
-                    onchange="RealtimeCalculateCheckbox_OnChange();" checked />Realtime Calculate
-                &nbsp;Interval:<input type="text" id="_IntervalText" name="_IntervalText" value="15" size="6" maxlength="5" />(unit: second)
+                    onchange="RealtimeCalculateCheckbox_OnChange();" checked /><%=GetLanguage("RealtimeCalculate")%>
+                &nbsp;<%=GetLanguage("Interval")%>:<input type="text" id="_IntervalText" name="_IntervalText" value="15" size="6" maxlength="5" /><%=GetLanguage("UnitMsg")%>
             </td>
             <td>
-               <input type="button" style="width:86px" id="ChangePriceForFPLCalcButton" name="ChangePriceForFPLCalcButton" onclick="ChangePriceForFPLCalcButton_OnClick();" value="ChangePrice" style="width: 170px">
+               <input type="button" style="width:86px" id="ChangePriceForFPLCalcButton" name="ChangePriceForFPLCalcButton" onclick="ChangePriceForFPLCalcButton_OnClick();" value="<%=GetLanguage("ChangePrice")%>" style="width: 170px">
 				<select id="selectPrice">
-					<option id="UseMarketPrice" value="0">UseMarketPrice</option>
-					<option id="UsePrices" value="1">UserPrice</option>
+					<option id="UseMarketPrice" value="0"><%=GetLanguage("UseMarketPrice")%></option>
+					<option id="UsePrices" value="1"><%=GetLanguage("UserPrice")%></option>
 				</select>
                 &nbsp;<input type="button" id="QueryButton" name="QueryButton" onclick="btnQuery_onclick();"
-                    value="Query" style="width: 86px">
+                    value="<%=GetLanguage("Query")%>" style="width: 86px">
             </td>
         </tr>
     </table>

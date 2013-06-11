@@ -1,4 +1,4 @@
-function ColumnParameter(colKey, colWidth, colHidden) {
+﻿function ColumnParameter(colKey, colWidth, colHidden) {
     this.ColKey = colKey;
     this.ColWidth = colWidth;
     this.ColHidden = colHidden;
@@ -33,8 +33,8 @@ function OptionGridLanguage() {
     this.QuotationTaskGrid = "Quotation Task";
     this.QuotePolicyGrid = "QuotePolicyGrid";
     this.SourceLevelAdjustmentGrid = "SourceLevelAdjustmentGrid";
-    this.OrderGrid = "Order";
-    this.HistoryGrid = "History";
+    this.OrderGrid = "单子";
+    this.HistoryGrid = "历史";
     this.PropertiesGrid = "Properties";
     this.SearchGrid = "SearchGrid";
     this.SearchGridForCancelledOrder = "SearchGridForCancelledOrder";
@@ -98,7 +98,7 @@ function InstrumentPropertyColKey() {
 
 function InstrumentPropertyLanguage() {
     this.MaxSpreadPoints = "Max Spread";
-    this.SpreadPoints = "Spread";
+    this.SpreadPoints = "点差";
     this.SpreadPoints2 = "Spread1";
     this.SpreadPoints3 = "Spread2";
     this.SpreadPoints4 = "Spread3";
@@ -176,10 +176,10 @@ function InstrumentColKey() {
 
 function InstrumentLanguage() {
     this.ID = "";
-    this.Item = "Item";
-    this.Time = "Time";
-    this.SourceBid = "Bid Source";
-    this.SourceAsk = "Ask Source";
+    this.Item = "交易项目";
+    this.Time = "时间";
+    this.SourceBid = "卖";
+    this.SourceAsk = "买";
     this.Source = "Source";
     this.Adjust = "Adjust";
     this.Bid = "Bid";
@@ -206,8 +206,7 @@ function InstrumentLanguage() {
     }
 }
 
-function SourceLevelAdjustmentGridColKey()
-{
+function SourceLevelAdjustmentGridColKey() {
     this.OriginCode = "OriginCode";
     this.IncreaseAutoAdjustPoints = "IncreaseAutoAdjustPoints";
     this.DecreaseAutoAdjustPoints = "DecreaseAutoAdjustPoints";
@@ -217,7 +216,7 @@ function SourceLevelAdjustmentGridColKey()
 
 function SourceLevelAdjustmentGridLanguage() {
     this.OriginCode = "Auto Pts";
-    this.IncreaseAutoAdjustPoints = "Up";
+    this.IncreaseAutoAdjustPoints = "上升";
     this.DecreaseAutoAdjustPoints = "Dn";
     this.ReferenceAutoAdjustPoints = "Ref Auto Pts";
     this.InstrumentCodes = "";
@@ -240,7 +239,7 @@ function QuotePolicyGridColKey() {
 function QuotePolicyGridLanguage() {
     this.Item = "";
     this.Bid = "Bid";
-    this.Ask = "Ask";
+    this.Ask = "买";
     this.AutoAdjustPoints = "AP";
     this.IncreaseAutoAdjustPoints = "+";
     this.DecreaseAutoAdjustPoints = "-";
@@ -322,14 +321,14 @@ function OrderGridColKey() {
 }
 
 function OrderGridLanguage() {
-    this.DQAccept = "DQ Order";
+    this.DQAccept = "DQ 单";
     this.DQReject = "DQ Order";
     this.OrderPlacing = "LMT Order";
     this.OrderPending = "LMT Order";
     this.OrderCanceled = "LMT Order";
     this.OrderExecuted = "LMT Order";
     this.Order = "";
-    this.Item = "Item";
+    this.Item = "交易项目";
     this.Time = "Time";
     this.SubmitTime = "Submit Time";
     this.Account = "Account";
@@ -354,8 +353,8 @@ function OrderGridLanguage() {
 }
 
 function HistoryGridColKey() {
-    this.Bid = "Bid";
-    this.Ask = "Ask";
+    this.Bid = "卖";
+    this.Ask = "买";
     this.Time = "Time";
     this.Source = "Source";
     this.Key = "Key";
@@ -385,7 +384,7 @@ function SearchGridColKey() {
 }
 
 function SearchGridLanguage() {
-    this.Item = "Item";
+    this.Item = "交易项目";
     this.IsBuy = "B/S";
     this.OpenClose = "O/C";
     this.Lot = "Lot";
@@ -473,7 +472,7 @@ function GroupNetPositionGridLanguage() {
 }
 
 function ExecuteOrderSummaryGridColKey() {
-    this.Range = "Range";
+    this.Range = "范围";
     this.OrderCount = "OrderCount";
     this.SellAvgPrice = "SellAvgPrice";
     this.SellLot = "SellLot";
@@ -543,13 +542,13 @@ function InstantOrderListGridColKey() {
 
 function InstantOrderListGridLanguage() {
     this.Status = "";
-    this.AcceptAction = "Accept";
+    this.AcceptAction = "接受";
     this.DiffPrice = "Diff";
-    this.RejectAction = "Reject";
+    this.RejectAction = "取消";
     this.SubmitTime = "";
     this.AccountCode = "";
-    this.SetPrice = "Price";
-    this.Lot = "Lot";
+    this.SetPrice = "价格";
+    this.Lot = "手数";
     this.IsOpen = "O/C";
     this.QuotePolicyCode = "QuotePolicy";
     this.DQMaxMove = "";
@@ -716,143 +715,4 @@ function CustomerPolicyManagementGridLanguage() {
     this.SalesCode = "Sales Code";
     this.SalesQuotePolicyCode = "Sales Quote Policy";
     this.SalesDealingPolicyCode = "Sales Dealing Policy";
-}
-//Add by Erric Only Langauge
-function LimitProcessGridLanguage() {
-    this.Unconfirm = "Unconfirm";
-    this.Account = "A/C";
-    this.OrderDate = "Order Date";
-    this.OpenClose = "O/C";
-    this.BuyLot = "Buy Lot";
-    this.SellLot = "Sell Lot";
-    this.QuotePolicyCode = "Quote Policy";
-    this.Price = "Price";
-    this.Message = "Message";
-}
-
-function CommonLanguage() {
-    this.Ok = "Ok";
-    this.Cancel = "Cancel";
-    this.Go = "Go";
-    this.Buy = "B";
-    this.Sell = "S";
-    this.Open = "O";
-    this.Close = "C";
-    this.TotalBuy = "Total Buy";
-    this.TotalSell = "Total Sell";
-    this.ExecuteAllButton = "Execute All";
-    this.VariationLable = "Variation";
-    this.Column = "Column";
-    this.ColWidth = "Width";
-    this.ColHidden = "Hidden";
-    this.InstrumentCode = "Code";
-    this.Timestamp = "Time";
-    this.Origin = "Origin";
-    this.Select = "Select";
-    this.Instrument = "Instrument";
-    this.ParameterName = "Name";
-    this.ParameterValue = "Value";
-    this.Lot = "Lot";
-    this.Quantity = "Quantity";
-    this.OnAcceptQutation = "accept(Y)";
-    this.OnDiscardQutation = "discard(N)";
-    this.OnAbandonQutation = "aBandon";
-    this.OnUpdateQutation = "Update";
-    this.OnModifyQutation = "Modify";
-    this.OnSendQutation = "Send";
-    this.OnModify2Qutation = "Modify";
-    this.Inactive = "Inactive";
-    this.OutOfRange = "Out Of Range";
-    this.Enquiry = "Enquiry";
-    this.Enquiry2 = "Enquiry2";
-
-    this.AcceptCaption = "Accept";
-    this.RejectCaption = "Reject";
-    this.DetailCaption = "Detail";
-    this.uPdateCaption = "uPdate";
-    this.modiFyCaption = "modiFy";
-    this.waItCaption = "waIt";
-    this.ExecuteCaption = "Execute";
-    this.CancelCaption = "Cancel";
-
-    this.Placing = "Placing";
-    this.Placed = "Pending";
-    this.Canceled = "Canceled";
-    this.Executed = "Executed";
-    this.Completed = "Completed";
-    this.Deleted = "Deleted";
-    this.WaitServerResponse = "Wait server response";
-    this.Deleting = "Deleting";
-    this.WaitOutPriceDQ = "Out of HiLo, Accept or Reject?";
-    this.WaitOutLotDQ = "Accept or Reject?";
-    this.WaitOutPriceLMT = "Out of HiLo, Wait or Execute?";
-    this.WaitOutLotLMTOrigin = "Update, Wait or Execute?";
-    this.WaitOutLotLMT = "Update, Modify, Wait or Execute?";
-    this.SendFailed = "Send failed.";
-    this.WaitNextPrice = "Wait for price.";
-    this.WaitTime = "Wait time arrive.";
-    this.TimeArrived = "Time arrived, wait response.";
-    this.WaitAcceptRejectPlace = "Accept or Reject Place?";
-    this.WaitAcceptRejectCancel = "Accept or Reject Cancel?";
-    this.WaitAutoExecuteDQ = "Wait for price.";
-    this.InputNewPrice = "Input new price";
-    this.InputLotMustLessThan = "Input lot must less than.";
-    this.ClientCode ="Client";
-    this.BSStatus = "BS";
-    this.QuotePolicy = "QuotePolicy";
-    this.Bid = "Bid";
-    this.Ask = "Ask";
-    this.AnswerLot = "Answer Lot";
-    this.SelectAccount = "Select Account";
-    this.SelectAccountName = "Select Account Name";
-    this.AccountStatusMsg = "Please select Account to query!";
-}
-
-function ComboListLanguage() {
-    this.Reject = "Reject";
-    this.Resume = "Resume";
-    this.Suspend = "Suspend";
-    this.AllowLMT = "Allow";
-    this.DisAllowLMT = "Disallow";
-    this.OrderTypeComboList = "None;None|SPT;DQ|LMT;LMT|MKT;MKT|MOO;MOO|MOC;MOC|SYS;SYS";
-
-    this.PriceTypeComboList = "#1;One Price|#3;BidAsk";
-    this.OriginTypeComboList = "#0;Bid|#1;Ask|#2;(Bid+Ask)/2";
-    this.AllowedOrderSidesComboList = "#0;None|#1;Buy|#2;Sell|#3;All";
-    this.AllowedNewTradeSidesTypeComboList = "#0;Disallow add New|#1;Allow add new Buy only|#2;Allow add new Sell only|#3;Allow add new";
-}
-
-function MessageLanguage() {
-    this.AlertContent = "Are you sure?";
-    this.AlertYesButton = "  Yes  ";
-    this.AlertNoButton = "  No  ";
-    this.ExecuteAllMsg = "Please select origin code.";
-    this.ExecuteAllAlert = "Origin is not available!";
-    this.LMTProcessAlert = "Out of Range, accept the price?";
-    this.AlertAcceptButton = "Accept";
-    this.AlertRejectButton = "Reject";
-    this.ProcessError = "You have been signed out of the system, because:\n -  you may sign in at other location; or \n -  the server is refreshing its connection with you!";
-    this.InitDataError = "Init Data is empty!";
-    this.FailedUpdateInstrument = "Failed to Update Instrument!";
-    this.FailedUpdateParameter = "Failed to Update Instrument Parameter";
-    this.NoDataEffectMsg = "Not data is effected!";
-    this.ResumeFailed = "Failed to Resume";
-    this.SuspendFailed = "Failed to Suspend";
-    this.AllowLMTFailed = "Failed to Allow Limit";
-    this.DisallowLMTFailed = "Failed to Disallow Limit";
-    this.SetAutoToManualFailed = "Failed to From Auto To Manual";
-    this.FailedUpdateQuotePoliyDetail = "Failed to Update QuotePolicyDetail!"
-    this.UpdateQuotePolicAlert = "AutoPoints/Spread should not be greater than the MaxAutoPoints/MaxSpreadPoints";
-    this.CancelTransactionMsg = "The order is canceled already";
-    this.CancelTransactionFailed = "Failed to cancel order!";
-    this.ComfirmCancelTransactionMsg = "Failed to send order to cancel!";
-    this.RejectCancelLmtOrderAlert = "Failed to Reject Cancel Lmt Order!";
-    this.RejectCancelLmtOrderMsg = "Succeed to Reject Cancel Lmt Order!";
-    this.UpdateSystemParametersMsg = "UpdateSystemParameters Failed!";
-    this.UpdateEnquiryOutTimeMsg = "UpdateEnquiryOutTime Failed!";
-    this.SetActiveSourceInstrumentMsg = "Succeed to Set Active Source!";
-    this.SetActiveSourceInstrumentAlert = "Failed to Set Active Source!";
-    this.UpdateDealingPolicyDetailMsg = "Succeed to Update Dealing Policy Detail!";
-    this.UpdateDealingPolicyDetailAlert = "Failed to Update Dealing Policy Detail!";
-    this.SelectInstrumentAlert = "Please select a item.";
 }

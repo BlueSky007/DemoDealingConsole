@@ -244,6 +244,12 @@ var customerPolicyManagementGridLanguage = new CustomerPolicyManagementGridLangu
 var blotterSelectionGridColKey = new BlotterSelectionGridColKey();
 var blotterSelectionGridLanguage = new BlotterSelectionGridLanguage();
 
+//Add by Erric Common Language List
+var limitProcessGridLanguage = new LimitProcessGridLanguage();
+var commonLanguage = new CommonLanguage();
+var messageLanguage = new MessageLanguage();
+var comboListLanguage = new ComboListLanguage();
+
 var quotationTaskFrm = null;
 var vsflexQuotationTask = null;
 var vsflexOrderTask = null;
@@ -341,6 +347,7 @@ function TradeDayReset() {
     CanDealerViewAccountInfo = false;
     MooMocAcceptDuration = null;
     LotDecimal = 2.00;
+    LanguageString = "en";
     MooMocCancelDuration = null;
     QuotePolicyDetailID = "";
     currentTradeDay = null;
@@ -631,6 +638,7 @@ function DealingConsole() {
     this.mainWindow = null;
     this.RedirectCount = 0;
     this.LotDecimal = 2.00;
+    this.LanguageString = "en";
 
     this.CloseAllEnquiryWindow = function () {
         if (this.EnquiryManager != null) {
@@ -639,6 +647,7 @@ function DealingConsole() {
     };
 
     this.InitApp = function (window) {
+
         /*simulator data
         for(var i=0,count=10;i<count;i++)
         {
@@ -876,8 +885,69 @@ function DealingConsole() {
             }
         }
     };
-    
+
     //----------------------------------------------------------------------------------
+    this.SettingGridLanguage = function (obj, languageXml, gridNodeName, isDeletedNode) {
+        var xmlNodeTable = languageXml.getElementsByTagName(gridNodeName)[0];
+        if (xmlNodeTable == null) return languageXml;
+
+        for (prop in obj) {
+            if (obj[prop] == "") continue;
+            var xmlRows = xmlNodeTable.childNodes;
+            for (var i = 0, length = xmlRows.length; i < length; i++) {
+                var xmlNodeRow = xmlRows[i];
+                var key = xmlNodeRow.getAttribute("key");
+                if (key == prop) {
+                    var caption = xmlNodeRow.getAttribute("value");
+                    obj[prop] = caption;
+                    if (isDeletedNode) {
+                        xmlNodeTable.removeChild(xmlNodeRow);
+                    }
+                    break;
+                }
+            }
+        }
+        if (isDeletedNode) {
+            languageXml.removeChild(xmlNodeTable);
+        }
+        return languageXml;
+    };
+    //Add by Erric
+    this.InitLanguageXml = function (xmlData) {
+
+        var languageXml = xmlData.getElementsByTagName("Languages")[0];
+        if (languageXml == null) return;
+
+        languageXml = this.SettingGridLanguage(instrumentPropertyLanguage, languageXml, "InstrumentPropertyGrid", true);
+        languageXml = this.SettingGridLanguage(instrumentLanguage, languageXml, "QuotationGrid", true);
+        for (var prop in instrumentPropertyLanguage) {
+            instrumentLanguage[prop] = instrumentPropertyLanguage[prop];
+        }
+        languageXml = this.SettingGridLanguage(optionGridLanguage, languageXml, "OptionGrid", true);
+        languageXml = this.SettingGridLanguage(quotationTaskGridLanguage, languageXml, "QuotationTaskGrid", true);
+        languageXml = this.SettingGridLanguage(quotePolicyGridLanguage, languageXml, "QuotePolicyGrid");
+        languageXml = this.SettingGridLanguage(sourceLevelAdjustmentGridLanguage, languageXml, "SourceLevelAdjustmentGrid", true);
+        languageXml = this.SettingGridLanguage(orderGridLanguage, languageXml, "OrderGrid", true);
+        languageXml = this.SettingGridLanguage(historyGridLanguage, languageXml, "HistoryGrid", true);
+        languageXml = this.SettingGridLanguage(searchGridLanguage, languageXml, "SearchGrid", false);
+        languageXml = this.SettingGridLanguage(searchGridLanguageForCancelledOrder, languageXml, "SearchGrid", true);
+        languageXml = this.SettingGridLanguage(interestGridLanguage, languageXml, "InterestGrid", true);
+        languageXml = this.SettingGridLanguage(groupNetPositionGridLanguage, languageXml, "GroupNetPositionGrid", true);
+        languageXml = this.SettingGridLanguage(interestSummaryGridLanguage, languageXml, "InterestSummaryGrid", true);
+        languageXml = this.SettingGridLanguage(executeOrderSummaryGridLanguage, languageXml, "ExecuteOrderSummaryGrid", true);
+        languageXml = this.SettingGridLanguage(instantOrderListGridLanguage, languageXml, "InstantOrderListGrid", true);
+        languageXml = this.SettingGridLanguage(executedGridLanguage, languageXml, "ExecutedGrid", true);
+        languageXml = this.SettingGridLanguage(unclosedOrderGridLanguage, languageXml, "UnclosedOrderGrid", true);
+        languageXml = this.SettingGridLanguage(orderPrintGridLanguage, languageXml, "OrderPrintGrid", true);
+        languageXml = this.SettingGridLanguage(dealingPolicyDetailGridLanguage, languageXml, "DealingPolicyDetailGrid", true);
+        languageXml = this.SettingGridLanguage(customerPolicyManagementGridLanguage, languageXml, "CustomerPolicyManagementGrid", true);
+        languageXml = this.SettingGridLanguage(blotterSelectionGridLanguage, languageXml, "BlotterSelectionGrid", true);
+        languageXml = this.SettingGridLanguage(limitProcessGridLanguage, languageXml, "LimitProcessGrid", true);
+        languageXml = this.SettingGridLanguage(commonLanguage, languageXml, "Common", true);
+        languageXml = this.SettingGridLanguage(messageLanguage, languageXml, "Message", true);
+        languageXml = this.SettingGridLanguage(comboListLanguage, languageXml, "ComboList", true);
+        
+    };
     this.InitCommandInfo = function (xmlData) {
         var commandInfo = new Object();
         commandInfo.commandSequence = 0;
@@ -1369,6 +1439,7 @@ function DealingConsole() {
 
 
     this.InitData_Xml = function (xmlData, isInitUi) {
+        this.LanguageString = xmlData.getAttribute("Language");
         var commandInfo = new Object();
         commandInfo.commandSequence = 0;
         commandInfo.userID = null;
@@ -1381,6 +1452,11 @@ function DealingConsole() {
         vsflexOrderTask.Redraw = false;
 
         var xmlNodeTable;
+        //Add by Erric
+
+        this.InitLanguageXml(xmlData);
+
+
         commandInfo = this.InitCommandInfo(xmlData);
         this.InitSourceInstrument(xmlData);
         if (window.parent.toolBarFrm) {
@@ -5483,6 +5559,7 @@ function DealingConsole() {
         this.mainWindow.parent.quotationFrm.FlexQuotationInit();
         this.mainWindow.parent.orderTaskFrm.OrderTaskInit();
         this.mainWindow.parent.quotationTaskFrm.QuotationTaskInit();
+        //this.mainWindow.parent.QuotePolicyFrm.SettingLanguage();
         this.mainWindow.parent.QuotePolicyFrm.QuotePolicyInit();
         this.mainWindow.parent.SourceLevelAdjustmentFrm.SourceLevelAdjustmentInit();
         this.mainWindow.parent.propertyFrm.HistoryInit();

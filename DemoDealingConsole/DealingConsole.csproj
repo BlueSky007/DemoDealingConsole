@@ -173,6 +173,7 @@
       <DependentUpon>Kickout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Language.cs" />
+    <Compile Include="Language\LanguageHelper.cs" />
     <Compile Include="LMTProcess.aspx.designer.cs">
       <DependentUpon>LMTProcess.aspx</DependentUpon>
     </Compile>
@@ -364,6 +365,13 @@
     <Content Include="JavaScript\updateHistoryQuotation.js" />
     <Content Include="JavaScript\UpdateHighLowBatchProcessInfo.js" />
     <Content Include="Kickout.aspx" />
+    <Content Include="Language\Language.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Language\Language.zh-CHS.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Language\Language.zh-CHT.xml" />
     <Content Include="LMTProcess.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ManagementFrame.aspx" />

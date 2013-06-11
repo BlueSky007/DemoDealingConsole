@@ -26,6 +26,9 @@ function EnquiryInit() {
 	
 	var IsCustomerVisibleToDealer = dialogArguments[2];
 	var lColIndex = 0;
+	window.ownerWindow = window.dialogArguments[0];
+	window.ownerWindow.enquiryWindow = window;
+	var commonLanguage = window.ownerWindow.parent.quotationFrm.commonLanguage;
 	with (vsflexEnquiry)
 	{
 		//Fill ColKey
@@ -34,44 +37,44 @@ function EnquiryInit() {
 		FixedCols = 0;
 		Cols = 8;
 	    
-		TextMatrix(0, lColIndex) = "Select";
+		TextMatrix(0, lColIndex) = commonLanguage["Select"];
 		ColKey(lColIndex) = "Select";
 		ColWidth(lColIndex) = 800;
         ColDataType(lColIndex) = flexDTBoolean;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Client";
+
+		TextMatrix(0, lColIndex) = commonLanguage["ClientCode"];
 		ColKey(lColIndex) = "ClientCode";
 		ColHidden(lColIndex) = !IsCustomerVisibleToDealer;
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
-	    
-	    TextMatrix(0, lColIndex) = "BS";
+
+		TextMatrix(0, lColIndex) = commonLanguage["BSStatus"];
 		ColKey(lColIndex) = "BSStatus";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "QuotePolicy";
+
+		TextMatrix(0, lColIndex) = commonLanguage["QuotePolicy"];
 		ColKey(lColIndex) = "QuotePolicy";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Bid";
+
+		TextMatrix(0, lColIndex) = commonLanguage["Bid"];
 		ColKey(lColIndex) = "Bid";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
-	    
-		TextMatrix(0, lColIndex) = "Ask";
+
+		TextMatrix(0, lColIndex) = commonLanguage["Ask"];
 		ColKey(lColIndex) = "Ask";
 		ColWidth(lColIndex) = 1000;
 		lColIndex ++;
 
-		TextMatrix(0, lColIndex) = "Enquire Lot";
+		TextMatrix(0, lColIndex) = commonLanguage["Lot"];
 		ColKey(lColIndex) = "Lot";
 		ColWidth(lColIndex) = 1000;
 		lColIndex++;
 
-		TextMatrix(0, lColIndex) = "Answer Lot";
+		TextMatrix(0, lColIndex) = commonLanguage["AnswerLot"];
 		ColKey(lColIndex) = "AnswerLot";
 		ColWidth(lColIndex) = 200;
 		lColIndex++;
@@ -83,8 +86,7 @@ function EnquiryInit() {
 		Editable = flexEDKbdMouse;
 	}
 	
-	window.ownerWindow = window.dialogArguments[0];
-	window.ownerWindow.enquiryWindow = window;
+	
 	
 	var enquirys = window.dialogArguments[1];
 	if(!enquirys || !enquirys.length)
@@ -397,7 +399,8 @@ function OnEnquiryAdjust()
 	var oldValue = LabelSource.innerText;
 	if(oldValue)
 	{
-		var quotationFrm = window.ownerWindow.parent.quotationFrm;
+	    var quotationFrm = window.ownerWindow.parent.quotationFrm;
+	    var messageLanguage = quotationFrm.messageLanguage;
 		var adjustPriceString = GetAdjustPrice(newValue, oldValue, instrument.numeratorUnit, instrument.denominator);
 		//var priceTemp = new Price();
 		//priceTemp.Normalize(adjustPriceString, instrument.numeratorUnit, instrument.denominator);
@@ -424,7 +427,7 @@ function OnEnquiryAdjust()
 		
 		if(window.isProblematic)
 		{
-			var args = new Array("Out of Range, accept the price?", "Accept", "Reject");
+		    var args = new Array(messageLanguage["LMTProcessAlert"], messageLanguage["AlertAcceptButton"], messageLanguage["AlertRejectButton"]);
 			window.isProblematic = !window.showModalDialog("Confirm.aspx", args,"status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 		}
 		

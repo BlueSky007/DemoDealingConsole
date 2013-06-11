@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-    <title>Dealing Policy</title>
+    <title><%=GetLanguage("DealingPolicyPage")%></title>
     <style>
         #_SaveButton
         {
@@ -182,7 +182,7 @@
         <tr>
             <td>
                 <input type="radio" id="_DealingPolicyRadio" value="V1" name="_Category" checked="checked"
-                    onclick="ChangeBy();" />By DealingPolicy
+                    onclick="ChangeBy();" /><%=GetLanguage("ByDealingPolicy")%>
             </td>
             <td colspan="2">
                 <select id="_DealingPolicySelect" name="_DealingPolicySelect" style="text-align: right;
@@ -191,13 +191,13 @@
                 </select>
             </td>
             <td colspan="6" align="left">
-                <input type="button" id="_QueryButton" value="Query" onclick="QueryButton_OnClick();" style="width: 70px;"/>
+                <input type="button" id="_QueryButton" value="<%=GetLanguage("Query") %>" onclick="QueryButton_OnClick();" style="width: 70px;"/>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="radio" id="_InstrumentRadio" value="V1" name="_Category" onclick="ChangeBy();" />By
-                Instrument
+                <input type="radio" id="_InstrumentRadio" value="V1" name="_Category" onclick="ChangeBy();" />
+                <%=GetLanguage("ByInstrument")%>
             </td>
             <td colspan="2">
                 <select id="_InstrumentSelect" name="_InstrumentSelect" style="text-align: right;
@@ -205,19 +205,19 @@
                 </select>
             </td>
             <td colspan="6" align="left">
-                <input type="button" id="_Query2Button" value="Query" onclick="QueryButton_OnClick();" style="width: 70px;"/>
+                <input type="button" id="_Query2Button" value="<%=GetLanguage("Query") %>" onclick="QueryButton_OnClick();" style="width: 70px;"/>
             </td>
         </tr>
         <%--</table>
     <table class="style1" style="font-size: smaller; border=1">--%>
         <tr>
             <td class="style6" colspan="9" style="font-weight: bold">
-                Batch Process:
+               <%=GetLanguage("BatchProcess")%>:
             </td>
         </tr>
         <tr>
             <td class="style32">
-                Max DQ Lot:
+                <%=GetLanguage("MaxDQLot")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_MaxDQLotText" name="_MaxDQLotText" value="100" style="text-align: right;
@@ -225,17 +225,17 @@
             </td>
             <td class="style15">
                 <input type="button" id="_MaxDQLotAddButton" name="_MaxDQLotAddButton" style="width: 70px;"
-                    onclick="MaxDQLotAdd();" value="Add" />
+                    onclick="MaxDQLotAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td class="style29">
                 <input type="button" id="_MaxDQLotReplaceButton" name="_MaxDQLotReplaceButton" onclick="MaxDQLotReplace();"
-                    value="Replace" />
+                    value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style8">
-                Max Other Lot:
+                <%=GetLanguage("MaxOtherLot")%>:
             </td>
             <td class="style19">
                 <input type="text" id="_MaxOtherLotText" name="_MaxOtherLotText" value="100" style="text-align: right;
@@ -243,16 +243,16 @@
             </td>
             <td class="style17">
                 <input type="button" id="_MaxOtherLotAddButton" name="_MaxOtherLotAddButton" style="width: 70px"
-                    onclick="MaxOtherLotAdd();" value="Add" />
+                    onclick="MaxOtherLotAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td class="style27">
                 <input type="button" id="_MaxOtherLotReplaceButton" name="_MaxOtherLotReplaceButton"
-                    onclick="MaxOtherLotReplace();" value="Replace" />
+                    onclick="MaxOtherLotReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
         <tr>
             <td class="style32">
-                DQ Quote Min Lot:
+                <%=GetLanguage("DQQuoteMinLot")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_DQQuoteMinLotText" name="_DQQuoteMinLotText" value="1" style="text-align: right;
@@ -260,17 +260,17 @@
             </td>
             <td class="style15">
                 <input type="button" id="_DQQuoteMinLotAddButton" name="_DQQuoteMinLotAddButton" style="width: 70px"
-                    onclick="DQQuoteMinLotAdd();" value="   Add   " />
+                    onclick="DQQuoteMinLotAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td class="style29">
                 <input type="button" id="_DQQuoteMinLotReplaceButton" name="_DQQuoteMinLotReplaceButton"
-                    onclick="DQQuoteMinLotReplace();" value="Replace" />
+                    onclick="DQQuoteMinLotReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style8">
-                Auto DQ Max Lot:
+                <%=GetLanguage("AutoDQMaxLot")%>:
             </td>
             <td class="style19">
                 <input type="text" id="_AutoDQMaxLotText" name="_AutoDQMaxLotText" value="1" style="text-align: right;
@@ -278,16 +278,16 @@
             </td>
             <td class="style17">
                 <input type="button" id="_AutoDQMaxLotAddButton" name="_AutoDQMaxLotAddButton" style="width: 70px" onclick="AutoDQMaxLotAdd();"
-                    value="   Add   " />
+                    value="<%=GetLanguage("Add")%>" />
             </td>
             <td>
                 <input type="button" id="_AutoDQMaxLotReplaceButton" name="_AutoDQMaxLotReplaceButton"
-                    onclick="AutoDQMaxLotReplace();" value="Replace" />
+                    onclick="AutoDQMaxLotReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
         <tr>
             <td class="style32">
-                Auto Lmt Mkt Max Lot:
+                <%=GetLanguage("AutoLmtMktMaxLot")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_AutoLmtMktMaxLotText" name="_AutoLmtMktMaxLotText" value="1"
@@ -295,17 +295,17 @@
             </td>
             <td class="style15">
                 <input type="button" id="_AutoLmtMktMaxLotAddButton" name="_AutoLmtMktMaxLotAddButton" style="width: 70px"
-                    onclick="AutoLmtMktMaxLotAdd();" value="   Add   " />
+                    onclick="AutoLmtMktMaxLotAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td class="style29">
                 <input type="button" id="_AutoLmtMktMaxLotReplaceButton" name="_AutoLmtMktMaxLotReplaceButton"
-                    onclick="AutoLmtMktMaxLotReplace();" value="Replace" />
+                    onclick="AutoLmtMktMaxLotReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style8">
-                Accept DQ Variation:
+                <%=GetLanguage("AcceptDQVariation")%>:
             </td>
             <td class="style19">
                 <input type="text" id="_AcceptDQVariationText" name="_AcceptDQVariationText" value="50"
@@ -313,16 +313,16 @@
             </td>
             <td class="style17">
                 <input type="button" id="_AcceptDQVariationAddButton" name="_AcceptDQVariationAddButton" style="width: 70px"
-                    onclick="AcceptDQVariationAdd();" value="   Add   " />
+                    onclick="AcceptDQVariationAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td>
                 <input type="button" id="_AcceptDQVariationReplaceButton" name="_AcceptDQVariationReplaceButton"
-                    onclick="AcceptDQVariationReplace();" value="Replace" />
+                    onclick="AcceptDQVariationReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
         <tr>
             <td class="style32">
-                Add Net Position Accept Lmt Variation:
+                <%=GetLanguage("AcceptLmtVariation")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_AcceptLmtVariationText" name="_AcceptLmtVariationText" value="10"
@@ -330,17 +330,17 @@
             </td>
             <td class="style15">
                 <input type="button" id="_AcceptLmtVariationAddButton" name="_AcceptLmtVariationAddButton" style="width: 70px"
-                    onclick="AcceptLmtVariationAdd();" value="   Add   " />
+                    onclick="AcceptLmtVariationAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td class="style29">
                 <input type="button" id="_AcceptLmtVariationReplaceButton" name="_AcceptLmtVariationReplaceButton"
-                    onclick="AcceptLmtVariationReplace();" value="Replace" />
+                    onclick="AcceptLmtVariationReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style8">
-                Cancel Lmt Variation:
+                <%=GetLanguage("CancelLmtVariation")%>:
             </td>
             <td class="style19">
                 <input type="text" id="_CancelLmtVariationText" name="_CancelLmtVariationText" value="10"
@@ -348,16 +348,16 @@
             </td>
             <td class="style17">
                 <input type="button" id="_CancelLmtVariationAddButton" name="_CancelLmtVariationAddButton" style="width: 70px"
-                    onclick="CancelLmtVariationAdd();" value="   Add   " />
+                    onclick="CancelLmtVariationAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td>
                 <input type="button" id="_CancelLmtVariationReplaceButton" name="_CancelLmtVariationReplaceButton"
-                    onclick="CancelLmtVariationReplace();" value="Replace" />
+                    onclick="CancelLmtVariationReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
         <tr>
             <td class="style32">
-                Auto DQ Delay:
+                <%=GetLanguage("AutoDQDelay")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_AutoDQDelayText" name="_AutoDQDelayText" value="1" style="text-align: right;
@@ -365,24 +365,24 @@
             </td>
             <td class="style15">
                 <input type="button" id="_AutoDQDelayAddButton" name="_AutoDQDelayAddButton" onclick="AutoDQDelayAdd();"
-                    value="Add" style="width: 70px" />
+                    value="<%=GetLanguage("Add")%>" style="width: 70px" />
             </td>
             <td class="style29">
                 <input type="button" id="_AutoDQDelayReplaceButton" name="_AutoDQDelayReplaceButton" onclick="AutoDQDelayReplace();"
-                    value="Replace" />
+                    value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style8">
-                Allowed New Trade Sides:
+                <%=GetLanguage("AllowedNewTradeSides")%>:
             </td>
             <td class="style19">
             <select id="_AllowedNewTradeSidesCmb" name="_AllowedNewTradeSidesCmb" style="text-align: right;width:98px;">
-                <option value="0">Disallow add New</option>
-                <option value="1">Allow add new Buy only</option>
-                <option value="2">Allow add new Sell only</option>
-                <option value="3" selected="selected" >Allow add new</option>
+                <option value="0"><%=GetLanguage("AllowedNewTradeSidesCombo1")%></option>
+                <option value="1"><%=GetLanguage("AllowedNewTradeSidesCombo2")%></option>
+                <option value="2"><%=GetLanguage("AllowedNewTradeSidesCombo3")%></option>
+                <option value="3" selected="selected" ><%=GetLanguage("AllowedNewTradeSidesCombo4")%></option>
             </select>
             </td>
             <td>
@@ -390,13 +390,13 @@
             </td>
             <td class="style17">
                 <input type="button" id="_AllowedNewTradeSidesReplaceButton" name="_AllowedNewTradeSidesReplaceButton" onclick="AllowedNewTradeSidesReplace();"
-                    value="Replace" />
+                    value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
 
         <tr>
             <td class="style32">
-                Auto Accept Max Lot:
+                <%=GetLanguage("AutoAcceptMaxLot")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_AutoAcceptMaxLotText" name="_AutoAcceptMaxLotText" value="1" style="text-align: right;
@@ -404,18 +404,18 @@
             </td>
             <td class="style15">
                 <input type="button" id="_AutoAcceptMaxLotAddButton" name="_AutoAcceptMaxLotAddButton" onclick="AutoAcceptMaxLotAdd();"
-                        value="Add" style="width: 70px" />
+                        value="<%=GetLanguage("Add")%>" style="width: 70px" />
                 
             </td>
             <td class="style29">
                 <input type="button" id="_AutoAcceptMaxLotReplaceButton" name="_AutoAcceptMaxLotReplaceButton" onclick="AutoAcceptMaxLotReplace();"
-                    value="Replace" />
+                    value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style8">
-                Auto Cancel Max Lot:
+                <%=GetLanguage("AutoCancelMaxLot")%>:
             </td>
             <td class="style19">
                 <input type="text" id="_AutoCancelMaxLotText" name="_AutoCancelMaxLotText" value="10"
@@ -423,16 +423,16 @@
             </td>
             <td class="style17">
                 <input type="button" id="_AutoCancelMaxLotAddButton" name="_AutoCancelMaxLotAddButton" style="width: 70px"
-                    onclick="AutoCancelMaxLotAdd();" value="   Add   " />                
+                    onclick="AutoCancelMaxLotAdd();" value="<%=GetLanguage("Add")%>" />                
             </td>
             <td>
                 <input type="button" id="_AutoCancelMaxLotReplaceButton" name="_AutoCancelMaxLotReplaceButton" onclick="AutoCancelMaxLotReplace();"
-                    value="Replace" />
+                    value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
         <tr>
             <td class="style32">
-                Reduce Net Position Accept Lmt Variation:
+                <%=GetLanguage("AcceptCloseLmtVariation")%>:
             </td>
             <td class="style23">
                 <input type="text" id="_AcceptCloseLmtVariationText" name="_AcceptCloseLmtVariationText" value="10"
@@ -440,17 +440,17 @@
             </td>
             <td class="style15">
                 <input type="button" id="_AcceptCloseLmtVariationAddButton" name="_AcceptCloseLmtVariationAddButton" style="width: 70px"
-                    onclick="AcceptCloseLmtVariationAdd();" value="   Add   " />
+                    onclick="AcceptCloseLmtVariationAdd();" value="<%=GetLanguage("Add")%>" />
             </td>
             <td class="style29">
                 <input type="button" id="_AcceptCloseLmtVariationReplaceButton" name="_AcceptCloseLmtVariationReplaceButton"
-                    onclick="AcceptCloseLmtVariationReplace();" value="Replace" />
+                    onclick="AcceptCloseLmtVariationReplace();" value="<%=GetLanguage("Replace")%>" />
             </td>
             <td class="style30">
                 &nbsp;
             </td>
             <td class="style10">
-                Hit Price Variation For STP:
+                <%=GetLanguage("HitPriceVariationForSTP")%>:
             </td>
             <td class="style20">
                <input type="text" id="_HitPriceVariationForSTPText" name="_HitPriceVariationForSTPText" value="0" 
@@ -458,16 +458,16 @@
             </td>
             <td class="style18">
                 <input type="button" id="_HitPriceVariationForSTPAddButton" name="_HitPriceVariationForSTPAddButton" style="width: 70px"
-                    onclick="HitPriceVariationForSTPAdd();" value="   Add   " />     
+                    onclick="HitPriceVariationForSTPAdd();" value="<%=GetLanguage("Add")%>" />     
             </td>
             <td class="style12">
                <input type="button" id="_HitPriceVariationForSTPReplaceButton" name="_HitPriceVariationForSTPReplaceButton" onclick="HitPriceVariationForSTPReplace();"
-                    value="Replace" />
+                    value="<%=GetLanguage("Replace")%>" />
             </td>
         </tr>
         <tr>
             <td>
-                <input type="button" name="_SaveButton" id="_SaveButton" value="  Save  " onclick="DealingPolicyDetail_Save();" />
+                <input type="button" name="_SaveButton" id="_SaveButton" value="<%=GetLanguage("SaveButton")%>" onclick="DealingPolicyDetail_Save();" />
             </td>
             <td class="style24">
                 &nbsp;

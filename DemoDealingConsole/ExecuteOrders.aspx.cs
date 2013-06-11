@@ -1,5 +1,6 @@
 using System;
 using iExchange.Common;
+using System.Collections;
 
 namespace iExchange.DealingConsole
 {
@@ -11,6 +12,7 @@ namespace iExchange.DealingConsole
 		protected void Page_Load(object sender, System.EventArgs e)
 		{
 			// Put user code to initialize the page here
+            this.AccountGroupLable.Text = this.GetLanguage("AccountGroup");
 		}
 
 		#region Web Form Designer generated code
@@ -37,6 +39,17 @@ namespace iExchange.DealingConsole
         {
             Token token = (Token)this.Session["Token"];
             return DealingConsoleServer.GetAllAccountGroupOptions(token);
+        }
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
         }
 	}
 }

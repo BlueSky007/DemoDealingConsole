@@ -12,6 +12,10 @@ var oWndDealingPolicy = null;
 var toolBarPageLoaded = false;
 function ToolBarPageOnLoad() {
     toolBarPageLoaded = true;
+    document.getElementById("_ResumeOrSuspend").value = ResumeStr;
+    document.getElementById("_MassAllowLMT").value = AllowLMTStr;
+    document.getElementById("_LogoutButton").value = LogoutButtonStr;
+    document.getElementById("GoButton").value = GoButtonStr;
 }
 
 function Password_click() {
@@ -108,18 +112,18 @@ function DealingPolicyEdit_Onclick() {
 }
 
 function ResumeOrSuspend_Onclick() {
-    var isResume = window.document.all._ResumeOrSuspend.value.toLowerCase() == "resume";
+    var isResume = window.document.all._ResumeOrSuspend.value.toLowerCase() == ResumeStr.toLowerCase();
     window.parent.quotationFrm.oDealingConsole.SuspendOrResume(isResume);
     window.document.all._ResumeOrSuspend.style.color = isResume ? "red" : "green";
-    window.document.all._ResumeOrSuspend.value = isResume ? "Suspend" : "Resume";
+    window.document.all._ResumeOrSuspend.value = isResume ? SuspendStr : ResumeStr;
 }
 
 function MassAllowLMT_Onclick() {
-    var allow = window.document.all._MassAllowLMT.value.toLowerCase() == "allow limit";
+    var allow = window.document.all._MassAllowLMT.value.toLowerCase() == AllowLMTStr.toLowerCase();
     var needChangeDirection = window.parent.quotationFrm.oDealingConsole.MassAllowLMT(allow);
     if (needChangeDirection) {
         window.document.all._MassAllowLMT.style.color = allow ? "red" : "green";
-        window.document.all._MassAllowLMT.value = allow ? "Disallow Limit" : "Allow Limit";
+        window.document.all._MassAllowLMT.value = allow ? DisAllowLMTStr : AllowLMTStr;
     }
 }
 
@@ -312,7 +316,12 @@ function FillSelect(control, elementInnerText, elementValue) {
 }
 
 function LogoutButton_Onclick() {
-    if (window.confirm("Are you sure to logout?")) {
+    var languageStr = window.parent.quotationFrm.oDealingConsole.LanguageString;
+    var msg = "Are you sure to logout?";
+    if (languageStr == "zh-CHS") {
+        msg = "您确定退出吗？";
+    }
+    if (window.confirm(msg)) {
         window.parent.quotationFrm.SystemLogout();
         window.parent.location = "Login.aspx";
     }

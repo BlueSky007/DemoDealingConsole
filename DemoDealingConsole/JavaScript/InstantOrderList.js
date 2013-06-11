@@ -15,6 +15,8 @@ function InstantOrderOnunload() {
 var quotationFrm;
 var instantOrderListGridColKey;
 var instantOrderListGridLanguage;
+var commonLanguage;
+var messageLanguage;
 
 //var instantOrderListInitTimeOutID = null;
 var isInitialized = false;
@@ -24,7 +26,10 @@ function InstantOrderListInit() {
     quotationFrm = GetQuotationFrm();
     instantOrderListGridColKey = quotationFrm.instantOrderListGridColKey;
     instantOrderListGridLanguage = quotationFrm.instantOrderListGridLanguage;
+    commonLanguage = quotationFrm.commonLanguage;
+    messageLanguage = quotationFrm.messageLanguage;
 
+    SettingLanguage();
     InstantOrderListGridInit();
     instantOrderListInitTimeOutID = window.setTimeout(InstantOrderListInitTimeOut, 10);
     isInitialized = true;
@@ -314,11 +319,11 @@ function GetCurrentInstrument() {
 function ExecuteAll_Onclick() {
     var instrument = GetCurrentInstrument();
     if (instrument == null) {
-        alert("Please select origin code.");
+        alert(messageLanguage["ExecuteAllMsg"]);
         return;
     }
     if (window.document.all._MarketOriginPriceDiv.innerText == "") {
-        alert("Origin is not available!");
+        alert(messageLanguage["ExecuteAllAlert"]);
         return;
     }
     onBlurEvent();
@@ -515,7 +520,7 @@ function UpdateOrderStatus(order, vsflexGrid, line, instantOrderListGridColKey) 
     var orderInRow = vsflexGrid.RowData(line);
     orderInRow.status = order.status;
     orderInRow.lastStatus = order.lastStatus;
-    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(instantOrderListGridColKey.Status)) = OrderStatus.GetOrderStatusString(order.status);
+    vsflexGrid.TextMatrix(line, vsflexGrid.ColIndex(instantOrderListGridColKey.Status)) = OrderStatus.GetOrderStatusString(order.status, GetQuotationFrm().commonLanguage);
 }
 
 function RemoveOrderFromGrid(order) {
@@ -540,7 +545,7 @@ function FillRow(quotationFrm, vsflexGrid, instantOrderListGridColKey, order, li
         var tran = order.tran;
 
         RowHeight(line) = quotationFrm.oDealingConsole.GetRowHeight(quotationFrm.optionGrid.InstantOrderListGrid);
-        //TextMatrix(line, ColIndex(instantOrderListGridColKey.Status)) = OrderStatus.GetOrderStatusString(order.status);
+        //TextMatrix(line, ColIndex(instantOrderListGridColKey.Status)) = OrderStatus.GetOrderStatusString(order.status, GetQuotationFrm().commonLanguage);
         //TextMatrix(line, ColIndex(instantOrderListGridColKey.SystemTime)) = GetDateTimeString(quotationFrm.oSystemTime, "DateTime");//.getVarDate();
         //TextMatrix(line, ColIndex(instantOrderListGridColKey.SubmitTime)) = GetDateTimeString(tran.submitTime, "DateTime");//.getVarDate();
         //TextMatrix(line, ColIndex(instantOrderListGridColKey.AccountCode)) = account ? account.code : tran.accountID;
@@ -596,11 +601,11 @@ function OnOrderAccept(vsflexGrid, line, needConfirmWindow) {
         else {
             var args = null;
             if (order.mainWindow.CanDealerViewAccountInfo) {
-                args = new Array("Are you sure?", "  Yes  ", "  No  ", order);
+                args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order);
                 isOK = window.showModalDialog("DealerCanViewAccountInfoConfirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:320px;dialogHeight:400px");
             }
             else {
-                args = new Array("Are you sure?", "  Yes  ", "  No  ", order);
+                args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order);
                 isOK = window.showModalDialog("DQConfirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
             }
         }
@@ -618,7 +623,7 @@ function OnOrderReject(vsflexGrid,line,needConfirmWindow)
 	    if (needConfirmWindow) {
 	        var confirmRejectDQOrder = order.mainWindow.oDealingConsole.ConfirmRejectDQOrder;
 	        if (confirmRejectDQOrder) {
-	            var args = new Array("Are you sure?", "Yes", "No", order.GetDescription());
+	            var args = new Array(messageLanguage["AlertContent"], messageLanguage["AlertYesButton"], messageLanguage["AlertNoButton"], order.GetDescription());
 	            isOK = window.showModalDialog("Confirm.aspx", args, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 	            if (!isOK) {
 	                return;
@@ -629,6 +634,14 @@ function OnOrderReject(vsflexGrid,line,needConfirmWindow)
         var color = vsflexGrid.Cell(flexcpForeColor, line, vsflexGrid.ColIndex("Status"));
         vsflexGrid.RowHidden(line) = (color == color_darkgray)?true:false;
 	}
+}
+
+function SettingLanguage() {
+    if (commonLanguage == null) return;
+    document.getElementById("_QueryButton").value = commonLanguage["Go"];
+    document.getElementById("VariationLable").value = commonLanguage["Go"];
+    VariationLable.innerText = commonLanguage["VariationLable"];
+    document.getElementById("_ExecuteAllButton").value = commonLanguage["ExecuteAllButton"];
 }
 
 function InstantOrderListGrid_OnBeforeRowColChange(oldRow, oldCol, newRow, newCol, cancel)

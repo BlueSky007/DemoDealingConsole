@@ -160,13 +160,13 @@ function QuotationAction() {
     this.NoneAction = new ActionClass(QuotationActionEnum.None, " ");
 //    this.OnSwitch = new ActionClass(QuotationActionEnum.OnSwitch, "Switch To Manual Way");
 //    this.OnIgnore = new ActionClass(QuotationActionEnum.OnIgnore, "iGnore");
-    this.OnAccept = new ActionClass(QuotationActionEnum.OnAccept, "accept(Y)");
-    this.OnDiscard = new ActionClass(QuotationActionEnum.OnDiscard, "discard(N)");
-    this.OnAbandon = new ActionClass(QuotationActionEnum.OnAbandon, "aBandon");
-    this.OnUpdate = new ActionClass(QuotationActionEnum.OnUpdate, "Update");
-    this.OnModify = new ActionClass(QuotationActionEnum.OnModify, "Modify");
-    this.OnSend = new ActionClass(QuotationActionEnum.OnSend, "Send");
-    this.OnModify2 = new ActionClass(QuotationActionEnum.OnModify2, "Modify");
+    this.OnAccept = new ActionClass(QuotationActionEnum.OnAccept, "OnAccept");
+    this.OnDiscard = new ActionClass(QuotationActionEnum.OnDiscard, "OnDiscard");
+    this.OnAbandon = new ActionClass(QuotationActionEnum.OnAbandon, "OnAbandon");
+    this.OnUpdate = new ActionClass(QuotationActionEnum.OnUpdate, "OnUpdate");
+    this.OnModify = new ActionClass(QuotationActionEnum.OnModify, "OnModify");
+    this.OnSend = new ActionClass(QuotationActionEnum.OnSend, "OnSend");
+    this.OnModify2 = new ActionClass(QuotationActionEnum.OnModify2, "OnModify2");
 }
 
 function CellDataInstance(quotationAction, btnCount) {
@@ -178,13 +178,14 @@ function SetQuotationCellData(vsflexGrid, row, col, cellDataInstance) {
     //vsflexGrid.GridColor = color_black;
     vsflexGrid.Cell(flexcpBackColor, row, col) = color_lightblue;
     vsflexGrid.Cell(flexcpForeColor, row, col) = color_blue;
-
+    var commonLanguage = parent.quotationFrm.commonLanguage;
     var showBtnCount = cellDataInstance.ButtonCount;
+    var buttonCaption = commonLanguage[cellDataInstance.Action.Caption + "Qutation"];
     switch (showBtnCount) {
         case 1:
             vsflexGrid.MergeCells = flexMergeFree;
             vsflexGrid.MergeRow(row) = true;
-            vsflexGrid.Cell(flexcpText, row, _QuotationTaskGridColIndexs.QuotationButtonA, row, _QuotationTaskGridColIndexs.QuotationButtonD) = cellDataInstance.Action.Caption;
+            vsflexGrid.Cell(flexcpText, row, _QuotationTaskGridColIndexs.QuotationButtonA, row, _QuotationTaskGridColIndexs.QuotationButtonD) = buttonCaption;// cellDataInstance.Action.Caption;
 
             vsflexGrid.Cell(flexcpBackColor, row, _QuotationTaskGridColIndexs.QuotationButtonC) = color_lightblue;
             vsflexGrid.Cell(flexcpData, row, _QuotationTaskGridColIndexs.QuotationButtonC) = cellDataInstance;
@@ -192,17 +193,17 @@ function SetQuotationCellData(vsflexGrid, row, col, cellDataInstance) {
         case 2:
             vsflexGrid.MergeCells = flexMergeFree;
             vsflexGrid.MergeRow(row) = true;
-            
+
             if (col < _QuotationTaskGridColIndexs.QuotationButtonC) {
-                vsflexGrid.Cell(flexcpText, row, _QuotationTaskGridColIndexs.QuotationButtonA, row, _QuotationTaskGridColIndexs.QuotationButtonB) = cellDataInstance.Action.Caption;
+                vsflexGrid.Cell(flexcpText, row, _QuotationTaskGridColIndexs.QuotationButtonA, row, _QuotationTaskGridColIndexs.QuotationButtonB) = buttonCaption; // cellDataInstance.Action.Caption;
             }
             else {
-                vsflexGrid.Cell(flexcpText, row, _QuotationTaskGridColIndexs.QuotationButtonC, row, _QuotationTaskGridColIndexs.QuotationButtonD) = cellDataInstance.Action.Caption;
+                vsflexGrid.Cell(flexcpText, row, _QuotationTaskGridColIndexs.QuotationButtonC, row, _QuotationTaskGridColIndexs.QuotationButtonD) = buttonCaption;// cellDataInstance.Action.Caption;
             }
             vsflexGrid.Cell(flexcpData, row, col) = cellDataInstance;
             break;
         case 4:
-            vsflexGrid.TextMatrix(row, col) = cellDataInstance.Action.Caption;
+            vsflexGrid.TextMatrix(row, col) = buttonCaption; //cellDataInstance.Action.Caption;
             vsflexGrid.Cell(flexcpData, row, col) = cellDataInstance;
             break;
     }

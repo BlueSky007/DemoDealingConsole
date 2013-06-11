@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Management</title>
+    <title><%=GetLanguage("ManagementPage")%></title>
     <meta content="False" name="vs_showGrid">
     <meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
     <meta content="C#" name="CODE_LANGUAGE">
@@ -15,8 +15,8 @@
         border="1" style="width: 100%; height: 100%;">
         <tr>
             <td nowrap align="left" style="width: 100%; height: 6%;">
-                <input type="button" id="_DealingPolicyButton" name="_DealingPolicyButton" onclick="DealingPolicyButton_Onclick();" value="Dealing Policy" style="font-weight:bold;width:150px;" />
-                &nbsp;&nbsp;<input type="button" id="_CustomerManagementButton" name="_CustomerManagementButton" onclick="CustomerManagement_Onclick();" value="Customer Management" style="font-weight:normal;width:150px;"/>
+                <input type="button" id="_DealingPolicyButton" name="_DealingPolicyButton" onclick="DealingPolicyButton_Onclick();" value="<%=GetLanguage("DealingPolicy")%>" style="font-weight:bold;width:150px;" />
+                &nbsp;&nbsp;<input type="button" id="_CustomerManagementButton" name="_CustomerManagementButton" onclick="CustomerManagement_Onclick();" value="<%=GetLanguage("CustomerManagementButton")%>" style="font-weight:normal;width:150px;"/>
             </td>
         </tr>
     <tr>

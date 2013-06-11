@@ -722,7 +722,28 @@ function InStringArray(value, stringArray) {
     }
     return false;
 }
+function GetComboListItemCaption(comboList, value) {
+    var comboItemArray = comboList.split('|');
+    for (var i = 0, length = comboItemArray.length; i < length; i++) {
+        var item = comboItemArray[i].split(';')
+        if (item[0] == ("#" + value.toString())) {
+            return item[1];
+        }
+    }
+    return value;
+};
 
+function GetOrderTypeCaption(comboList, orderType) {
+    var orderTypeItemArray = comboList.split('|');
+    for (var i = 0, length = orderTypeItemArray.length; i < length; i++) {
+        var orderTypeItem = orderTypeItemArray[i].split(';');
+        var orderTypeKey = orderTypeItem[0];
+        if (orderTypeKey == orderType) {
+            return orderTypeItem[1];
+        }
+    }
+    return orderType;
+};
 ////#region Convert value From XML Result
 function XmlConvert()
 { }

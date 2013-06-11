@@ -8,6 +8,7 @@ using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Xml;
 
 namespace iExchange.DealingConsole
 {
@@ -35,6 +36,25 @@ namespace iExchange.DealingConsole
             return string.Empty;
         }
 
+        public XmlNode GetLanguageInfo()
+        {
+            if (this.Session["Test"] != null)
+            {
+                return (XmlNode)this.Session["Test"];
+            }
+            return null;
+        }
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["LoginLanguage"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["LoginLanguage"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
         public string NeedSendQuotationChangeAPSP()
         {
             var needSendQuotationChangeAPSPString = (string)System.Configuration.ConfigurationManager.AppSettings["NeedSendQuotationChangeAPSP"];

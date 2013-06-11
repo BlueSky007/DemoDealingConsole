@@ -127,7 +127,7 @@
         </tr>
         <tr>
             <td style="height: 30px;" nowrap>
-                &nbsp;AP:
+                &nbsp;<font face="system" size="2.5px"><%=GetLanguage("AP")%></font> 
             </td>
             <td nowrap>
                 <input type="button" id="_IncreaseAutoPointsButton" name="_IncreaseAutoPointsButton"
@@ -145,19 +145,19 @@
                 <input id="_AutoPointsText" onblur="onBlurEvent();" maxlength="19" style="width: 38px;
                     text-align: right" type="text" value="0" />
                 <input id="_AutoPointsReplaceButton" onclick="ReplaceAutoPoints();" accesskey="r"
-                    type="button" value="Rep" style="width: 57px" />
+                    type="button" value="<%=GetLanguage("SpreadReplace")%>" style="width: 57px" />
             </td>
             <td style="width:40px;">
                 &nbsp;
             </td>
             <td nowrap colspan="3" style="width:60%;" align="left">
-                <input id="Button6" type="button" value="Undo" name="btnCancel"
+                <input id="btnCancel" type="button" value="<%=GetLanguage("Undo")%>" name="btnCancel"
                         accesskey="U" onclick="Undo();" style="width: 66px">
             </td>
          </tr>
          <tr>
             <td nowrap>
-                &nbsp;SP:
+                &nbsp;<font face="system" size="2px"><%=GetLanguage("SP")%></font>
             </td>
             <td nowrap>
                 <input type="button" id="_IncreaseSpreadButton" name="_IncreaseSpreadButton" value="  +  "
@@ -172,14 +172,14 @@
             <td nowrap>
                 <input id="_SpreadText" onblur="onBlurEvent();" maxlength="19" style="width: 38px;
                     height: 22px; text-align: right" type="text" value="0" />
-                <input id="_SpreadReplaceButton" onclick="ReplaceSpread();" accesskey="l" type="button"
-                    value="Rep" style="width: 57px" />
+                <input id="_SpreadReplaceButton" name="_SpreadReplaceButton" onclick="ReplaceSpread();" accesskey="l" type="button"
+                    value="<%=GetLanguage("SpreadReplace")%>" style="width: 57px" />
             </td>
             <td style="width:40px;">
                 &nbsp;
             </td>
             <td nowrap colspan="3" style="width:60%;" align="left">
-                <input id="Button5" type="button" value="Ok" name="btnOk" accesskey="O" onclick="OnOk()"
+                <input id="btnOk" type="button" value="<%=GetLanguage("Ok")%>" name="btnOk" accesskey="O" onclick="OnOk()"
                     style="width: 66px">
             </td>
         </tr>

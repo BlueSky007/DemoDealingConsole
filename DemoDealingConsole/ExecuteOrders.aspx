@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
 <head>
-    <title>Executed Orders</title>
+    <title><%=GetLanguage("ExecutedOrdersPage")%></title>
     <meta name="GENERATOR" content="Microsoft Visual Studio 7.0">
     <meta name="CODE_LANGUAGE" content="C#">
     <meta name="vs_defaultClientScript" content="JavaScript">
@@ -34,29 +34,29 @@
         <tr id="_ExecuteOrderListTR">
             <td nowrap colspan="1">
                 <input type="button" id="_ExecuteOrderListButton1" name="_ExecuteOrderListButton1" style="width: 100px;"
-                    value="    List    " accesskey="l" onclick="ExecuteOrderListShow();" />
+                    value="<%=GetLanguage("List")%>" accesskey="l" onclick="ExecuteOrderListShow();" />
                 <input type="button" id="_ExecuteOrderSummaryButton1" name="_ExecuteOrderSummaryButton1" style="width: 100px;"
-                    value="Summary" accesskey="s" onclick="ExecuteOrderSummaryShow();" />
+                    value="<%=GetLanguage("Summary")%>" accesskey="s" onclick="ExecuteOrderSummaryShow();" />
             </td>
             <td>|</td>
-            <TD style="width:auto" align="right"><asp:Label ID="Label1" Width="130px" runat="server" Text="Account Group:" /></TD>
+            <TD style="width:auto" align="right"><asp:Label ID="AccountGroupLable" Width="130px" runat="server" Text="Account Group:" /></TD>
             <td>
             <select id="_AccountGroupSelect" style="WIDTH: 100px" name="_AccountGroupSelect" onchange = "AccountGroupSelect_OnChanged()">
                             <option id="_AccountGroupOptionAll" value="">&lt;All&gt;</option>
                                 <%=GetAccountGroupOptions()%></select></td>
             <td style="height: 9px" nowrap colspan="1" align="left" style="width: 80%;">
-                <input type="button" value="Print" onclick="Print();" id="btnPrint" style="width: 100px;"
+                <input type="button" value="<%=GetLanguage("PrintButton")%>" onclick="Print();" id="btnPrint" style="width: 100px;"
                     accesskey="p" name="btnPrint">
                 &nbsp;&nbsp;&nbsp;<input type="button" id="_ShowAccountStatus" name="_ShowAccountStatus"
-                    onclick="ShowAccountStatus();" value="Account Status" />
+                    onclick="ShowAccountStatus();" value="<%=GetLanguage("AccountStatus")%>" />
             </td>
         </tr>
         <tr id="_ExecuteOrderSummaryTR">
             <td nowrap colspan="1">
                 <input type="button" id="_ExecuteOrderListButton2" name="_ExecuteOrderListButton2" style="width: 100px;"
-                    value="    List    " accesskey="l" onclick="ExecuteOrderListShow();" />
+                    value="<%=GetLanguage("List")%>" accesskey="l" onclick="ExecuteOrderListShow();" />
                 <input type="button" id="_ExecuteOrderSummaryButton2" name="_ExecuteOrderSummaryButton2" style="width: 100px;"
-                    value="Summary" accesskey="s" onclick="ExecuteOrderSummaryShow();" />
+                    value="<%=GetLanguage("Summary")%>" accesskey="s" onclick="ExecuteOrderSummaryShow();" />
             </td>
             <td>|</td>
             <%--<td colspan="1" nowrap style="width: 160px;" align="right">
@@ -147,17 +147,17 @@
                     pressedsrc="images\\Refresh.gif" hoversrc="images\\Refresh.gif" designtimedragdrop="148">
             </td>--%>
             <td align="left" colspan="1" nowrap>
-                <input type="radio" id="_QueryOnTimeRadio" name="_QueryOnTimeRadio" checked onclick="QueryOnTimeRadio_Onclick();" />Time
-                Range:
+                <input type="radio" id="_QueryOnTimeRadio" name="_QueryOnTimeRadio" checked onclick="QueryOnTimeRadio_Onclick();" />
+                <%=GetLanguage("TimeRange")%>
                 <input type="text" id="_TimeRangeText" name="_TimeRangeText" maxlength="10" size="5"
                     value="10" onblur="TimeRangeText_Onblur();" />
-                &nbsp;Minutes &nbsp;&nbsp;<input type="radio" id="_QueryOnPriceRadio" name="_QueryOnPriceRadio"
-                    onclick="QueryOnPriceRadio_Onclick();" />Price Range:
+                &nbsp;<%=GetLanguage("Minutes")%> &nbsp;&nbsp;<input type="radio" id="_QueryOnPriceRadio" name="_QueryOnPriceRadio"
+                    onclick="QueryOnPriceRadio_Onclick();" /><%=GetLanguage("PriceRange")%>:
                 <input type="text" id="_PriceRangeText" name="_PriceRangeText" maxlength="10" size="5"
                     value="100" onblur="PriceRangeText_Onblur();" />
-                &nbsp;Pips &nbsp;&nbsp;<input type="button" id="_QuerySummaryButton" name="_QuerySummaryButton"
-                    value="Query" style="width: 100px;" accesskey="q" onclick="QuerySummaryButton_Onclick();" />
-                &nbsp;&nbsp;<input type="button" value="Print" onclick="ExecuteOrderSummaryPrint();"
+                &nbsp;<%=GetLanguage("Pips")%> &nbsp;&nbsp;<input type="button" id="_QuerySummaryButton" name="_QuerySummaryButton"
+                    value="<%=GetLanguage("Query")%>" style="width: 100px;" accesskey="q" onclick="QuerySummaryButton_Onclick();" />
+                &nbsp;&nbsp;<input type="button" value="<%=GetLanguage("PrintButton")%>" onclick="ExecuteOrderSummaryPrint();"
                     id="_ExecuteOrderSummaryPrintButton" style="width: 100px;" accesskey="p" name="_ExecuteOrderSummaryPrintButton">
             </td>
         </tr>

@@ -2,6 +2,7 @@
 var _RootGNPId = "10000000-0000-0000-0000-100000000001";
 var _EmptyGNPSummaryGroupId = '00000000-0000-0000-0000-000000000000';
 var _EmptyGNPSummaryGroupCode = 'Other Group';   //FOR SORT
+var _CommonLanguage;
 
 function GroupNetPositionInit() {
     GroupNetPositionGridInit();
@@ -44,6 +45,7 @@ function GroupNetPositionGridInit() {
         FixedCols = 0;
 
         var quotationFrm = GetQuotationFrm();
+        _CommonLanguage = quotationFrm.commonLanguage;
         var groupNetPositionGridColKey = quotationFrm.groupNetPositionGridColKey;
         var groupNetPositionGridLanguage = quotationFrm.groupNetPositionGridLanguage;
         var parameters = quotationFrm.oDealingConsole.SpecialInitGrid(window._GroupNetPositionGrid, quotationFrm.optionGrid.GroupNetPositionGrid, groupNetPositionGridLanguage);
@@ -721,6 +723,7 @@ function UpdateSummaryGroupGNPsToGrid(vsflexGrid, groupingGNP, line) {
 }
 
 function UpdateSummaryGroupGNPToGrid(vsflexGrid, summaryGroupGNP, line) {
+    
     showActualQuantityTemp = window._ShowActualQuantityCheckbox.checked;
     with (vsflexGrid) {
         //        if (summaryGroupGNP.id != _EmptyGNPSummaryGroupId) {
@@ -735,9 +738,9 @@ function UpdateSummaryGroupGNPToGrid(vsflexGrid, summaryGroupGNP, line) {
             FixedAlignment(columnIndex + 1) = flexAlignCenterCenter;
             ColAlignment(columnIndex) = flexAlignRightCenter;
             TextMatrix(0, columnIndex) = !summaryGroupGNP.code ? "" : summaryGroupGNP.code;
-            TextMatrix(1, columnIndex) = "Lot";
+            TextMatrix(1, columnIndex) = _CommonLanguage["Lot"];
             TextMatrix(0, columnIndex + 1) = !summaryGroupGNP.code ? "" : summaryGroupGNP.code;
-            TextMatrix(1, columnIndex + 1) = "Quantity";
+            TextMatrix(1, columnIndex + 1) = _CommonLanguage["Quantity"]; // "Quantity";
         }
         if (summaryGroupGNP.groupingGNP.groupingGNPType != GroupingGNPType.Detail) {
             var quotationFrm = GetQuotationFrm();
@@ -784,7 +787,7 @@ function UpdateInstrumentGNPToGrid(vsflexGrid, instrumentGNP, line) {
             FixedAlignment(columnIndex) = flexAlignCenterCenter;
             ColAlignment(columnIndex) = flexAlignRightCenter;
             TextMatrix(0, columnIndex) = instrumentGNP.instrument.code;
-            TextMatrix(1, columnIndex) = "Lot";
+            TextMatrix(1, columnIndex) = _CommonLanguage["Lot"];
         }
         if (instrumentGNP.summaryGroupGNP.groupingGNP.groupingGNPType == GroupingGNPType.Detail) {
             TextMatrix(line, columnIndex) = instrumentGNP.detailDisplay();

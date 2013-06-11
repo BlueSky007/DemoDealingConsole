@@ -31,6 +31,8 @@ namespace iExchange.DealingConsole
 		protected void Page_Load(object sender, System.EventArgs e)
 		{
 			// Put user code to initialize the page here
+            this.btnOk.Text = this.GetLanguage("Ok");
+            this.btnCancel.Text = this.GetLanguage("Cancel");
 		}
 
 		#region Web Form Designer generated code
@@ -98,21 +100,33 @@ namespace iExchange.DealingConsole
 					Service service=new Service();
 					isSucced = service.ChangePassword(oldPassword,newPassword);
 #endif
-					lblChangePasswordPrompt.Text = (isSucced == true)?"Succed to change password!":"Failed to change password!";
+                    lblChangePasswordPrompt.Text = (isSucced == true) ? this.GetLanguage("SuccedChangePassword") : this.GetLanguage("FailedChangePassword");
 					lblChangePasswordPrompt.Visible=true;
 				}
 				else
 				{
-					lblChangePasswordPrompt.Text = "Error,please enter your new/comfirm password again!";
+                    lblChangePasswordPrompt.Text = this.GetLanguage("InvalidPassword");
 					lblChangePasswordPrompt.Visible=true;
 				}
 			}
 			else
 			{
-				lblChangePasswordPrompt.Text = "Failed to enter your Password(8-16)!";
+                lblChangePasswordPrompt.Text = this.GetLanguage("IsValidPasswordInputMsg");
 				lblChangePasswordPrompt.Visible=true;
 			}
 		}
+
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["LoginLanguage"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["LoginLanguage"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
 
 		protected void btnCancel_Click(object sender, System.EventArgs e)
 		{

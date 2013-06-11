@@ -34,8 +34,10 @@ function AccountStatusQueryOnLoad() {
     selectGridInit(window.AccountNameSelectGrid);
     if (window.dialogArguments.quotationFrm.AccountComboString == "") {
         window.dialogArguments.quotationFrm.oIOProxy.GetAccountComboList(this, true);
-        window.AccountSelectGrid.TextMatrix(0, 0) = "Select Account";
-        window.AccountNameSelectGrid.TextMatrix(0, 0) = "Select Account Name";
+        var commonLanguage = window.dialogArguments.quotationFrm.commonLanguage;
+
+        window.AccountSelectGrid.TextMatrix(0, 0) = commonLanguage["SelectAccount"]
+        window.AccountNameSelectGrid.TextMatrix(0, 0) = commonLanguage["SelectAccountName"]
         return;
     }
     OnReset();
@@ -62,8 +64,10 @@ function InitUI() {
         btnQuery_onclick();
     }
     else {
-        window.AccountSelectGrid.TextMatrix(0, 0) = "Select Account";
-        window.AccountNameSelectGrid.TextMatrix(0, 0) = "Select Account Name";
+        var commonLanguage = window.dialogArguments.quotationFrm.commonLanguage;
+
+        window.AccountSelectGrid.TextMatrix(0, 0) = commonLanguage["SelectAccount"]
+        window.AccountNameSelectGrid.TextMatrix(0, 0) = commonLanguage["SelectAccountName"]
     } 
 }
 
@@ -107,10 +111,12 @@ function btnQuery_onclick() {
 
 function AccountStatusQuery(isPrompt) {
     var accountId = window.AccountSelectGrid.Cell(flexcpText, 0, 0);
+    
     if (accountId == null || typeof (accountId) == 'undefined' || accountId == "" || accountId.length < 36) {
         if (isPrompt) {
             AccountStatusQueryTimerStop();
-            alert("Please select Account to query.");
+            var commonLanguage = window.dialogArguments.quotationFrm.commonLanguage;
+            alert(commonLanguage["AccountStatusMsg"]);
         }
         return false;
     }
@@ -159,10 +165,11 @@ function AccountCodeText_OnKeyDown() {
     if (event.keyCode == 13) {
         var accountCode = window.document.all._AccountCodeText.value;
         var accountList = window.dialogArguments.quotationFrm.AccountCodeList;
+        var commonLanguage = window.dialogArguments.quotationFrm.commonLanguage;
         if (accountCode == "" || accountList == null || !accountList.Exists(accountCode)) {
-            window.AccountSelectGrid.Cell(flexcpText, 0, 0) = "Select Account";
-            window.AccountNameSelectGrid.Cell(flexcpText, 0, 0) = "Select Account Name"
-            alert("Please Select an Account!");
+            window.AccountSelectGrid.Cell(flexcpText, 0, 0) = commonLanguage["SelectAccount"]; 
+            window.AccountNameSelectGrid.Cell(flexcpText, 0, 0) = commonLanguage["SelectAccountName"];
+            alert(commonLanguage["AccountStatusMsg"]);
             return;
         }
         window.AccountSelectGrid.Cell(flexcpText, 0, 0) = accountList.Item(accountCode);

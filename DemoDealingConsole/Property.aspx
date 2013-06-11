@@ -48,7 +48,7 @@
     bgcolor="buttonface" onkeydown="parent.quotationFrm.OnGridKeyUp(event)">
     <!--DIV style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; HEIGHT: 100%; BACKGROUND-COLOR: white"-->
     <mpc:container id="oMpc" style="width: 404px; height: 217px">
-			<mpc:page ID="History" TABTITLE="History" TABTEXT="History">
+			<mpc:page ID="History" TABTITLE="<%=GetLanguage("History") %>" TABTEXT="<%=GetLanguage("History") %>">
 				<div STYLE="PADDING-RIGHT:3px; PADDING-LEFT:3px; PADDING-BOTTOM:3px; PADDING-TOP:3px">
 					<OBJECT id="vsFlexHistory" style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; HEIGHT: 100%; BACKGROUND-COLOR: white" codeBase="./cab/vsflex7.CAB#Version=7,0,1,160" classid="clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949" name="vsFlexHistory" VIEWASTEXT>
 						<PARAM NAME="_cx" VALUE="10504">
@@ -130,7 +130,7 @@
 					</OBJECT>
 				</div>
 			</mpc:page>
-			<mpc:page ID="Properties" TABTITLE="Properties" TABTEXT="Properties">
+			<mpc:page ID="Properties" TABTITLE="<%=GetLanguage("Properties") %>" TABTEXT="<%=GetLanguage("Properties") %>">
 				<div STYLE="PADDING-RIGHT:3px; PADDING-LEFT:3px; PADDING-BOTTOM:3px; PADDING-TOP:3px">
 					<OBJECT id="vsFlexProperites" style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; HEIGHT: 100%; BACKGROUND-COLOR: white" codeBase="./Cab/vsflex7.CAB#Version=7,0,1,160" classid="clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949" name="vsFlexProperites" VIEWASTEXT>
 						<PARAM NAME="_cx" VALUE="10504">
@@ -212,7 +212,7 @@
 					</OBJECT>
 				</div>
 			</mpc:page>
-            <mpc:page id="_InstantOrderMPCPage" TABTEXT="Instant Order" TABTITLE="Instant Order" onclick="InstantOrderMPCPage_Onclick();" >
+            <mpc:page id="_InstantOrderMPCPage"  TABTEXT="<%=GetLanguage("InstantOrder") %>" TABTITLE="<%=GetLanguage("InstantOrder") %>" onclick="InstantOrderMPCPage_Onclick();">
                 <iframe id="_InstantOrderByInstrumentIFrame" src="InstantOrderListFrame.aspx" style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; WIDTH: 100%; HEIGHT: 100%; BACKGROUND-COLOR: white"></iframe>
             </mpc:page>
 		</mpc:container>

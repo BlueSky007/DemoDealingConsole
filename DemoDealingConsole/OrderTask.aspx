@@ -46,7 +46,7 @@
 	<body onload="OrderTaskPageOnLoad();" STYLE="MARGIN: 0px; OVERFLOW: show" bgColor="#c6c3c6" tabindex="-1" onkeydown="parent.quotationFrm.OnGridKeyUp(event)">
 		<div>
             <select id="_InstrumentSelect" name="_InstrumentSelect" onchange="InstrumentSelect_Onchange();" style="WIDTH: 100px; POSITION: relative;" ></select>
-            <input type="button" id="_OpenPriceButton" name="_OpenPriceButton" onclick="OpenPriceButton_OnClick();" value="Position" />
+            <input type="button" id="_OpenPriceButton" name="_OpenPriceButton" onclick="OpenPriceButton_OnClick();" value="<%=GetLanguage("OpenPriceButton")%>" />
 			<OBJECT id="vsflexOrderTask" style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; HEIGHT: 90%; BACKGROUND-COLOR: white" codeBase="./Cab/vsflex7.CAB#Version=7,0,1,160" classid="clsid:C0A63B86-4B21-11d3-BD95-D426EF2C7949" name="vsflexConfirmationTask" VIEWASTEXT>
 				<PARAM NAME="_cx" VALUE="19341">
 				<PARAM NAME="_cy" VALUE="10874">

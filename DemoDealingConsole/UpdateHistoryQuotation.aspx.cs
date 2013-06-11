@@ -56,4 +56,15 @@ public partial class UpdateHistoryQuotation : System.Web.UI.Page
         bool allowDeleteOverridedQuotation = (bool)DataAccess.ExecuteScalar(sql, connectionString);
         return allowDeleteOverridedQuotation?"TRUE":"FALSE";
     }
+    public string GetLanguage(string key)
+    {
+        if (((Hashtable)Session["Common"]).ContainsKey(key))
+        {
+            return ((Hashtable)Session["Common"])[key].ToString();
+        }
+        else
+        {
+            return key;
+        }
+    }
 }

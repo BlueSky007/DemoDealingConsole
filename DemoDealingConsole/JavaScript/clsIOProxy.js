@@ -48,9 +48,7 @@ function IOProxy()
 
 	                    try {
 	                        //may be able to not alert for different OS
-	                        alert("You have been signed out of the system, because:\n" +
-								"-  you may sign in at other location; or \n" +
-								"-  the server is refreshing its connection with you!");
+	                        alert(ProcessErrorStr);
 	                        top.close();
 	                    }
 	                    catch (e)
@@ -101,7 +99,7 @@ function IOProxy()
 	    }
 	    else {
 	        if (xmlDoc == null) {
-	            alert("Init Data is empty!");
+	            alert(InitDataEmptyStr);
 	            return;
 	        }
 	        if (xmlDoc.getElementsByTagName("Exception") != null && xmlDoc.getElementsByTagName("Exception").length > 0) {
@@ -449,20 +447,21 @@ function IOProxy()
 	    callObj.funcName = "SuspendOrResume";
 
 	    var result = Service.SrvTest.callService(callObj, isResume);
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 	    if (result.error) oIOProxy.ProcessError(result, "SuspendOrResumeResult");
 	    if (!result.error) {
 	        if (result.value == 0) {
 	            return true;
 	        }
 	        else if (result.value == -2) {
-	            alert("Not data is effected!");
+	            alert(messageLanguage["NoDataEffectMsg"]);
 	        }
 	        else {
-	            alert("Failed to " + (isResume ? "Resume" : "Suspend"));
+	            isResume ? alert(messageLanguage["ResumeFailed"]) : alert(messageLanguage["SuspendFailed"]);
 	        }
 	    }
 	    else {
-	        alert("Failed to " + (isResume ? "Resume" : "Suspend"));
+	        isResume ? alert(messageLanguage["ResumeFailed"]) : alert(messageLanguage["SuspendFailed"]);
 	    }
 	    return false;
 	};
@@ -473,6 +472,7 @@ function IOProxy()
 	    callObj.funcName = "SuspendOrResumeForInstrument";
 
 	    var result = Service.SrvTest.callService(callObj, isResume, instrumentID);
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 	    if (result.error) oIOProxy.ProcessError(result, "SuspendOrResumeForInstrumentResult");
 	    if (!result.error) {
 	        if (result.value == 0) {
@@ -482,11 +482,11 @@ function IOProxy()
 	            //alert("Not data is effected!");
 	        }
 	        else {
-	            alert("Failed to " + (isResume ? "Resume" : "Suspend"));
+	            isResume ? alert(messageLanguage["ResumeFailed"]) : alert(messageLanguage["SuspendFailed"]);
 	        }
 	    }
 	    else {
-	        alert("Failed to " + (isResume ? "Resume" : "Suspend"));
+	        isResume ? alert(messageLanguage["ResumeFailed"]) : alert(messageLanguage["SuspendFailed"]);
 	    }
 	    return false;
 	};
@@ -497,21 +497,22 @@ function IOProxy()
 	    callObj.funcName = "MassAllowLMT";
 
 	    var result = Service.SrvTest.callService(callObj, allow);
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 	    if (result.error) oIOProxy.ProcessError(result, "MassAllowLMTResult");
 	    if (!result.error) {
 	        if (result.value == 0) {
 	            return true;
 	        }
 	        else if (result.value == -2) {
-	            alert("Not data is effected!");
+	            alert(messageLanguage["NoDataEffectMsg"]);
 	            return true;
 	        }
 	        else {
-	            alert("Failed to " + (allow ? "Allow Limit" : "Disallow Limit"));
+	            allow ? alert(messageLanguage["AllowLMTFailed"]) : alert(messageLanguage["DisallowLMTFailed"]);
 	        }
 	    }
 	    else {
-	        alert("Failed to " + (allow ? "Allow Limit" : "Disallow Limit"));
+	        allow ? alert(messageLanguage["AllowLMTFailed"]) : alert(messageLanguage["DisallowLMTFailed"]);
 	    }
 	    return false;
 	};
@@ -522,21 +523,22 @@ function IOProxy()
 	    callObj.funcName = "AllowLMT";
 
 	    var result = Service.SrvTest.callService(callObj, allow, instrumentID);
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 	    if (result.error) oIOProxy.ProcessError(result, "AllowLMTResult");
 	    if (!result.error) {
 	        if (result.value == 0) {
-	            return false;// true;
+	            return false; // true;
 	        }
 	        else if (result.value == -2) {
 	            //alert("Not data is effected!");
 	            return true;
 	        }
 	        else {
-	            alert("Failed to " + (allow ? "Allow Limit" : "Disallow Limit"));
+	            allow ? alert(messageLanguage["AllowLMTFailed"]) : alert(messageLanguage["DisallowLMTFailed"]);
 	        }
 	    }
 	    else {
-	        alert("Failed to " + (allow ? "Allow Limit" : "Disallow Limit"));
+	        allow ? alert(messageLanguage["AllowLMTFailed"]) : alert(messageLanguage["DisallowLMTFailed"]);
 	    }
 	    return false;
 	};
@@ -548,20 +550,21 @@ function IOProxy()
 	    callObj.funcName = "UpdateInstrumentForAutoToManual";
 
 	    var result = Service.SrvTest.callService(callObj);
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 	    if (result.error) oIOProxy.ProcessError(result, "UpdateInstrumentForAutoToManualResult");
 	    if (!result.error) {
 	        if (result.value == 0) {
 	            return true;
 	        }
 	        else if (result.value == -2) {
-	            alert("Not data is effected!");
+	            alert(messageLanguage["NoDataEffectMsg"]);
 	        }
 	        else {
-	            alert("Failed to From Auto To Manual");
-            }
+	            alert(messageLanguage["SetAutoToManualFailed"]);
+	        }
 	    }
 	    else {
-	        alert("Failed to From Auto To Manual");
+	        alert(messageLanguage["SetAutoToManualFailed"]);
 	    }
 	    return false;
 	};
@@ -603,16 +606,17 @@ function IOProxy()
 
 	this.UpdateQuotePolicyResultErrorProcess = function (functionName, result) {
 	    var message = "";
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 	    if (result.error) {
-	        message = "Failed to Update QuotePolicyDetail!";
+	        message = messageLanguage["FailedUpdateQuotePoliyDetail"];
 	    }
 	    else {
 	        if (result.value) {
 	            if (result.value.errorLine == -2) {
-	                message = "AutoPoints/Spread should not be greater than the MaxAutoPoints/MaxSpreadPoints";
+	                message = messageLanguage["UpdateQuotePolicAlert"];
 	            }
 	            else {
-	                if (result.value.errorLine != 0) message = "Failed to Update QuotePolicyDetail!";
+	                if (result.value.errorLine != 0) message = messageLanguage["FailedUpdateQuotePoliyDetail"];
 	            }
 	        }
 	    }
@@ -823,7 +827,7 @@ function IOProxy()
 	{
 		var oParameters = oIOProxy.Calls.Item(result.id);
 		var tran = oParameters.tran;
-		
+		var messageLanguage = oIOProxy.mainWindow.parent.quotationFrm.messageLanguage;
 		if(result.error || result.value != "OK")
 		{
 		    var sMsg = "";
@@ -832,7 +836,7 @@ function IOProxy()
 		    }
 		    else {
 		        if (result.value == "TransactionNotExists") {
-		            sMsg = "The order is canceled already";
+		            sMsg = messageLanguage["CancelTransactionMsg"]; 
 		            oIOProxy.mainWindow.parent.showModalDialog("Alert.aspx", sMsg, "status:no;help:no; resizable:no; scroll:no; center:yes; dialogWidth:200px;dialogHeight:200px");
 		            tran.Cancel();
 		            return;
@@ -841,7 +845,7 @@ function IOProxy()
 
 		    if (oIOProxy.mainWindow.oDisablePopup == 0) {
 		        if (result.error) {
-		            sMsg = "Failed to cancel order! " + tran.code;
+		            sMsg = messageLanguage["CancelTransactionFailed"] + tran.code;
 		        }
 		        else {
 		            sMsg = oDealingConsole.GetCancelMessage(tran, result.value);
@@ -901,7 +905,7 @@ function IOProxy()
 	{
 		var oParameters = oIOProxy.Calls.Item(result.id);
 		var tran = oParameters.tran;
-		
+		var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 		if (result.error || result.value != "OK")
 		{
 			if (result.error)
@@ -910,14 +914,14 @@ function IOProxy()
 			}
 			else
 			{
-				alert("Failed to Reject Cancel Lmt Order!");
+			    alert(messageLanguage["RejectCancelLmtOrderAlert"]);
 			}
 		}
 		else
 		{
 			tran.GetRejectCancelLmtOrderResult();
 			if(oIOProxy.mainWindow.oDisablePopup == 0)
-			    alert("Succeed to Reject Cancel Lmt Order!");			
+			    alert(messageLanguage["RejectCancelLmtOrderMsg"]);
 		}
 	}
 
@@ -1384,12 +1388,12 @@ function IOProxy()
 	    sXml = sXml.replace(/>/g, "&gt;");
 	    var iCallID = Service.SrvTest.callService(UpdateSystemParametersResult, "UpdateSystemParameters", sXml);
 	};
-	function UpdateSystemParametersResult(result)
-	{
+	function UpdateSystemParametersResult(result) {
+	    var messageLanguage = this.mainWindow.parent.quotationFrm.messageLanguage;
 		if(result.error || result.value == false)
 		{
-			if(result.error) oIOProxy.ProcessError(result,"UpdateSystemParametersResult");			
-			alert("UpdateSystemParameters Failed!");
+			if(result.error) oIOProxy.ProcessError(result,"UpdateSystemParametersResult");
+			alert(messageLanguage["UpdateSystemParametersMsg"]);
 		}
 	}
 
@@ -1400,8 +1404,8 @@ function IOProxy()
 	{
 		if(result.error || result.value == false)
 		{
-			if(result.error) oIOProxy.ProcessError(result,"UpdateEnquiryOutTimeResult");			
-			alert("UpdateEnquiryOutTime Failed!");
+			if(result.error) oIOProxy.ProcessError(result,"UpdateEnquiryOutTimeResult");
+			alert(messageLanguage["UpdateEnquiryOutTimeMsg"]);
 		}
 	}
 
@@ -1657,14 +1661,14 @@ function IOProxy()
 	    var oParameters = oIOProxy.Calls.Item(result.id);
 	    var callWin = oParameters.callWin;
 	    oIOProxy.Calls.Remove(result.id);
-
+	    var messageLanguage = oIOProxy.mainWindow.parent.quotationFrm.messageLanguage;
         if (result.error || result.value == false) {
             if (result.error) oIOProxy.ProcessError(result, "UpdateDealingPolicyDetailResult");
             if (!(callWin == null || callWin.closed == true)) {
                 callWin.AfterSavedProcess(false);
             }
             else {
-                alert("Failed to Update Dealing Policy Detail!");
+                alert(messageLanguage["UpdateDealingPolicyDetailAlert"]);
             }
         }
         else {
@@ -1672,7 +1676,7 @@ function IOProxy()
                 callWin.AfterSavedProcess(true);
             }
             else {
-                alert("Succeed to Update Dealing Policy Detail!");
+                alert(messageLanguage["UpdateDealingPolicyDetailMsg"]);
             }
         }
 	}

@@ -46,5 +46,17 @@ namespace iExchange.DealingConsole
 		{
 		
 		}
+
+        public string GetLanguage(string key)
+        {
+            if (((Hashtable)Session["Common"]).ContainsKey(key))
+            {
+                return ((Hashtable)Session["Common"])[key].ToString();
+            }
+            else
+            {
+                return key;
+            }
+        }
 	}
 }

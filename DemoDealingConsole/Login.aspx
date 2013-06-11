@@ -25,6 +25,15 @@
 			</p>
 			<div align="center">
 				<center>
+                    <table width="100%" border="0">
+                      <tr>
+                          <td align="right">
+                          <asp:DropDownList ID = "_LanguageDropDownList" runat="server" Width="136px" 
+                                  AutoPostBack="True" 
+                                  onselectedindexchanged="_LanguageDropDownList_SelectedIndexChanged"/>
+                          </td>
+                      </tr>
+                    </table>
 					<table border="0" width="50%" cellspacing="3" cellpadding="2">
 						<tr>
 							<td width="100%"><img border="0" src="Images/Dealing.jpg" width="400" height="40"><br>
@@ -37,11 +46,11 @@
 									<table border="1" width="90%" bgcolor="#dfefe3" bordercolorlight="#479933" cellspacing="0"
 										bordercolordark="#ffffff">
 										<tr>
-											<td width="38%"><b><font face="Times New Roman" color="#008000">User Name:</font></b></td>
+											<td width="38%"><b><font face="Times New Roman" color="#008000"><%=GetLanguage("UserName")%></font></b></td>
 											<td width="62%"><asp:TextBox id="txtLoginID" class="input" runat="server" accessKey="u"></asp:TextBox><b><font face="Times New Roman" color="#008000">*</font></b></td>
 										</tr>
 										<tr>
-											<td width="38%"><b><font face="Times New Roman" color="#008000">Password:</font></b></td>
+											<td width="38%"><b><font face="Times New Roman" color="#008000"><%=GetLanguage("Password")%></font></b></td>
 											<td width="62%"><asp:TextBox id="txtPassword" runat="server" TextMode="Password" MaxLength="16" class="input"
 													accessKey="p"></asp:TextBox><b><font face="Times New Roman" color="#008000">*</font></b></td>
 										</tr>
@@ -56,8 +65,8 @@
 						</tr>
 						<tr>
 							<td width="100%">
-								<p align="center"><asp:Button id="btnOk" runat="server" Text="Logon" class="button" onclick="btnOk_Click"></asp:Button>
-									<asp:Button id="btnCancel" class="button" runat="server" Text="Cancel" onclick="btnCancel_Click"></asp:Button>
+								<p align="center"><asp:Button id="btnOk" Width="74px" runat="server" Text="Logon" class="button" onclick="btnOk_Click"></asp:Button>
+									<asp:Button id="btnCancel" Width="74px" class="button" runat="server" Text="Cancel" onclick="btnCancel_Click"></asp:Button>
 								</p>
 							</td>
 						</tr>
